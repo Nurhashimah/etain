@@ -10,21 +10,12 @@
     = render 'layouts/shim'
 
   %body
-    //.container
-    #mp-pusher.mp-pusher
-      .nav#mp-menu.mp-menu
-        = render 'layouts/menu'
-      .scroller
-        .scroller-inner
-          .content.clearfix
-            .block
-              = render 'layouts/header'
-              - flash.each do |key, value|
-                %div{:class => "alert alert-#{key}"}= value
-              = yield
-              = render 'layouts/footer'
-              
-              
 
-    :javascript
-      new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+    = render 'layouts/header'
+    .row
+      .col-md-10.col-md-offset-1
+        - flash.each do |key, value|
+          %div{:class => "alert alert-#{key}"}= value
+        = yield
+        = render 'layouts/footer'
+

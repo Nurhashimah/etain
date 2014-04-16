@@ -23,6 +23,7 @@ gem 'modernizr-rails', '~> 2.7.1'
 # gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
+  gem 'quiet_assets', '~> 1.0.2'
   gem "rspec-rails", "~> 2.14.0"
   gem 'guard-rspec', "~> 2.5.0"
 end

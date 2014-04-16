@@ -22,7 +22,7 @@ html, body, .container, .scroller {
 }
 
 html { /*overflow-y: scroll;*/}
-body {/*padding-top: 60px;*/}
+body {padding-top: 60px;}
 /*section {overflow: auto;}*/
 textarea {resize: vertical;}
 
@@ -87,10 +87,13 @@ p {
 
 
 /* header */
-.topnav {height:40px; padding-top:5px;
+.topnav {height:30px; margin-top:10px;
   a {color:#606060; font-size:1.3em; padding-right:5px;}
   a:hover{color:#606060; background-color:white; font-size:1.3em;}
 }
+
+.dropdown {margin-left:15px;}
+.right {float:right;}
 #logo {
   float: left;
   margin-right: 10px;
