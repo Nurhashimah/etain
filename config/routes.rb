@@ -1,4 +1,4 @@
-Skeleton::Application.routes.draw do
+Etain::Application.routes.draw do
   devise_for :users
   resources :users
   root  'static_pages#home'
