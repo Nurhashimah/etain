@@ -16,14 +16,9 @@
             Courses
             %b.caret
           %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Course Details
-            %li
-              %a{:href => "#"} Scheduling
-            %li
-              %a{:href => "#"} Bookings
-            %li
-              %a{:href => "#"} Facilities
+            %li= link_to "Course Details", courses_path
+            %li= link_to "Scheduling", schedules_path
+            %li= link_to "Bookings", bookings_path
             %li
               %a{:href => "#"} Course Blog
         %li.dropdown
@@ -31,20 +26,16 @@
             People
             %b.caret
           %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Lecturers
-            %li
-              %a{:href => "#"} Customers
-            %li
-              %a{:href => "#"} Client Companies
+            %li= link_to "Lecturers", lecturers_path
+            %li= link_to "Customers", customers_path
+            %li= link_to "Client Companies", companies_path
 
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             Facilities
             %b.caret
           %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Locations
+            %li= link_to "Locations", locations_path
             %li
               %a{:href => "#"} Assets
         %li.dropdown
@@ -58,8 +49,7 @@
               %a{:href => "#"} Resume Generator
             %li
               %a{:href => "#"} Assets
-        %li
-          %a{:href => "#"} Payment
+        %li= link_to "Payments", payments_path
           
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown{style: "padding-top:10px; padding-right:60px;"}
