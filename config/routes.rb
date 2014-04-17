@@ -1,4 +1,22 @@
 Etain::Application.routes.draw do
+  resources :locations
+
+  resources :companies
+
+  resources :customers
+
+  resources :attendances
+
+  resources :payments
+
+  resources :lecturers
+
+  resources :bookings
+
+  resources :schedules
+
+  resources :courses
+
   devise_for :users
   resources :users
   root  'static_pages#home'

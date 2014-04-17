@@ -1,0 +1,11 @@
+Course code:string category:string topic:string description:string fee:decimal duration:integer duration_type:string user_id:integer college_id:integer data:string
+
+Schedule course_id:integer scheduled_on:datetime location_id:integer lecturer_by:lecturer_id max_people:integer status:string user_id:integer college_id:integer data:string
+
+Booking code:string schedule_id:integer customer_id:integer payment_id:integer warranty_id:integer status:string user_id:integer college_id:integer data:string
+
+Lecturer name:string details:text rate:decimal user_id:integer college_id:integer data:string
+
+Payment booking_id:integer customer_id:integer method:string auth_code:string amount:decimal confirmed_by:integer confirmed_on:datetime status:string user_id:integer college_id:integer data:string
+
+Attendance schedule_id:integer customer_id:integer attended:boolean taken_on:date_time

@@ -11,10 +11,128 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130905150104) do
+ActiveRecord::Schema.define(version: 20140417192616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: true do |t|
+    t.integer  "schedule_id"
+    t.integer  "customer_id"
+    t.boolean  "attended"
+    t.datetime "taken_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bookings", force: true do |t|
+    t.string   "code"
+    t.integer  "schedule_id"
+    t.integer  "customer_id"
+    t.integer  "payment_id"
+    t.integer  "warranty_id"
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "company_code"
+    t.string   "name"
+    t.text     "address"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "fax"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "courses", force: true do |t|
+    t.string   "code"
+    t.string   "category"
+    t.string   "topic"
+    t.string   "description"
+    t.decimal  "fee"
+    t.integer  "duration"
+    t.string   "duration_type"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "id_no"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.boolean  "corporate"
+    t.integer  "company_id"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lecturers", force: true do |t|
+    t.string   "name"
+    t.text     "details"
+    t.decimal  "rate"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.integer  "location_id"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "booking_id"
+    t.integer  "customer_id"
+    t.string   "method"
+    t.string   "auth_code"
+    t.decimal  "amount"
+    t.integer  "confirmed_by"
+    t.datetime "confirmed_on"
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schedules", force: true do |t|
+    t.integer  "course_id"
+    t.datetime "scheduled_on"
+    t.integer  "location_id"
+    t.integer  "lecturer_by"
+    t.integer  "max_people"
+    t.string   "status"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
