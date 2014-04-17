@@ -9,3 +9,9 @@ Lecturer name:string details:text rate:decimal user_id:integer college_id:intege
 Payment booking_id:integer customer_id:integer method:string auth_code:string amount:decimal confirmed_by:integer confirmed_on:datetime status:string user_id:integer college_id:integer data:string
 
 Attendance schedule_id:integer customer_id:integer attended:boolean taken_on:date_time
+
+Customer id_no:string name:string email:string phone:string corporate:boolean company_id:integer user_id:integer college_id:integer data:string
+
+Company company_code:string name:string address:text phone:string email:string fax:string user_id:integer college_id:integer data:string
+
+Location location_id:integer name:string description:text user_id:integer college_id:integer data:string
