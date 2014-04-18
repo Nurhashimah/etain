@@ -1,7 +1,7 @@
 - provide(:title, 'Course')
 - model_class = Course
 .page-header
-  %h1= Listing Courses
+  %h1= Listing Courses, :default => model_class.model_name.human.pluralize
 
 .navbar.navbar-inverse
   .navbar-inner
