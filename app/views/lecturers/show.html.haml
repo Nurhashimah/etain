@@ -1,0 +1,39 @@
+- provide(:title, 'Lecturer Details')
+- model_class = Lecturer
+.page-header
+  %h1= Lecturer Details
+%p#notice= notice
+%dl.dl-horizontal
+  %dt= Name:
+  %dd= @lecturer.name
+
+%dl.dl-horizontal
+  %dt= Details:
+  %dd= @lecturer.details
+
+%dl.dl-horizontal
+  %dt= Rate:
+  %dd= @lecturer.rate
+
+%dl.dl-horizontal
+  %dt= User:
+  %dd= @lecturer.user_id
+
+%dl.dl-horizontal
+  %dt= College:
+  %dd= @lecturer.college_id
+
+%dl.dl-horizontal
+  %dt= Data:
+  %dd= @lecturer.data
+
+.form-actions
+  = link_to content_tag(:i, "", :class => "fa fa-arrow-left ") + " " + t('.back', :default => t("helpers.links.back")), lecturers_path, :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-edit") + " " + t('.edit', :default => t("helpers.links.edit")), |
+    edit_lecturer_path(@lecturer), :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-trash-o icon-white") + " " + t('.destroy', :default => t("helpers.links.destroy")), |
+    lecturer_path(@lecturer),                                                                                                    |
+    :method => 'delete',                                                                                                           |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },                   |
+    :class => 'btn btn-danger'                                                                                                     |
+
