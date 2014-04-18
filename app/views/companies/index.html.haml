@@ -1,0 +1,40 @@
+- provide(:title, 'Company')
+- model_class = Company
+.page-header
+  %h1= Listing Company
+
+.navbar.navbar-inverse
+  .navbar-inner
+    %ul.nav
+      %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_company_path
+    %ul.nav.pull-right
+      %li= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#"
+      %li= link_to_function(fa_icon("print", text: (t 'actions.print')), "javascript:print()")
+
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th= Company code
+      %th= Name
+      %th= Address
+      %th= Phone
+      %th= Email
+      %th= Fax
+      %th= User
+      %th= College
+      %th= Data
+      %th= 
+  %tbody
+    - @companies.each do |company|
+      %tr
+        %td= company.company_code
+        %td= company.name
+        %td= company.address
+        %td= company.phone
+        %td= company.email
+        %td= company.fax
+        %td= company.user_id
+        %td= company.college_id
+        %td= company.data
+        = render :partial => 'action_menu', :locals => { :company => company }
+
