@@ -1,0 +1,41 @@
+- provide(:title, 'bookings')
+- model_class = Booking
+.page-header
+  %h1= Listing bookings
+
+.navbar.navbar-inverse
+  .navbar-inner
+    %ul.nav
+      %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_booking_path
+    %ul.nav.pull-right
+      %li= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#"
+      %li= link_to_function(fa_icon("print", text: (t 'actions.print')), "javascript:print()")
+
+
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th= code
+      %th= Schedule 
+      %th= Customer 
+      %th= Payment 
+      %th= Warranty 
+      %th= Status 
+      %th= User 
+      %th= College 
+      %th= Data 
+      %th= 
+  %tbody
+    - @bookings.each do |booking|
+      %tr
+        %td= booking.code 
+        %td= booking.schedule_id 
+        %td= booking.customer_id 
+        %td= booking.payment_id 
+        %td= booking.status 
+        %td= booking.user_id 
+        %td= booking.college_id 
+        %td= booking.data
+        = render :partial => 'action_menu', :locals => { :booking => booking } 
+
+
