@@ -1,43 +1,41 @@
 - provide(:title, 'Course')
 - model_class = Course
 .page-header
+  %h1 Courses
 
 
-.navbar.navbar-inverse
-  .navbar-inner
-    %ul.nav
-      %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_course_path
-    %ul.nav.pull-right
-      %li= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#"
+.row
+  %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_course_path
 
-%table.table.table-condensed.table-hover.table-striped
-  %thead
-    %tr
-      %th code
-      %th category
-      %th topic
-      %th description
-      %th fee
-      %th duration
-      %th duration_type
-      %th user
-      %th college
-      %th data
-      %th
-  %tbody
-    - @courses.each do |course|
+.row
+  %table.table.table-condensed.table-hover.table-striped
+    %thead
       %tr
-        %td= course.code
-        %td= course.category
-        %td= course.topic
-        %td= course.description
-        %td= course.fee
-        %td= course.duration 
-        %td= course.duration_type
-        %td= course.user_id
-        %td= course.college_id
-        %td= course.data
-        = render :partial => 'action_menu', :locals => { :course => course }
+        %th code
+        %th category
+        %th topic
+        %th description
+        %th fee
+        %th duration
+        %th duration_type
+        %th user
+        %th college
+        %th data
+        %th
+    %tbody
+      - @courses.each do |course|
+        %tr
+          %td= course.code
+          %td= course.category
+          %td= course.topic
+          %td= course.description
+          %td= course.fee
+          %td= course.duration 
+          %td= course.duration_type
+          %td= course.user_id
+          %td= course.college_id
+          %td= course.data
+          = render :partial => 'action_menu', :locals => { :course => course }
 
 
 
