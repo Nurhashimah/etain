@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+#ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -12,7 +12,8 @@ gem 'uglifier', '~> 2.1.1'  # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.1'  # Use CoffeeScript for .js.coffee assets and views
 gem "jquery-rails", "~> 3.1.0"  # Use jquery as the JavaScript library
 gem 'jbuilder', '~> 1.2'  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem "haml", "~> 4.0.5"
+gem 'haml',         '~> 4.0.6'
+gem 'haml-rails',   '~> 0.9.0'
 gem "font-awesome-rails", "~> 4.0.3.1"
 gem "bootstrap-datepicker-rails", "~> 1.3.0.1"
 gem "bootstrap-select-rails", "~> 1.3.0.1"
