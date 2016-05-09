@@ -25,8 +25,11 @@ gem 'modernizr-rails', '~> 2.7.1'
 
 group :development, :test do
   gem 'quiet_assets', '~> 1.0.2'
-  gem "rspec-rails", "~> 2.14.0"
-  gem 'guard-rspec', "~> 2.5.0"
+  #gem "rspec-rails", "~> 2.14.0"  # a=http://stackoverflow.com/questions/28046509/error-could-not-load-guard-rspec-or-find-class-guardrspec
+  #gem "rspec-rails", "~> 3.3.2" #https://github.com/projecthydra/sufia/issues/1639
+  gem "rspec-rails", "~> 3.4.2"
+  #gem 'guard-rspec', "~> 2.5.0" # refer a
+  gem 'guard-rspec', "~>4.6.0"
 end
 
 group :test do
