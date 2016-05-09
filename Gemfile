@@ -30,6 +30,7 @@ group :development, :test do
   gem "rspec-rails", "~> 3.4.2"
   #gem 'guard-rspec', "~> 2.5.0" # refer a
   gem 'guard-rspec', "~>4.6.0"
+  gem 'capistrano'
 end
 
 group :test do
