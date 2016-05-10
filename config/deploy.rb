@@ -52,6 +52,10 @@ set :keep_releases, 5
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
 
+set :rvm_type, :user                     # Defaults to: :auto
+set :rvm_ruby_version, '2.2.3'      # Defaults to: 'default'
+set :rvm_custom_path, '/home/nurhashimah/.rvm/'  # only needed if not detected
+
 namespace :deploy do
   
   after :restart, :clear_cache do
@@ -70,7 +74,5 @@ namespace :deploy do
     end
   end
 end
-
- 
 
 after "deploy", "deploy:symlink_config_files"
