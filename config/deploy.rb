@@ -5,7 +5,7 @@ lock '3.5.0'
 
 set :application, 'etain'
 set :scm, :git
-set :repository, 'git@github.com:maxcobmara/etain.git'
+set :repo_url, 'git@github.com:maxcobmara/etain.git'
 set :scm_passphrase, ""
 
 # Default branch is :master

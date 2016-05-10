@@ -8,7 +8,7 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 server "106.187.51.114", user: 'nurhashimah', roles: [:app, :web, :db], :primary => true
 #set :deploy_to, "#{fetch(:rails)}"
-set :deploy_to, "/rails"
+set :deploy_to, "/opt/app/etain"
 
 
 # role-based syntax
