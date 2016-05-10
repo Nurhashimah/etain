@@ -65,6 +65,7 @@ namespace :deploy do
   
   desc "Symlink shared config files"
   task :symlink_config_files do
+    on roles(:all) do |host|
       execute "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
   end
 end
