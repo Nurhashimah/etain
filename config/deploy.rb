@@ -53,7 +53,7 @@ set :stages, ["staging", "production"]
 set :default_stage, "staging"
 
 namespace :deploy do
-
+  
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -62,5 +62,13 @@ namespace :deploy do
       # end
     end
   end
-
+  
+  desc "Symlink shared config files"
+  task :symlink_config_files do
+      execute "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+  end
 end
+
+ 
+
+after "deploy", "deploy:symlink_config_files"
