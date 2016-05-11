@@ -27,7 +27,8 @@ set :ssh_options, {:forward_agent => true, :port => 4321}
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
-
+ set :linked_files, fetch(:linked_files, []).push('config/database.yml')
+ 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
 
@@ -57,12 +58,12 @@ namespace :deploy do
     end
   end
   
-  desc "Symlink shared config files"
-  task :symlink_config_files do
-    on roles(:all) do |host|
-      execute "ln -s /opt/app/etain/shared/config/database.yml /opt/app/etain/current/config/database.yml"
-    end
-  end
+#   desc "Symlink shared config files"
+#   task :symlink_config_files do
+#     on roles(:all) do |host|
+#       execute "ln -s /opt/app/etain/shared/config/database.yml /opt/app/etain/current/config/database.yml"
+#     end
+#   end
 end
 
-after "deploy", "deploy:symlink_config_files"
+#after "deploy", "deploy:symlink_config_files"
