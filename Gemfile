@@ -33,6 +33,7 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
 end
 
 group :test do

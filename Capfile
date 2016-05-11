@@ -18,10 +18,14 @@ require "capistrano/deploy"
 require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
-# require 'capistrano/bundler'
+ require 'capistrano/bundler'
 # require 'capistrano/rails/assets'
  require 'capistrano/rails/migrations'
 # require 'capistrano/passenger'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
+
+# This means that as well as loading all .cap files in lib/capistrano/tasks, Capistrano will load all .rb files in lib/capistrano and its subfolders. This is used later to define simple helper functions for use in tasks.
+# http://www.talkingquickly.co.uk/2014/01/deploying-rails-apps-to-a-vps-with-capistrano-v3/
+Dir.glob('lib/capistrano/**/*.rb').each { |r| import r }
