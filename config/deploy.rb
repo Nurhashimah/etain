@@ -52,8 +52,12 @@ set :keep_releases, 5
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
 
-namespace :deploy do
+set :rvm_type, :user                     # Defaults to: :auto
+set :rvm_ruby_version, '2.2.3'      # Defaults to: 'default'
+set :rvm_custom_path, '/home/nurhashimah/.rvm/'  # only needed if not detected
 
+namespace :deploy do
+  
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -62,5 +66,13 @@ namespace :deploy do
       # end
     end
   end
-
+  
+  desc "Symlink shared config files"
+  task :symlink_config_files do
+    on roles(:all) do |host|
+      execute "ln -s /opt/app/etain/shared/config/database.yml /opt/app/etain/current/config/database.yml"
+    end
+  end
 end
+
+after "deploy", "deploy:symlink_config_files"
