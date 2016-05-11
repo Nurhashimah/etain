@@ -10,15 +10,7 @@ set :scm_passphrase, ""
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
-# Default deploy_to directory is /var/www/my_app_name
-#set :deploy_to, '/var/www/my_app_name'
-
-# Default value for :scm is :git
-
-
 set :branch, "master"
-
 set :rails_env, "production"
 set :deploy_via, :copy
 set :ssh_options, {:forward_agent => true, :port => 4321}
@@ -46,8 +38,6 @@ set :ssh_options, {:forward_agent => true, :port => 4321}
 set :keep_releases, 5
 
 #default_run_options[:pty] = true
-#server "106.187.51.114", :app, :web, :db, :primary => true
-#set :user, "nurhashimah"
 
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
