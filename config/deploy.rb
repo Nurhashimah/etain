@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.5.0'
 
-#require 'capistrano/ext/multistage'
+#require 'capistrano/ext/multistage' ##no longer needed in Capistrano 3
 
 set :application, 'etain'
 set :scm, :git
@@ -12,6 +12,7 @@ set :scm_passphrase, ""
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, "master"
 set :rails_env, "production"
+set :assets_roles, [:web, :app]
 set :deploy_via, :copy
 set :ssh_options, {:forward_agent => true, :port => 4321}
 
@@ -41,7 +42,7 @@ set :keep_releases, 5
 #default_run_options[:pty] = true
 
 set :stages, ["staging", "production"]
-set :default_stage, "staging"
+#set :default_stage, "staging" ##no longer needed in Capistrano 3
 
 set :rvm_type, :user                     # Defaults to: :auto
 set :rvm_ruby_version, '2.2.3'      # Defaults to: 'default'
