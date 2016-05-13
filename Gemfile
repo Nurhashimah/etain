@@ -5,8 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 gem "devise", "~> 3.2.4"
 gem 'pg', '~> 0.17.1'
-# Use unicorn as the app server
-gem 'unicorn'
+
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '~> 2.1.1'  # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.1'  # Use CoffeeScript for .js.coffee assets and views
@@ -50,6 +49,8 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+  # Use unicorn as the app server
+  gem 'unicorn'
 end
 
 # Use ActiveModel has_secure_password
