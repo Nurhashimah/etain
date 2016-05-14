@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
-gem "thin", "~> 1.6.2"
 gem "devise", "~> 3.2.4"
 gem 'pg', '~> 0.17.1'
 
@@ -24,6 +23,7 @@ gem 'modernizr-rails', '~> 2.7.1'
 # gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
+  gem "thin", "~> 1.6.2"
   gem 'quiet_assets', '~> 1.0.2'
   #gem "rspec-rails", "~> 2.14.0"  # a=http://stackoverflow.com/questions/28046509/error-could-not-load-guard-rspec-or-find-class-guardrspec
   #gem "rspec-rails", "~> 3.3.2" #https://github.com/projecthydra/sufia/issues/1639
@@ -49,13 +49,12 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+  # Use unicorn as the app server
+  gem 'unicorn'
 end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
