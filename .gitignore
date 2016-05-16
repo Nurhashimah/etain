@@ -37,6 +37,4 @@ tmp/**/*
 .idea
 .secret
 
-shared/log/*.log 
-shared/pids/*.pid 
-shared/sockets
+shared/*
