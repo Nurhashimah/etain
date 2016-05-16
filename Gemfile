@@ -52,6 +52,11 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   # Use unicorn as the app server
   gem 'unicorn'
+  gem 'capistrano'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-nginx', '~> 2.0'
 end
 
 # Use ActiveModel has_secure_password
