@@ -37,4 +37,5 @@ tmp/**/*
 .idea
 .secret
 
-shared/*
+shared/log/*
+shared/pids/*
