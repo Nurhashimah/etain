@@ -38,4 +38,4 @@ tmp/**/*
 .secret
 
 shared/log/*
-shared/pids/*
+
