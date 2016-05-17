@@ -27,7 +27,7 @@ set :ssh_options, {:forward_agent => true, :port => 4321}
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+ #set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
  set :linked_files, fetch(:linked_files, []).push('config/database.yml')
  
 # Default value for linked_dirs is []
