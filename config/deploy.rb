@@ -48,16 +48,18 @@ set :rvm_type, :user                     # Defaults to: :auto
 set :rvm_ruby_version, '2.2.3'      # Defaults to: 'default'
 set :rvm_custom_path, '/home/nurhashimah/.rvm/'  # only needed if not detected
 
+### task :restart_app do ...on roles(... end.... end### - github.com/capistrano/capistrano
+
 namespace :deploy do
   
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #after :restart, :clear_cache do ###after "deploy:published", "restart_app"
+  #  on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-    end
-  end
+  #  end
+  #end
   
 #   desc "Symlink shared config files"
 #   task :symlink_config_files do
