@@ -865,3 +865,75 @@ I, [2016-05-13T15:58:43.451355 #19171]  INFO -- : worker=1 ready
 I, [2016-05-13T15:59:39.603364 #19162]  INFO -- : reaped #<Process::Status: pid 19168 exit 0> worker=0
 I, [2016-05-13T15:59:39.603481 #19162]  INFO -- : reaped #<Process::Status: pid 19171 exit 0> worker=1
 I, [2016-05-13T15:59:39.603574 #19162]  INFO -- : master complete
+I, [2016-05-17T16:05:51.156362 #8141]  INFO -- : Refreshing Gem list
+/home/shimah/.rvm/gems/ruby-2.2.3/gems/activesupport-4.1.0/lib/active_support/values/time_zone.rb:285: warning: circular argument reference - now
+I, [2016-05-17T16:05:52.693223 #8141]  INFO -- : unlinking existing socket=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock
+I, [2016-05-17T16:05:52.693382 #8141]  INFO -- : listening on addr=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock fd=10
+I, [2016-05-17T16:05:52.693646 #8141]  INFO -- : listening on addr=0.0.0.0:8080 fd=11
+I, [2016-05-17T16:05:52.693723 #8141]  INFO -- : worker=0 spawning...
+I, [2016-05-17T16:05:52.695111 #8141]  INFO -- : worker=1 spawning...
+I, [2016-05-17T16:05:52.695726 #8147]  INFO -- : worker=0 spawned pid=8147
+I, [2016-05-17T16:05:52.695904 #8147]  INFO -- : worker=0 ready
+I, [2016-05-17T16:05:52.696580 #8141]  INFO -- : master process ready
+I, [2016-05-17T16:05:52.697161 #8150]  INFO -- : worker=1 spawned pid=8150
+I, [2016-05-17T16:05:52.697329 #8150]  INFO -- : worker=1 ready
+I, [2016-05-17T16:12:32.885971 #8141]  INFO -- : reaped #<Process::Status: pid 8147 exit 0> worker=0
+I, [2016-05-17T16:12:32.886085 #8141]  INFO -- : reaped #<Process::Status: pid 8150 exit 0> worker=1
+I, [2016-05-17T16:12:32.886172 #8141]  INFO -- : master complete
+I, [2016-05-17T16:47:56.950354 #8730]  INFO -- : Refreshing Gem list
+/home/shimah/.rvm/gems/ruby-2.2.3/gems/activesupport-4.1.0/lib/active_support/values/time_zone.rb:285: warning: circular argument reference - now
+I, [2016-05-17T16:47:58.486326 #8730]  INFO -- : unlinking existing socket=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock
+I, [2016-05-17T16:47:58.486491 #8730]  INFO -- : listening on addr=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock fd=10
+I, [2016-05-17T16:47:58.486755 #8730]  INFO -- : listening on addr=0.0.0.0:8080 fd=11
+I, [2016-05-17T16:47:58.486832 #8730]  INFO -- : worker=0 spawning...
+I, [2016-05-17T16:47:58.488284 #8730]  INFO -- : worker=1 spawning...
+I, [2016-05-17T16:47:58.489017 #8737]  INFO -- : worker=0 spawned pid=8737
+I, [2016-05-17T16:47:58.489236 #8737]  INFO -- : worker=0 ready
+I, [2016-05-17T16:47:58.491141 #8730]  INFO -- : master process ready
+I, [2016-05-17T16:47:58.491762 #8740]  INFO -- : worker=1 spawned pid=8740
+I, [2016-05-17T16:47:58.491925 #8740]  INFO -- : worker=1 ready
+I, [2016-05-17T16:48:37.757233 #8730]  INFO -- : reaped #<Process::Status: pid 8737 exit 0> worker=0
+I, [2016-05-17T16:48:37.757420 #8730]  INFO -- : reaped #<Process::Status: pid 8740 exit 0> worker=1
+I, [2016-05-17T16:48:37.757570 #8730]  INFO -- : master complete
+I, [2016-05-17T16:48:50.202830 #8940]  INFO -- : Refreshing Gem list
+/home/shimah/.rvm/gems/ruby-2.2.3/gems/activesupport-4.1.0/lib/active_support/values/time_zone.rb:285: warning: circular argument reference - now
+I, [2016-05-17T16:48:51.780431 #8940]  INFO -- : unlinking existing socket=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock
+I, [2016-05-17T16:48:51.780641 #8940]  INFO -- : listening on addr=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock fd=10
+I, [2016-05-17T16:48:51.781005 #8940]  INFO -- : listening on addr=0.0.0.0:8080 fd=11
+I, [2016-05-17T16:48:51.781124 #8940]  INFO -- : worker=0 spawning...
+I, [2016-05-17T16:48:51.783519 #8940]  INFO -- : worker=1 spawning...
+I, [2016-05-17T16:48:51.784134 #8946]  INFO -- : worker=0 spawned pid=8946
+I, [2016-05-17T16:48:51.784322 #8946]  INFO -- : worker=0 ready
+I, [2016-05-17T16:48:51.785880 #8940]  INFO -- : master process ready
+I, [2016-05-17T16:48:51.786488 #8949]  INFO -- : worker=1 spawned pid=8949
+I, [2016-05-17T16:48:51.786669 #8949]  INFO -- : worker=1 ready
+I, [2016-05-17T16:49:11.297945 #8940]  INFO -- : reaped #<Process::Status: pid 8946 exit 0> worker=0
+I, [2016-05-17T16:49:11.298067 #8940]  INFO -- : reaped #<Process::Status: pid 8949 exit 0> worker=1
+I, [2016-05-17T16:49:11.298211 #8940]  INFO -- : master complete
+I, [2016-05-17T16:52:21.606292 #9158]  INFO -- : Refreshing Gem list
+/home/shimah/.rvm/gems/ruby-2.2.3/gems/activesupport-4.1.0/lib/active_support/values/time_zone.rb:285: warning: circular argument reference - now
+I, [2016-05-17T16:52:23.149294 #9158]  INFO -- : unlinking existing socket=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock
+I, [2016-05-17T16:52:23.149456 #9158]  INFO -- : listening on addr=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock fd=10
+I, [2016-05-17T16:52:23.149721 #9158]  INFO -- : listening on addr=0.0.0.0:8080 fd=11
+I, [2016-05-17T16:52:23.149798 #9158]  INFO -- : worker=0 spawning...
+I, [2016-05-17T16:52:23.151237 #9158]  INFO -- : worker=1 spawning...
+I, [2016-05-17T16:52:23.151875 #9164]  INFO -- : worker=0 spawned pid=9164
+I, [2016-05-17T16:52:23.152094 #9164]  INFO -- : worker=0 ready
+I, [2016-05-17T16:52:23.152858 #9158]  INFO -- : master process ready
+I, [2016-05-17T16:52:23.153425 #9167]  INFO -- : worker=1 spawned pid=9167
+I, [2016-05-17T16:52:23.153588 #9167]  INFO -- : worker=1 ready
+I, [2016-05-17T17:31:48.100538 #9158]  INFO -- : reaped #<Process::Status: pid 9164 exit 0> worker=0
+I, [2016-05-17T17:31:48.100654 #9158]  INFO -- : reaped #<Process::Status: pid 9167 exit 0> worker=1
+I, [2016-05-17T17:31:48.100747 #9158]  INFO -- : master complete
+I, [2016-05-18T09:01:55.437152 #1527]  INFO -- : Refreshing Gem list
+/home/shimah/.rvm/gems/ruby-2.2.3/gems/activesupport-4.1.0/lib/active_support/values/time_zone.rb:285: warning: circular argument reference - now
+I, [2016-05-18T09:02:01.594094 #1527]  INFO -- : unlinking existing socket=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock
+I, [2016-05-18T09:02:01.594303 #1527]  INFO -- : listening on addr=/home/shimah/rails/training_cloud/etain/shared/sockets/unicorn.sock fd=10
+I, [2016-05-18T09:02:01.594665 #1527]  INFO -- : listening on addr=0.0.0.0:8080 fd=11
+I, [2016-05-18T09:02:01.594775 #1527]  INFO -- : worker=0 spawning...
+I, [2016-05-18T09:02:01.596179 #1527]  INFO -- : worker=1 spawning...
+I, [2016-05-18T09:02:01.596812 #1700]  INFO -- : worker=0 spawned pid=1700
+I, [2016-05-18T09:02:01.596990 #1700]  INFO -- : worker=0 ready
+I, [2016-05-18T09:02:01.597690 #1527]  INFO -- : master process ready
+I, [2016-05-18T09:02:01.598312 #1703]  INFO -- : worker=1 spawned pid=1703
+I, [2016-05-18T09:02:01.598470 #1703]  INFO -- : worker=1 ready

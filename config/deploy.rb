@@ -32,6 +32,7 @@ set :ssh_options, {:forward_agent => true, :port => 4321}
  
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+ #set :linked_dirs, fetch(:linked_dirs, []).push('sockets')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -50,6 +51,9 @@ set :rvm_custom_path, '/home/nurhashimah/.rvm/'  # only needed if not detected
 
 ### task :restart_app do ...on roles(... end.... end### - github.com/capistrano/capistrano
 
+# set path to application
+shared_path = "/opt/app/etain/current/shared"
+
 namespace :deploy do
   
   #after :restart, :clear_cache do ###after "deploy:published", "restart_app"
@@ -67,6 +71,27 @@ namespace :deploy do
 #       execute "ln -s /opt/app/etain/shared/config/database.yml /opt/app/etain/current/config/database.yml"
 #     end
 #   end
+  
+#   desc "create socket dir in unicorn shared folder first"
+#   task :setup_unicorn do
+#     on roles([:web, :app]) do |host|
+#       execute "mkdir -p #{shared_path}/sockets"
+#     end
+#   end
+
+  desc "Unicorn - load default var, mkdir & start unicorn service (etain)"
+  task :run_unicorn_etain do
+    invoke "load:defaults"
+    invoke "unicorn:setup"
+    invoke "unicorn:start"
+  end
+
 end
 
+before "deploy:symlink:linked_files", "unicorn:stop"
+after "deploy:log_revision", "deploy:run_unicorn_etain"
+
+#below also works
+#before "deploy:cleanup", "unicorn:setup"
+#before "deploy:cleanup", "deploy:setup_unicorn"
 #after "deploy", "deploy:symlink_config_files"
