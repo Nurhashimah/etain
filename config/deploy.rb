@@ -24,7 +24,7 @@ set :ssh_options, {:forward_agent => true, :port => 4321}
 # set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+ set :pty, true
 
 # Default value for :linked_files is []
  #set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
@@ -85,11 +85,19 @@ namespace :deploy do
     invoke "unicorn:setup"
     invoke "unicorn:start"
   end
+  
+  desc "Nginx - start nginx"
+  task :run_nginx_proxy do
+    on roles([:web, :app]) do |host|
+      execute "sudo service nginx start"
+    end
+  end
 
 end
 
 before "deploy:symlink:linked_files", "unicorn:stop"
 after "deploy:log_revision", "deploy:run_unicorn_etain"
+after "deploy:run_unicorn_etain", "deploy:run_nginx_proxy"
 
 #below also works
 #before "deploy:cleanup", "unicorn:setup"
