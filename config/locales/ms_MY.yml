@@ -1,13 +1,63 @@
 ms_MY:
   sidebar:
     home: Rumah
+
+  activerecord:
+    models:
+      courses: Kursus
+      lecturers: Pengajar
+    attributes:
+      courses:
+        code: Kod
+        category: Kategori
+        topic: Tajuk
+        description: Deskripsi
+        fee: Yuran
+        duration: Tempoh
+        #duration_type: Jenis Tempoh
+      lecturers:
+        name: Nama
+        mykadno: No MyKad
+        rate: Kadar
+        position: Jawatan
+        address: Alamat
+        qualifications: Qualifications
+        experiences: Experiences
+  
+  courses:
+    list: Senarai Kursus
+    title: Butiran Kursus
+    new: Kursus Baru
+    edit: Sunting Kursus
+    code: Kod
+    category: Kategori
+    topic: Tajuk
+    description: Deskripsi
+    fee: Yuran
+    duration: Tempoh
+    #duration_type: Jenis Tempoh
     
-    
+  lecturers:
+    list: Senarai Pengajar
+    title: Butiran Pengajar
+    new: Pengajar Baru
+    edit: Sunting Pengajar
+    name: Nama
+    mykadno: No MyKad
+    rate: Kadar
+    position: Jawatan
+    address: Alamat
+    qualifications: Kelayakan
+    experiences: Pengalaman
     
   helpers:
     links:
       new: Cipta
       back: Terdahulu
+      submit: Hantar
+    user_id: Pengguna
+    college_id: Kolej
+    data: Data
   
   
   date:

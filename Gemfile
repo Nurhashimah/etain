@@ -17,7 +17,7 @@ gem "font-awesome-rails", "~> 4.0.3.1"
 gem "bootstrap-datepicker-rails", "~> 1.3.0.1"
 gem "bootstrap-select-rails", "~> 1.3.0.1"
 gem 'modernizr-rails', '~> 2.7.1'
-
+gem 'ransack',        '~> 1.6.6'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

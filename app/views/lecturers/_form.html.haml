@@ -3,28 +3,44 @@
     = render 'shared/error_messages', object: f.object
 
     .control-group
-      = f.label :name, :class => 'control-label'
+      = f.label (t 'lecturers.name'), :class => 'control-label'
       .controls= f.text_field :name, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label :details, :class => 'control-label'
-      .controls= f.text_field :details, :class => 'text_field input-xxlarge'
-
+      = f.label (t 'lecturers.mykadno'), :class => 'control-label'
+      .controls
+        = f.text_field :mykadno, :class => 'text_field'
+        .small Sample: 900102015500
     .control-group
-      = f.label :rate, :class => 'control-label'
+      = f.label (t 'lecturers.rate'), :class => 'control-label'
       .controls= f.text_field :rate, :class => 'text_field'  
 
     .control-group
-      = f.label :user_id, :class => 'control-label'
-      .controls= f.number_field :user_id, :class => 'text_field'
+      = f.label (t 'lecturers.position'), :class => 'control-label'
+      .controls= f.text_field :position, :class => 'text_field'
+    .control-group
+      = f.label (t 'lecturers.address'), :class => 'control-label'
+      .controls= f.text_area :address, :class => 'text_field input-xxlarge' 
 
     .control-group
-      = f.label :college_id, :class => 'control-label'
-      .controls= f.number_field :college_id, :class => 'text_field'
+      = f.label (t 'lecturers.qualifications'), :class => 'control-label'
+      .controls= f.text_area :qualifications, :class => 'text_field input-xxlarge' 
 
     .control-group
-      = f.label :data, :class => 'control-label'
-      .controls= f.text_field :data, :class => 'text_field'
+      = f.label (t 'lecturers.experiences'), :class => 'control-label'
+      .controls= f.text_area :experiences, :class => 'text_field input-xxlarge' 
+
+    .control-group
+      = f.label (t 'helpers.user_id'), :class => 'control-label'
+      .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
+
+    .control-group
+      = f.label (t 'helpers.college_id'), :class => 'control-label'
+      .controls= f.number_field :college_id, :class => 'text_field', :readonly => 'readonly'
+
+    .control-group
+      = f.label (t 'helpers.data'), :class => 'control-label'
+      .controls= f.text_field :data, :class => 'text_field', :readonly => 'readonly'
 
 
 

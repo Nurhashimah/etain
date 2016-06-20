@@ -21,3 +21,61 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    models:
+      courses: Courses
+      lecturers: Lecturers
+    attributes:
+      courses:
+        topic: Title
+        code: Code
+        category: Category
+        topic: Title
+        description: Description
+        fee: Fee
+        duration: Duration
+        #duration_type: Duration Type
+      lecturers:
+        name: Name
+        mykadno: MyKad No
+        rate: Rate
+        position: Position
+        address: Address
+        qualifications: Qualifications
+        experiences: Experiences
+  
+  courses:
+    list: Courses List
+    title: Course Details
+    new: New Course
+    edit: Editing Course
+    code: Code
+    category: Category
+    topic: Title
+    description: Description
+    fee: Fee
+    duration: Duration
+    #duration_type: Duration Type
+  
+  lecturers:
+    list: Lecturers List
+    title: Lecturer Details
+    new: New Lecturer
+    edit: Editing Lecturer
+    name: Name
+    mykadno: MyKad No
+    rate: Rate
+    position: Position
+    address: Address
+    qualifications: Qualifications
+    experiences: Experiences
+    
+  helpers:
+    links:
+      new: Create
+      back: Back
+      submit: Submit
+    user_id: User 
+    college_id: College
+    data: Data

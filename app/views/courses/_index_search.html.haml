@@ -1,0 +1,12 @@
+= search_form_for @search, url: courses_path, class: "form-inline" do |f|
+  %tr.search_row{style: "display: none;"}
+    %td= f.text_field :code_cont, size: 2,  :class => "form-control"
+    %td= f.text_field :category_cont, :class => "form-control"
+    %td= f.text_field :topic_cont,:class => "form-control"
+    %td= f.text_field :description_cont, :class => "form-control"
+    %td &nbsp;
+    %td &nbsp;
+    %td.input-group
+      %span.input-group-btn
+        %button.btn.btn-sm.btn-default.right{:type => "submit"}
+          %i.fa.fa-search.fa-fw
