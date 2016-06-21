@@ -20,7 +20,6 @@
       %th{width: "30%"}=t('courses.description')
       %th{width: "10%"}=t('courses.fee')
       %th{width: "12%"}=t('courses.duration')
-      /%th{width:'8%'}=t('courses.duration_type')
       /%th User
       /%th College
       /%th Data
@@ -39,9 +38,3 @@
         /%td= course.college_id
         /%td= course.data
         = render :partial => 'action_menu', :locals => { :course => course }
-
-:javascript
-  
-    $('.index_search_bar').click(function(e) {   
-      $('.search_row').toggle(); 
-    });

@@ -1,0 +1,14 @@
+= search_form_for @search, url: lecturers_path, class: "form-inline" do |f|
+  %tr.search_row{style: "display: none;"}
+    %td= f.text_field :name_cont, :class => "form-control"
+    %td= f.text_field :mykadno_cont, :class => "form-control"
+    %td= f.text_field :position_cont, :class => "form-control"
+    %td= f.text_field :rate_eq, :class => "form-control", placeholder: "in RM"
+    %td= f.text_field :qualifications_cont, :class => "form-control"
+    %td
+      .input-group
+        = f.text_field :experiences_cont, :class => "form-control"
+        %span.input-group-btn
+          %button.btn.btn-sm.btn-default.right{:type => "submit"}
+            %i.fa.fa-search.fa-fw
+    %td &nbsp;

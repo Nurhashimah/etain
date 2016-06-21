@@ -14,7 +14,7 @@ ms_MY:
         description: Deskripsi
         fee: Yuran
         duration: Tempoh
-        #duration_type: Jenis Tempoh
+
       lecturers:
         name: Nama
         mykadno: No MyKad
@@ -35,7 +35,7 @@ ms_MY:
     description: Deskripsi
     fee: Yuran
     duration: Tempoh
-    #duration_type: Jenis Tempoh
+
     
   lecturers:
     list: Senarai Pengajar
@@ -49,6 +49,7 @@ ms_MY:
     address: Alamat
     qualifications: Kelayakan
     experiences: Pengalaman
+    rate_currency: Dalam Ringgit Malaysia (RM)
     
   helpers:
     links:
@@ -58,6 +59,9 @@ ms_MY:
     user_id: Pengguna
     college_id: Kolej
     data: Data
+  
+  actions:
+    search: Carian
   
   
   date:

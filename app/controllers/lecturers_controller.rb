@@ -4,7 +4,9 @@ class LecturersController < ApplicationController
   # GET /lecturers
   # GET /lecturers.json
   def index
-    @lecturers = Lecturer.all
+    #@lecturers = Lecturer.all
+    @search=Lecturer.search(params[:q])
+    @lecturers=@search.result
   end
 
   # GET /lecturers/1

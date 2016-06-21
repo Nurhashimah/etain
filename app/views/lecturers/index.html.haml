@@ -9,33 +9,34 @@
     %ul.nav
       %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_lecturer_path
     %ul.nav.pull-right
-      %li= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#"
+      %li.toga= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
 
 
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th=t 'lecturers.name'
-      %th=t 'lecturers.mykadno'
-      %th=t 'lecturers.rate'
-      %th=t 'lecturers.position'
+      %th{width: "30%"}=t 'lecturers.name'
+      %th{width: "10%"}=t 'lecturers.mykadno'
+      %th{width: "20%"}=t 'lecturers.position'
+      %th{width: "8%"}=t 'lecturers.rate'
+      %th{width: "16%"}=t 'lecturers.qualifications'
+      %th{width: "16%"}=t 'lecturers.experiences'
       /%th=t 'lecturers.address'
-      %th=t 'lecturers.qualifications'
-      /%th=t 'lecturers.experiences'
       /%th User
       /%th College
       /%th Data
       %th
   %tbody
+    = render "index_search"
     - @lecturers.each do |lecturer|
       %tr
         %td= lecturer.name
         %td= lecturer.mykadno
-        %td= lecturer.rate
         %td= lecturer.position
+        %td= "RM "+(sprintf("%.2f", lecturer.rate)).to_s
+        %td= lecturer.qualifications.truncate(29)
+        %td= lecturer.experiences.truncate(28)
         /%td= lecturer.address
-        %td= lecturer.qualifications
-        /%td= lecturer.experiences
         /%td= lecturer.user_id
         /%td= lecturer.college_id
         /%td= lecturer.data

@@ -35,7 +35,7 @@ en:
         description: Description
         fee: Fee
         duration: Duration
-        #duration_type: Duration Type
+
       lecturers:
         name: Name
         mykadno: MyKad No
@@ -46,7 +46,7 @@ en:
         experiences: Experiences
   
   courses:
-    list: Courses List
+    list: Course Listing
     title: Course Details
     new: New Course
     edit: Editing Course
@@ -56,10 +56,10 @@ en:
     description: Description
     fee: Fee
     duration: Duration
-    #duration_type: Duration Type
+
   
   lecturers:
-    list: Lecturers List
+    list: Lecturer Listing
     title: Lecturer Details
     new: New Lecturer
     edit: Editing Lecturer
@@ -70,6 +70,7 @@ en:
     address: Address
     qualifications: Qualifications
     experiences: Experiences
+    rate_currency: In Ringgit Malaysia (RM)
     
   helpers:
     links:
@@ -79,3 +80,6 @@ en:
     user_id: User 
     college_id: College
     data: Data
+
+  actions:
+    search: Search

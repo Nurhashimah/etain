@@ -13,7 +13,9 @@
         .small Sample: 900102015500
     .control-group
       = f.label (t 'lecturers.rate'), :class => 'control-label'
-      .controls= f.text_field :rate, :class => 'text_field'  
+      .controls
+        = f.text_field :rate, :class => 'text_field'  
+        .small=t 'lecturers.rate_currency'
 
     .control-group
       = f.label (t 'lecturers.position'), :class => 'control-label'
