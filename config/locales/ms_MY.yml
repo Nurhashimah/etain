@@ -8,6 +8,7 @@ ms_MY:
       lecturers: Pengajar
       schedules: Jadual Kursus
       locations: Lokasi
+      customers: Pelanggan
     attributes:
       courses:
         code: Kod
@@ -38,6 +39,13 @@ ms_MY:
         name: Nama
         description: Deskripsi
 
+      customers:
+        id_no: Id
+        name: Nama
+        email: Emel
+        phone: No telefon
+        corporate: Korporat
+        company_id: Syarikat
 
   courses:
     list: Senarai Kursus
@@ -84,7 +92,19 @@ ms_MY:
     region: Zon
     name: Nama
     description: Deskripsi
-        
+ 
+  customers:
+    list: Senarai Pelanggan
+    title: Butiran Pelanggan
+    new: Pelanggan Baru
+    edit: Sunting Pelanggan
+    id_no: Id
+    name: Nama
+    email: Emel
+    phone: No telefon
+    corporate: Korporat
+    company_id: Syarikat
+
   helpers:
     links:
       new: Cipta

@@ -1,0 +1,49 @@
+.container{:style => "padding-left: 60px;"}
+  = form_for @customer, :html => { :class => 'form-horizontal' }  do |f|
+    = render 'shared/error_messages', object: f.object
+
+    .control-group
+      = f.label  t('customers.id_no'), :class => 'control-label'
+      .controls= f.text_field :id_no, :class => 'text_field '
+
+    .control-group
+      = f.label  t('customers.name'), :class => 'control-label'
+      .controls= f.text_field :name, :class => 'text_field input-xxlarge'
+
+    .control-group
+      = f.label t('customers.email'), :class => 'control-label'
+      .controls= f.text_field :email, :class => 'text_field input-xxlarge'
+
+    .control-group
+      = f.label  t('customers.phone'), :class => 'control-label'
+      .controls= f.text_field :phone, :class => 'text_field input-xxlarge'
+
+    .control-group
+      = f.label  t('customers.corporate'), :class => 'control-label'
+      .controls= f.text_field :corporate, :class => 'text_field'
+
+    .control-group
+      = f.label  t('customers.company_id'), :class => 'control-label'
+      .controls
+        = f.number_field :company_id, :class => 'text_field'
+        /= f.select :duration_type, DropDown::DURATION_TYPE, :prompt => (t 'helpers.select')
+
+    .control-group
+      = f.label  t('helpers.user_id'), :class => 'control-label'
+      .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
+
+    .control-group
+      = f.label  t('helpers.college_id'), :class => 'control-label'
+      .controls= f.number_field :college_id, :class => 'text_field', :readonly => 'readonly'
+
+    .control-group
+      = f.label  t('helpers.data'), :class => 'control-label'
+      .controls= f.text_field :data, :class => 'text_field input-xxlarge', :readonly => 'readonly'
+
+
+    .form-actions
+      = f.submit (t 'helpers.links.submit'), :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        customers_path, :class => 'btn'
+
+
