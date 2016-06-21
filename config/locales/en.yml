@@ -44,7 +44,14 @@ en:
         address: Address
         qualifications: Qualifications
         experiences: Experiences
-  
+
+      schedules:
+        course_id: Course
+        scheduled_on: Scheduled on
+        location_id: Location
+        lecturer_id: Lecturer
+        max_people: Max participant
+
   courses:
     list: Course Listing
     title: Course Details
@@ -72,6 +79,17 @@ en:
     experiences: Experiences
     rate_currency: In Ringgit Malaysia (RM)
     
+  schedules:
+    list: Schedule Listing
+    title: Schedule Details
+    new: New Schedule
+    edit: Editing Schedule
+    course_id: Course
+    scheduled_on: Schedule on
+    location_id: Location
+    lecturer_id: Lecturer
+    max_people: Max participant
+
   helpers:
     links:
       new: Create
@@ -80,6 +98,7 @@ en:
     user_id: User 
     college_id: College
     data: Data
+    select: Select
 
   actions:
     search: Search

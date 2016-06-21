@@ -4,7 +4,9 @@ class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @schedules = Schedule.all
+    #@schedules = Schedule.all
+    @search=Schedule.search(params[:q])
+    @schedules=@search.result
   end
 
   # GET /schedules/1
@@ -69,6 +71,6 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:course_id, :scheduled_on, :location_id, :lecturer_by, :max_people, :status, :user_id, :college_id, :data)
+      params.require(:schedule).permit(:course_id, :start_on, :end_on, :location_id, :lecturer_id, :max_people, :status, :user_id, :college_id, :data)
     end
 end

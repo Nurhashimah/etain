@@ -6,6 +6,7 @@ ms_MY:
     models:
       courses: Kursus
       lecturers: Pengajar
+      schedules: Jadual Kursus
     attributes:
       courses:
         code: Kod
@@ -23,7 +24,15 @@ ms_MY:
         address: Alamat
         qualifications: Qualifications
         experiences: Experiences
-  
+        
+      schedules:
+        course_id: Kursus
+        scheduled_on: Tarikh kursus
+        location_id: Lokasi
+        lecturer_id: Pengajar
+        max_people: Peserta maksima
+
+
   courses:
     list: Senarai Kursus
     title: Butiran Kursus
@@ -36,7 +45,6 @@ ms_MY:
     fee: Yuran
     duration: Tempoh
 
-    
   lecturers:
     list: Senarai Pengajar
     title: Butiran Pengajar
@@ -50,7 +58,19 @@ ms_MY:
     qualifications: Kelayakan
     experiences: Pengalaman
     rate_currency: Dalam Ringgit Malaysia (RM)
-    
+
+  schedules:
+    list: Senarai Jadual Kursus
+    title: Butiran Jadual Kursus
+    new: Jadual Kursus Baru
+    edit: Sunting Jadual Kursus
+    course_id: Kursus
+    scheduled_on: Tarikh kursus
+    location_id: Lokasi
+    lecturer_id: Pengajar
+    max_people: Peserta maksima
+
+        
   helpers:
     links:
       new: Cipta
@@ -59,6 +79,7 @@ ms_MY:
     user_id: Pengguna
     college_id: Kolej
     data: Data
+    select: Pilih
   
   actions:
     search: Carian
