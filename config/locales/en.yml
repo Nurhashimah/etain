@@ -26,6 +26,7 @@ en:
     models:
       courses: Courses
       lecturers: Lecturers
+      locations: Locations
     attributes:
       courses:
         topic: Title
@@ -51,6 +52,11 @@ en:
         location_id: Location
         lecturer_id: Lecturer
         max_people: Max participant
+        
+      locations:
+        region: Region
+        name: Name
+        description: Description
 
   courses:
     list: Course Listing
@@ -89,6 +95,15 @@ en:
     location_id: Location
     lecturer_id: Lecturer
     max_people: Max participant
+    
+  locations:
+    list: Location Listing
+    title: Location Details
+    new: New Location
+    edit: Edit Location
+    region: Region
+    name: Name
+    description: Description
 
   helpers:
     links:
@@ -102,3 +117,4 @@ en:
 
   actions:
     search: Search
+    all_records: All records

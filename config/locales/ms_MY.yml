@@ -7,6 +7,7 @@ ms_MY:
       courses: Kursus
       lecturers: Pengajar
       schedules: Jadual Kursus
+      locations: Lokasi
     attributes:
       courses:
         code: Kod
@@ -31,6 +32,11 @@ ms_MY:
         location_id: Lokasi
         lecturer_id: Pengajar
         max_people: Peserta maksima
+        
+      locations:
+        region: Zon
+        name: Nama
+        description: Deskripsi
 
 
   courses:
@@ -70,6 +76,14 @@ ms_MY:
     lecturer_id: Pengajar
     max_people: Peserta maksima
 
+  locations:
+    list: Senarai Lokasi
+    title: Butiran Lokasi
+    new: Lokasi Baru
+    edit: Sunting Lokasi
+    region: Zon
+    name: Nama
+    description: Deskripsi
         
   helpers:
     links:
@@ -83,6 +97,7 @@ ms_MY:
   
   actions:
     search: Carian
+    all_records: Semua rekod
   
   
   date:
