@@ -44,7 +44,7 @@ ms_MY:
         name: Nama
         email: Emel
         phone: No telefon
-        corporate: Korporat
+        corporate: Pelanggan Korporat
         company_id: Syarikat
 
   courses:
@@ -102,7 +102,7 @@ ms_MY:
     name: Nama
     email: Emel
     phone: No telefon
-    corporate: Korporat
+    corporate: Pelanggan Korporat
     company_id: Syarikat
 
   helpers:
@@ -114,10 +114,13 @@ ms_MY:
     college_id: Kolej
     data: Data
     select: Pilih
+    select_company: Pilih Syarikat
   
   actions:
     search: Carian
     all_records: Semua rekod
+    yes: Ya
+    no: Tidak
   
   
   date:

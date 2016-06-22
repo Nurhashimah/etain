@@ -8,4 +8,20 @@ $(document).ready(function(e){
       format:'d-m-Y',
       formatDate:'Y-m-d'
   });
+  
+  $("input[id='is_checked']").change(function() {  
+    if($('#is_checked').is(':checked')) { 
+      $("#span_displaylist").show("highlight"); 
+    }else{
+      $("#span_displaylist").hide(""); 
+    }
+  });
+  $("input[id='is_checked']").each(function() {  
+    if($('#is_checked').is(':checked')) { 
+      $("#span_displaylist").show("highlight"); 
+    }else{
+      $("#span_displaylist").hide(""); 
+    }
+  });
+  
 });

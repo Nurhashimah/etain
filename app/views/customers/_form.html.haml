@@ -20,13 +20,9 @@
 
     .control-group
       = f.label  t('customers.corporate'), :class => 'control-label'
-      .controls= f.text_field :corporate, :class => 'text_field'
-
-    .control-group
-      = f.label  t('customers.company_id'), :class => 'control-label'
       .controls
-        = f.number_field :company_id, :class => 'text_field'
-        /= f.select :duration_type, DropDown::DURATION_TYPE, :prompt => (t 'helpers.select')
+        .col-sm-1= f.check_box :corporate, :id => 'is_checked'
+        .col-sm-3#span_displaylist= f.collection_select :company_id, Company.all, :id, :name, :include_blank => (t 'helpers.select_company'), :class => 'selectpicker'
 
     .control-group
       = f.label  t('helpers.user_id'), :class => 'control-label'
@@ -46,4 +42,22 @@
       = link_to t('.cancel', :default => t("helpers.links.cancel")), |
         customers_path, :class => 'btn'
 
-
+/ 
+/ :javascript
+/ 
+/ $(document).ready(function(){
+/   $("input[id='is_checked']").change(function() {  
+/     if($('#is_checked').is(':checked')) { 
+/       $("#span_displaylist").show("highlight"); 
+/     }else{
+/       $("#span_displaylist").hide(""); 
+/     }
+/   });
+/   $("input[id='is_checked']").each(function() {  
+/     if($('#is_checked').is(':checked')) { 
+/       $("#span_displaylist").show("highlight"); 
+/     }else{
+/       $("#span_displaylist").hide(""); 
+/     }
+/   });
+/ });  

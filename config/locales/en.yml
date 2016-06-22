@@ -64,7 +64,7 @@ en:
         name: Name
         email: Email
         phone: Phone
-        corporate: Corporate
+        corporate: Corporate Client
         company_id: Company
 
   courses:
@@ -123,7 +123,7 @@ en:
     name: Name
     email: Email
     phone: Phone no
-    corporate: Corporate
+    corporate: Corporate Client
     company_id: Company
 
   helpers:
@@ -135,7 +135,10 @@ en:
     college_id: College
     data: Data
     select: Select
+    select_company: Select Company
 
   actions:
     search: Search
     all_records: All records
+    yes: Yes
+    no: No

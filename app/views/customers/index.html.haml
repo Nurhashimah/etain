@@ -17,9 +17,9 @@
       %th{width: "8%"}=t('customers.id_no')
       %th{width: "20%"}=t('customers.name')
       %th{width: "20%"}=t('customers.email')
-      %th{width: "30%"}=t('customers.phone')
-      %th{width: "10%"}=t('customers.corporate')
-      %th{width: "12%"}=t('customers.company_id')
+      %th{width: "18%"}=t('customers.phone')
+      %th{width: "12%"}=t('customers.corporate')
+      %th{width: "22%"}=t('customers.company_id')
       /%th User
       /%th College
       /%th Data
@@ -32,8 +32,8 @@
         %td= customer.name
         %td= customer.email
         %td= customer.phone
-        %td= customer.corporate
-        %td= customer.try(:clientcompany).try(:name)
+        %td= customer.corporate? ? (t 'actions.yes') : (t 'actions.no')
+        %td= customer.corporate? ? customer.try(:clientcompany).try(:name) : "-"
         /%td= customer.user_id
         /%td= customer.college_id
         /%td= customer.data
