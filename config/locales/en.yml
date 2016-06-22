@@ -66,6 +66,14 @@ en:
         phone: Phone
         corporate: Corporate Client
         company_id: Company
+        
+      companies:
+        company_code: Company Code
+        name: Name
+        address: Address
+        phone: Phone no
+        email: Email
+        fax: Fax No
 
   courses:
     list: Course Listing
@@ -125,6 +133,18 @@ en:
     phone: Phone no
     corporate: Corporate Client
     company_id: Company
+
+  companies:
+    list: Company Listing
+    title: Company Details
+    new: New Company
+    edit: Edit Company
+    company_code: Company Code
+    name: Name
+    address: Address
+    phone: Phone No
+    email: Email
+    fax: Fax No
 
   helpers:
     links:

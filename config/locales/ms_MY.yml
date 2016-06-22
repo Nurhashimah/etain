@@ -9,6 +9,8 @@ ms_MY:
       schedules: Jadual Kursus
       locations: Lokasi
       customers: Pelanggan
+      companies: Syarikat
+
     attributes:
       courses:
         code: Kod
@@ -46,6 +48,15 @@ ms_MY:
         phone: No telefon
         corporate: Pelanggan Korporat
         company_id: Syarikat
+      
+      companies:
+        company_code: Kod Syarikat
+        name: Nama
+        address: Alamat
+        phone: No Telefon
+        email: Emel
+        fax: No Faks
+        
 
   courses:
     list: Senarai Kursus
@@ -104,6 +115,18 @@ ms_MY:
     phone: No telefon
     corporate: Pelanggan Korporat
     company_id: Syarikat
+    
+  companies:
+    list: Senarai Syarikat
+    title: Butiran Syarikat
+    new: Syarikat Baru
+    edit: Sunting Syarikat
+    company_code: Kod Syarikat
+    name: Nama
+    address: Alamat
+    phone: No Telefon
+    email: Emel
+    fax: No Faks
 
   helpers:
     links:
