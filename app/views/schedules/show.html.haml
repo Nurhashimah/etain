@@ -1,0 +1,53 @@
+- provide(:title, 'Schedule Details')
+- model_class = Schedule
+.page-header
+  %h1= t('schedules.title')
+%p#notice= notice
+
+%dl.dl-horizontal
+  %dt= t('schedules.course_id')+":"
+  %dd= @schedule.try(:schedulecourse).try(:topic)
+
+%dl.dl-horizontal
+  %dt= t('schedules.scheduled_on')+":"
+  %dd
+    = @schedule.try(:start_on).try(:strftime, '%d %b %y')
+    = @schedule.end_on.nil? ? "" : " - "+@schedule.try(:end_on).try(:strftime, '%d %b %Y')
+
+%dl.dl-horizontal
+  %dt= t('schedules.location_id')+":"
+  %dd= @schedule.try(:schedulelocation).try(:name)
+
+%dl.dl-horizontal
+  %dt= t('schedules.lecturer_id')+":"
+  %dd= @schedule.try(:schedulelecturer).try(:name)
+
+%dl.dl-horizontal
+  %dt= t('schedules.max_people')+":"
+  %dd= @schedule.max_people
+
+%dl.dl-horizontal
+  %dt Status :
+  %dd= @schedule.status
+
+/%dl.dl-horizontal
+/  %dt= t('helpers.user_id')+":"
+/  %dd= @schedule.user_id
+
+/%dl.dl-horizontal
+/  %dt= t('helpers.college')+":"
+/  %dd= @schedule.college_id
+
+/%dl.dl-horizontal
+/  %dt= t('helpers.data')+":"
+/  %dd= @schedule.data
+
+.form-actions
+  = link_to content_tag(:i, "", :class => "fa fa-arrow-left ") + " " + t('.back', :default => t("helpers.links.back")), schedules_path, :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-edit") + " " + t('.edit', :default => t("helpers.links.edit")), |
+    edit_schedule_path(@schedule), :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-trash-o icon-white") + " " + t('.destroy', :default => t("helpers.links.destroy")), |
+    schedule_path(@schedule),                                                                                                    |
+    :method => 'delete',                                                                                                           |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },                   |
+    :class => 'btn btn-danger'                                                                                                     |

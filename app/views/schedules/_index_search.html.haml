@@ -1,0 +1,16 @@
+= search_form_for @search, url: schedules_path, class: "form-inline" do |f|
+  %tr.search_row{style: "display: none;"}
+    %td= f.text_field :coursetitle_search, :class => "form-control"
+    %td
+      = f.text_field :start_on_eq, :class => 'date_picker_reverse', placeholder: 'start date', value: @search.start_on_eq.try(:strftime, '%d-%m-%Y')
+      = f.text_field :end_on_eq, :class => 'date_picker_reverse', placeholder: 'end date', value: @search.end_on_eq.try(:strftime, '%d-%m-%Y')
+    %td= f.text_field :locationname_search, :class => "form-control"
+    %td= f.text_field :lecturername_search, :class => "form-control"
+    %td= f.text_field :max_people_eq, :class => "form-control"
+    %td
+      .input-group
+        = f.text_field :status_cont, :class => "form-control"
+        %span.input-group-btn
+          %button.btn.btn-sm.btn-default.right{:type => "submit"}
+            %i.fa.fa-search.fa-fw
+    %td &nbsp;

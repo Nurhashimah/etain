@@ -1,13 +1,171 @@
 ms_MY:
   sidebar:
     home: Rumah
+
+  activerecord:
+    models:
+      courses: Kursus
+      lecturers: Pengajar
+      schedules: Jadual Kursus
+      locations: Lokasi
+      customers: Pelanggan
+      companies: Syarikat
+
+    attributes:
+      courses:
+        code: Kod
+        category: Kategori
+        topic: Tajuk
+        description: Deskripsi
+        fee: Yuran
+        duration: Tempoh
+
+      lecturers:
+        name: Nama
+        mykadno: No MyKad
+        rate: Kadar
+        position: Jawatan
+        address: Alamat
+        qualifications: Qualifications
+        experiences: Experiences
+        
+      schedules:
+        course_id: Kursus
+        scheduled_on: Tarikh kursus
+        location_id: Lokasi
+        lecturer_id: Pengajar
+        max_people: Peserta maksima
+        
+      locations:
+        region: Zon
+        name: Nama
+        description: Deskripsi
+
+      customers:
+        id_no: Id
+        name: Nama
+        email: Emel
+        phone: No telefon
+        corporate: Pelanggan Korporat
+        company_id: Syarikat
+      
+      companies:
+        company_code: Kod Syarikat
+        name: Nama
+        address: Alamat
+        phone: No Telefon
+        email: Emel
+        fax: No Faks
+        
+      payments:
+        booking_id: Tempahan
+        customer_id: Pelanggan
+        method: Kaedah
+        auth_code: Auth code
+        amount: Amaun
+        confirmed_by: Disahkan oleh
+        confirmed_on: Disahkan pada
+        
+
+  courses:
+    list: Senarai Kursus
+    title: Butiran Kursus
+    new: Kursus Baru
+    edit: Sunting Kursus
+    code: Kod
+    category: Kategori
+    topic: Tajuk
+    description: Deskripsi
+    fee: Yuran
+    duration: Tempoh
+
+  lecturers:
+    list: Senarai Pengajar
+    title: Butiran Pengajar
+    new: Pengajar Baru
+    edit: Sunting Pengajar
+    name: Nama
+    mykadno: No MyKad
+    rate: Kadar
+    position: Jawatan
+    address: Alamat
+    qualifications: Kelayakan
+    experiences: Pengalaman
+    rate_currency: Dalam Ringgit Malaysia (RM)
+
+  schedules:
+    list: Senarai Jadual Kursus
+    title: Butiran Jadual Kursus
+    new: Jadual Kursus Baru
+    edit: Sunting Jadual Kursus
+    course_id: Kursus
+    scheduled_on: Tarikh kursus
+    location_id: Lokasi
+    lecturer_id: Pengajar
+    max_people: Peserta maksima
+
+  locations:
+    list: Senarai Lokasi
+    title: Butiran Lokasi
+    new: Lokasi Baru
+    edit: Sunting Lokasi
+    region: Zon
+    name: Nama
+    description: Deskripsi
+ 
+  customers:
+    list: Senarai Pelanggan
+    title: Butiran Pelanggan
+    new: Pelanggan Baru
+    edit: Sunting Pelanggan
+    id_no: Id
+    name: Nama
+    email: Emel
+    phone: No telefon
+    corporate: Pelanggan Korporat
+    company_id: Syarikat
     
+  companies:
+    list: Senarai Syarikat
+    title: Butiran Syarikat
+    new: Syarikat Baru
+    edit: Sunting Syarikat
+    company_code: Kod Syarikat
+    name: Nama
+    address: Alamat
+    phone: No Telefon
+    email: Emel
+    fax: No Faks
     
-    
+  payments:
+    list: Senarai Pembayaran
+    title: Butiran Pembayaran
+    new: Pembayaran Baru
+    edit: Sunting Pembayaran
+    booking_id: Tempahan
+    customer_id: Pelanggan
+    method: Kaedah
+    auth_code: Auth code
+    amount: Amaun
+    confirmed_by: Disahkan oleh
+    confirmed_on: Disahkan pada
+
   helpers:
     links:
       new: Cipta
       back: Terdahulu
+      submit: Hantar
+    user_id: Pengguna
+    college_id: Kolej
+    data: Data
+    select: Pilih
+    select_company: Pilih Syarikat
+  
+  actions:
+    search: Carian
+    all_records: Semua rekod
+    yes: Ya
+    no: Tidak
   
   
   date:

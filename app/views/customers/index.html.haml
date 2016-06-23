@@ -1,0 +1,40 @@
+- provide(:title, 'customer')
+- model_class = Customer
+.page-header
+  %h1=t('customers.list')
+
+.navbar.navbar-inverse
+  .navbar-inner
+    %ul.nav
+      %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_customer_path
+    %ul.nav.pull-right
+      %li.toga= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
+
+
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th{width: "8%"}=t('customers.id_no')
+      %th{width: "20%"}=t('customers.name')
+      %th{width: "20%"}=t('customers.email')
+      %th{width: "18%"}=t('customers.phone')
+      %th{width: "12%"}=t('customers.corporate')
+      %th{width: "22%"}=t('customers.company_id')
+      /%th User
+      /%th College
+      /%th Data
+      %th
+  %tbody
+    = render "index_search"
+    - @customers.each do |customer|
+      %tr
+        %td= customer.id_no
+        %td= customer.name
+        %td= customer.email
+        %td= customer.phone
+        %td= customer.corporate? ? (t 'actions.yes') : (t 'actions.no')
+        %td= customer.corporate? ? customer.try(:clientcompany).try(:name) : "-"
+        /%td= customer.user_id
+        /%td= customer.college_id
+        /%td= customer.data
+        = render :partial => 'action_menu', :locals => { :customer => customer }

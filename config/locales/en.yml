@@ -21,3 +21,166 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    models:
+      courses: Courses
+      lecturers: Lecturers
+      locations: Locations
+      customers: Customers
+    attributes:
+      courses:
+        topic: Title
+        code: Code
+        category: Category
+        topic: Title
+        description: Description
+        fee: Fee
+        duration: Duration
+
+      lecturers:
+        name: Name
+        mykadno: MyKad No
+        rate: Rate
+        position: Position
+        address: Address
+        qualifications: Qualifications
+        experiences: Experiences
+
+      schedules:
+        course_id: Course
+        scheduled_on: Scheduled on
+        location_id: Location
+        lecturer_id: Lecturer
+        max_people: Max participant
+        
+      locations:
+        region: Region
+        name: Name
+        description: Description
+
+      customers:
+        id_no: Id
+        name: Name
+        email: Email
+        phone: Phone
+        corporate: Corporate Client
+        company_id: Company
+        
+      companies:
+        company_code: Company Code
+        name: Name
+        address: Address
+        phone: Phone no
+        email: Email
+        fax: Fax No
+       
+      payments:
+        booking_id: Booking
+        customer_id: Customer
+        method: Method
+        auth_code: Auth Code
+        amount: Amount
+        confirmed_by: Confirmed by
+        confirmed_on: Confirmed on
+
+  courses:
+    list: Course Listing
+    title: Course Details
+    new: New Course
+    edit: Editing Course
+    code: Code
+    category: Category
+    topic: Title
+    description: Description
+    fee: Fee
+    duration: Duration
+
+  
+  lecturers:
+    list: Lecturer Listing
+    title: Lecturer Details
+    new: New Lecturer
+    edit: Editing Lecturer
+    name: Name
+    mykadno: MyKad No
+    rate: Rate
+    position: Position
+    address: Address
+    qualifications: Qualifications
+    experiences: Experiences
+    rate_currency: In Ringgit Malaysia (RM)
+    
+  schedules:
+    list: Schedule Listing
+    title: Schedule Details
+    new: New Schedule
+    edit: Editing Schedule
+    course_id: Course
+    scheduled_on: Schedule on
+    location_id: Location
+    lecturer_id: Lecturer
+    max_people: Max participant
+    
+  locations:
+    list: Location Listing
+    title: Location Details
+    new: New Location
+    edit: Edit Location
+    region: Region
+    name: Name
+    description: Description
+
+  customers:
+    list: Customer Listing
+    title: Customer Details
+    new: New Customer
+    edit: Edit Customer
+    id_no: Id
+    name: Name
+    email: Email
+    phone: Phone no
+    corporate: Corporate Client
+    company_id: Company
+
+  companies:
+    list: Company Listing
+    title: Company Details
+    new: New Company
+    edit: Edit Company
+    company_code: Company Code
+    name: Name
+    address: Address
+    phone: Phone No
+    email: Email
+    fax: Fax No
+
+  payments:
+    list: Payment Listing
+    title: Payment Details
+    new: New Payment
+    edit: Edit Payment
+    booking_id: Booking
+    customer_id: Customer
+    method: Method
+    auth_code: Auth Code
+    amount: Amount
+    confirmed_by: Confirmed by
+    confirmed_on: Confirmed on
+
+  helpers:
+    links:
+      new: Create
+      back: Back
+      submit: Submit
+    user_id: User 
+    college_id: College
+    data: Data
+    select: Select
+    select_company: Select Company
+
+  actions:
+    search: Search
+    all_records: All records
+    yes: Yes
+    no: No

@@ -5,17 +5,19 @@
 
     .control-group
       = f.label :course_id, :class => 'control-label'
-      .controls= f.collection_select :course_id, Course.all, :id, :code, :include_blank => (t 'helpers.prompt.select_issuer'), :html_options => {:class => 'selectpicker'}
-
+      .controls
+        = f.collection_select :course_id, Course.all, :id, :topic, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
     .control-group
       = f.label :scheduled_on, :class => 'control-label'
-      .controls= f.datetime_select :scheduled_on, :class => 'text_field'
+      .controls
+        = f.text_field :start_on, :class => 'date_picker_reverse', :value => @schedule.start_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'start date'
+        = f.text_field :end_on, :class => 'date_picker_reverse', :value => @schedule.end_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'end date'
     .control-group
       = f.label :location_id, :class => 'control-label'
-      .controls= f.number_field :location_id, :class => 'text_field'
+      .controls= f.collection_select :location_id, Location.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
     .control-group
-      = f.label :lecturer_by, :class => 'control-label'
-      .controls= f.text_field :lecturer_by, :class => 'text_field'
+      = f.label :lecturer_id, :class => 'control-label'
+      .controls= f.collection_select :lecturer_id, Lecturer.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
     .control-group
       = f.label :max_people, :class => 'control-label'
       .controls= f.number_field :max_people, :class => 'text_field'
@@ -24,13 +26,13 @@
       .controls= f.text_field :status, :class => 'text_field'
     .control-group
       = f.label :user_id, :class => 'control-label'
-      .controls= f.number_field :user_id, :class => 'text_field'
+      .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
     .control-group
       = f.label :college_id, :class => 'control-label'
-      .controls= f.number_field :college_id, :class => 'text_field'
+      .controls= f.number_field :college_id, :class => 'text_field', :readonly => 'readonly'
     .control-group
       = f.label :data, :class => 'control-label'
-      .controls= f.text_field :data, :class => 'text_field'
+      .controls= f.text_field :data, :class => 'text_field', :readonly => 'readonly'
 
 
     .form-actions

@@ -1,41 +1,40 @@
 - provide(:title, 'Course')
 - model_class = Course
 .page-header
-  %h1 Courses
+  %h1=t('courses.list')
+
+.navbar.navbar-inverse
+  .navbar-inner
+    %ul.nav
+      %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_course_path
+    %ul.nav.pull-right
+      %li.toga= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
 
 
-.row
-  = link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_course_path
-
-.row
-  %table.table.table-condensed.table-hover.table-striped
-    %thead
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th{width: "8%"}=t('courses.code')
+      %th{width: "20%"}=t('courses.category')
+      %th{width: "20%"}=t('courses.topic')
+      %th{width: "30%"}=t('courses.description')
+      %th{width: "10%"}=t('courses.fee')
+      %th{width: "12%"}=t('courses.duration')
+      /%th User
+      /%th College
+      /%th Data
+      %th
+  %tbody
+    = render "index_search"
+    - @courses.each do |course|
       %tr
-        %th Code
-        %th Category
-        %th Topic
-        %th Description
-        %th Fee
-        %th Duration
-        %th Duration type
-        %th User
-        %th College
-        %th Data
-        %th
-    %tbody
-      - @courses.each do |course|
-        %tr
-          %td= course.code
-          %td= course.category
-          %td= course.topic
-          %td= course.description
-          %td= course.fee
-          %td= course.duration 
-          %td= course.duration_type
-          %td= course.user_id
-          %td= course.college_id
-          %td= course.data
-          = render :partial => 'action_menu', :locals => { :course => course }
-
-
-
+        %td= course.code
+        %td= course.category
+        %td= course.topic
+        %td= course.description
+        %td= course.fee
+        %td= course.duration.to_s+" "+course.duration_details
+        /%td= course.user_id
+        /%td= course.college_id
+        /%td= course.data
+        = render :partial => 'action_menu', :locals => { :course => course }

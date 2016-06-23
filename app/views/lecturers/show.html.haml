@@ -1,31 +1,47 @@
 - provide(:title, 'Lecturer Details')
 - model_class = Lecturer
 .page-header
-  %h1= Lecturer Details
+  %h1=t 'lecturers.title'
 %p#notice= notice
 %dl.dl-horizontal
-  %dt= Name:
+  %dt= t 'lecturers.name'
   %dd= @lecturer.name
 
 %dl.dl-horizontal
-  %dt= Details:
-  %dd= @lecturer.details
+  %dt= t 'lecturers.mykadno'+":"
+  %dd= @lecturer.mykadno
 
 %dl.dl-horizontal
-  %dt= Rate:
-  %dd= @lecturer.rate
+  %dt= t 'lecturers.rate'+":"
+  %dd= "RM "+(sprintf("%.2f", @lecturer.rate)).to_s
 
 %dl.dl-horizontal
-  %dt= User:
-  %dd= @lecturer.user_id
+  %dt= t 'lecturers.position'+":"
+  %dd= @lecturer.position
 
 %dl.dl-horizontal
-  %dt= College:
-  %dd= @lecturer.college_id
+  %dt= t 'lecturers.address'+":"
+  %dd= @lecturer.address
 
 %dl.dl-horizontal
-  %dt= Data:
-  %dd= @lecturer.data
+  %dt= t 'lecturers.qualifications'+":"
+  %dd= @lecturer.qualifications
+
+%dl.dl-horizontal
+  %dt= t 'lecturers.experiences'+":"
+  %dd= @lecturer.experiences
+
+/%dl.dl-horizontal
+/  %dt= t 'helpers.user_id'+":"
+/  %dd= @lecturer.user_id
+
+/%dl.dl-horizontal
+/  %dt= t 'helpers.college_id'+":"
+/  %dd= @lecturer.college_id
+
+/%dl.dl-horizontal
+/  %dt= t 'lecturers.data'+":"
+/  %dd= @lecturer.data
 
 .form-actions
   = link_to content_tag(:i, "", :class => "fa fa-arrow-left ") + " " + t('.back', :default => t("helpers.links.back")), lecturers_path, :class => 'btn'

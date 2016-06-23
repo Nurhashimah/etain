@@ -17,21 +17,20 @@
       = f.label :phone, :class => 'control-label'
       .controls= f.text_field :phone, :class => 'text_field '
     .control-group
-      = f.label :email, :class => 'control-label'
-      .controls= f.text_field :email, :class => 'text_field '
-
-    .control-group
       = f.label :fax, :class => 'control-label'
       .controls= f.text_field :fax, :class => 'text_field '
     .control-group
+      = f.label :email, :class => 'control-label'
+      .controls= f.text_field :email, :class => 'text_field '
+    .control-group
       = f.label :user_id, :class => 'control-label'
-      .controls= f.number_field :user_id, :class => 'text_field '
+      .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
     .control-group
       = f.label :college_id, :class => 'control-label'
-      .controls= f.number_field :college_id, :class => 'text_field '
+      .controls= f.number_field :college_id, :class => 'text_field', :readonly => 'readonly'
     .control-group
       = f.label :data, :class => 'control-label'
-      .controls= f.text_field :data, :class => 'text_field '
+      .controls= f.text_field :data, :class => 'text_field', :readonly => 'readonly'
 
     .form-actions
       = f.submit (t 'helpers.links.submit'), :class => 'btn btn-primary'

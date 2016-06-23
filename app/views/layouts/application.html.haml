@@ -14,8 +14,8 @@
     = render 'layouts/header'
     .row
       .col-md-10.col-md-offset-1
-        - flash.each do |key, value|
-          %div{:class => "alert alert-#{key}"}= value
+        /- flash.each do |key, value|
+        /  %div{:class => "alert alert-#{key}"}= value
         = yield
         = render 'layouts/footer'
 

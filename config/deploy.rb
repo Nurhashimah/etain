@@ -86,6 +86,13 @@ namespace :deploy do
     invoke "unicorn:start"
   end
   
+  desc "Nginx - stop nginx"
+  task :stop_nginx_proxy do
+    on roles([:web, :app]) do |host|
+      execute "sudo service nginx stop"
+    end
+  end
+  
   desc "Nginx - start nginx"
   task :run_nginx_proxy do
     on roles([:web, :app]) do |host|
@@ -95,6 +102,7 @@ namespace :deploy do
 
 end
 
+after "deploy:check:make_linked_dirs", "deploy:stop_nginx_proxy"
 before "deploy:symlink:linked_files", "unicorn:stop"
 after "deploy:log_revision", "deploy:run_unicorn_etain"
 after "deploy:run_unicorn_etain", "deploy:run_nginx_proxy"

@@ -1,48 +1,45 @@
 - provide(:title, 'Course Details')
 - model_class = Course
 .page-header
-  %h1= Course Details
+  %h1= t('courses.title')
 %p#notice= notice
 
 %dl.dl-horizontal
-  %dt= Code:
+  %dt= t('courses.code')+":"
   %dd= @course.code
 
 %dl.dl-horizontal
-  %dt= Category:
+  %dt= t('courses.category')+":"
   %dd= @course.category
 
 %dl.dl-horizontal
-  %dt= Topic:
+  %dt= t('courses.topic')+":"
   %dd= @course.topic
 
 %dl.dl-horizontal
-  %dt= Description:
+  %dt= t('courses.description')+":"
   %dd= @course.description
 
 %dl.dl-horizontal
-  %dt= Fee:
+  %dt= t('courses.fee')+":"
   %dd= @course.fee
 
 %dl.dl-horizontal
-  %dt= Duration:
-  %dd= @course.duration
+  %dt= t('courses.duration')+":"
+  %dd
+    = @course.duration.to_s+" "+@course.duration_details
 
-%dl.dl-horizontal
-  %dt= Duration type:
-  %dd= @course.duration_type
+/%dl.dl-horizontal
+/  %dt= t('courses.user_id')+":"
+/  %dd= @course.user_id
 
-%dl.dl-horizontal
-  %dt= User:
-  %dd= @course.user_id
+/%dl.dl-horizontal
+/  %dt= t('courses.college')+":"
+/  %dd= @course.college_id
 
-%dl.dl-horizontal
-  %dt= College:
-  %dd= @course.college_id
-
-%dl.dl-horizontal
-  %dt= Data:
-  %dd= @course.data
+/%dl.dl-horizontal
+/  %dt= t('courses.data')+":"
+/  %dd= @course.data
 
 
 .form-actions

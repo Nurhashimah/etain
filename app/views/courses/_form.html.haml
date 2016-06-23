@@ -3,44 +3,42 @@
     = render 'shared/error_messages', object: f.object
 
     .control-group
-      = f.label :code, :class => 'control-label'
+      = f.label  t('courses.code'), :class => 'control-label'
       .controls= f.text_field :code, :class => 'text_field '
 
     .control-group
-      = f.label :category, :class => 'control-label'
+      = f.label  t('courses.category'), :class => 'control-label'
       .controls= f.text_field :category, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label :topic, :class => 'control-label'
+      = f.label t('courses.topic'), :class => 'control-label'
       .controls= f.text_field :topic, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label :description, :class => 'control-label'
+      = f.label  t('courses.description'), :class => 'control-label'
       .controls= f.text_field :description, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label :fee, :class => 'control-label'
+      = f.label  t('courses.fee'), :class => 'control-label'
       .controls= f.text_field :fee, :class => 'text_field '
 
     .control-group
-      = f.label :duration, :class => 'control-label'
-      .controls= f.number_field :duration, :class => 'text_field '
+      = f.label  t('courses.duration'), :class => 'control-label'
+      .controls
+        = f.number_field :duration, :class => 'text_field '
+        = f.select :duration_type, DropDown::DURATION_TYPE, :prompt => (t 'helpers.select')
 
     .control-group
-      = f.label :duration_type, :class => 'control-label'
-      .controls= f.text_field :duration_type, :class => 'text_field input-xxlarge'
+      = f.label  t('helpers.user_id'), :class => 'control-label'
+      .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
 
     .control-group
-      = f.label :user_id, :class => 'control-label'
-      .controls= f.number_field :user_id, :class => 'text_field'
+      = f.label  t('helpers.college_id'), :class => 'control-label'
+      .controls= f.number_field :college_id, :class => 'text_field', :readonly => 'readonly'
 
     .control-group
-      = f.label :college_id, :class => 'control-label'
-      .controls= f.number_field :college_id, :class => 'text_field '
-
-    .control-group
-      = f.label :data, :class => 'control-label'
-      .controls= f.text_field :data, :class => 'text_field input-xxlarge'
+      = f.label  t('helpers.data'), :class => 'control-label'
+      .controls= f.text_field :data, :class => 'text_field input-xxlarge', :readonly => 'readonly'
 
 
     .form-actions

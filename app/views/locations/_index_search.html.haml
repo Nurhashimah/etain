@@ -1,0 +1,11 @@
+= search_form_for @search, url: locations_path, class: "form-inline" do |f|
+  %tr.search_row{style: "display: none;"}
+    %td= select_tag('q[region_eq]',options_for_select([[(t 'actions.all_records'),''],['Southern', 1],['Northern', 2],['Eastern', 3],['Sabah', 4],['Sarawak', 5]]), class: 'selectpicker',"data-width"=>'100px')
+    %td= f.text_field :name_cont, :class => "form-control"
+    %td
+      .input-group
+        = f.text_field :description_cont, :class => "form-control"
+        %span.input-group-btn
+          %button.btn.btn-sm.btn-default.right{:type => "submit"}
+            %i.fa.fa-search.fa-fw
+    %td &nbsp;

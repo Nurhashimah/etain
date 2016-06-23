@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417192616) do
+ActiveRecord::Schema.define(version: 20160621080451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,13 +59,13 @@ ActiveRecord::Schema.define(version: 20140417192616) do
     t.string   "topic"
     t.string   "description"
     t.decimal  "fee"
-    t.integer  "duration"
-    t.string   "duration_type"
     t.integer  "user_id"
     t.integer  "college_id"
     t.string   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "duration"
+    t.integer  "duration_type"
   end
 
   create_table "customers", force: true do |t|
@@ -84,17 +84,21 @@ ActiveRecord::Schema.define(version: 20140417192616) do
 
   create_table "lecturers", force: true do |t|
     t.string   "name"
-    t.text     "details"
+    t.text     "mykadno"
     t.decimal  "rate"
     t.integer  "user_id"
     t.integer  "college_id"
     t.string   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "position"
+    t.string   "address"
+    t.text     "qualifications"
+    t.text     "experiences"
   end
 
   create_table "locations", force: true do |t|
-    t.integer  "location_id"
+    t.integer  "region"
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
@@ -122,9 +126,9 @@ ActiveRecord::Schema.define(version: 20140417192616) do
 
   create_table "schedules", force: true do |t|
     t.integer  "course_id"
-    t.datetime "scheduled_on"
+    t.datetime "start_on"
     t.integer  "location_id"
-    t.integer  "lecturer_by"
+    t.integer  "lecturer_id"
     t.integer  "max_people"
     t.string   "status"
     t.integer  "user_id"
@@ -132,6 +136,7 @@ ActiveRecord::Schema.define(version: 20140417192616) do
     t.string   "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "end_on"
   end
 
   create_table "users", force: true do |t|
