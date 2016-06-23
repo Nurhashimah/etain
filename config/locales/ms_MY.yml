@@ -1,18 +1,31 @@
 ms_MY:
   sidebar:
     home: Rumah
+  
+  main_menu:
+    course: Kursus
+    people: Senarai Hubungan
+    facilities: Kemudahan
+    reports: Laporan
+    payments: Pembayaran
 
   activerecord:
     models:
-      courses: Kursus
-      lecturers: Pengajar
-      schedules: Jadual Kursus
-      locations: Lokasi
-      customers: Pelanggan
-      companies: Syarikat
+      course: Kursus
+      lecturer: Pengajar
+      schedule: Jadual Kursus
+      location: Lokasi
+      customer: Pelanggan
+      company: Syarikat Pelanggan
+      payment: Pembayaran
+      booking: Tempahan
 
     attributes:
-      courses:
+      course:
+        list: Senarai Kursus
+        title: Butiran Kursus
+        new: Kursus Baru
+        edit: Sunting Kursus
         code: Kod
         category: Kategori
         topic: Tajuk
@@ -20,36 +33,57 @@ ms_MY:
         fee: Yuran
         duration: Tempoh
 
-      lecturers:
+      lecturer:
+        list: Senarai Pengajar
+        title: Butiran Pengajar
+        new: Pengajar Baru
+        edit: Sunting Pengajar
         name: Nama
         mykadno: No MyKad
         rate: Kadar
         position: Jawatan
         address: Alamat
-        qualifications: Qualifications
-        experiences: Experiences
+        qualifications: Kelayakan
+        experiences: Pengalaman
+        rate_currency: Dalam Ringgit Malaysia (RM)
         
-      schedules:
+      schedule:
+        list: Senarai Jadual Kursus
+        title: Butiran Jadual Kursus
+        new: Jadual Kursus Baru
+        edit: Sunting Jadual Kursus
         course_id: Kursus
         scheduled_on: Tarikh kursus
         location_id: Lokasi
         lecturer_id: Pengajar
         max_people: Peserta maksima
         
-      locations:
+      location:
+        list: Senarai Lokasi
+        title: Butiran Lokasi
+        new: Lokasi Baru
+        edit: Sunting Lokasi
         region: Zon
         name: Nama
         description: Deskripsi
 
-      customers:
+      customer:
+        list: Senarai Pelanggan
+        title: Butiran Pelanggan
+        new: Pelanggan Baru
+        edit: Sunting Pelanggan
         id_no: Id
         name: Nama
         email: Emel
         phone: No telefon
         corporate: Pelanggan Korporat
         company_id: Syarikat
-      
-      companies:
+
+      company:
+        list: Senarai Syarikat
+        title: Butiran Syarikat
+        new: Syarikat Baru
+        edit: Sunting Baru
         company_code: Kod Syarikat
         name: Nama
         address: Alamat
@@ -57,7 +91,11 @@ ms_MY:
         email: Emel
         fax: No Faks
         
-      payments:
+      payment:
+        list: Senarai Pembayaran
+        title: Butiran Pembayaran
+        new: Pembayaran Baru
+        edit: Sunting Pembayaran
         booking_id: Tempahan
         customer_id: Pelanggan
         method: Kaedah
@@ -66,95 +104,26 @@ ms_MY:
         confirmed_by: Disahkan oleh
         confirmed_on: Disahkan pada
         
+      booking:
+        list: Senarai Tempahan
+        title: Butiran Tempahan
+        new: Tempahan Baru
+        edit: Sunting Tempahan
+        code: Kod
+        schedule_id: Jadual
+        customer_id: Pelanggan
+        payment_id: Pembayaran
+        warranty_id: Jaminan
 
-  courses:
-    list: Senarai Kursus
-    title: Butiran Kursus
-    new: Kursus Baru
-    edit: Sunting Kursus
-    code: Kod
-    category: Kategori
-    topic: Tajuk
-    description: Deskripsi
-    fee: Yuran
-    duration: Tempoh
-
-  lecturers:
-    list: Senarai Pengajar
-    title: Butiran Pengajar
-    new: Pengajar Baru
-    edit: Sunting Pengajar
-    name: Nama
-    mykadno: No MyKad
-    rate: Kadar
-    position: Jawatan
-    address: Alamat
-    qualifications: Kelayakan
-    experiences: Pengalaman
-    rate_currency: Dalam Ringgit Malaysia (RM)
-
-  schedules:
-    list: Senarai Jadual Kursus
-    title: Butiran Jadual Kursus
-    new: Jadual Kursus Baru
-    edit: Sunting Jadual Kursus
-    course_id: Kursus
-    scheduled_on: Tarikh kursus
-    location_id: Lokasi
-    lecturer_id: Pengajar
-    max_people: Peserta maksima
-
-  locations:
-    list: Senarai Lokasi
-    title: Butiran Lokasi
-    new: Lokasi Baru
-    edit: Sunting Lokasi
-    region: Zon
-    name: Nama
-    description: Deskripsi
- 
-  customers:
-    list: Senarai Pelanggan
-    title: Butiran Pelanggan
-    new: Pelanggan Baru
-    edit: Sunting Pelanggan
-    id_no: Id
-    name: Nama
-    email: Emel
-    phone: No telefon
-    corporate: Pelanggan Korporat
-    company_id: Syarikat
-    
-  companies:
-    list: Senarai Syarikat
-    title: Butiran Syarikat
-    new: Syarikat Baru
-    edit: Sunting Syarikat
-    company_code: Kod Syarikat
-    name: Nama
-    address: Alamat
-    phone: No Telefon
-    email: Emel
-    fax: No Faks
-    
-  payments:
-    list: Senarai Pembayaran
-    title: Butiran Pembayaran
-    new: Pembayaran Baru
-    edit: Sunting Pembayaran
-    booking_id: Tempahan
-    customer_id: Pelanggan
-    method: Kaedah
-    auth_code: Auth code
-    amount: Amaun
-    confirmed_by: Disahkan oleh
-    confirmed_on: Disahkan pada
 
   helpers:
     links:
       new: Cipta
+      edit: Sunting
+      destroy: Padam
       back: Terdahulu
       submit: Hantar
+      cancel: Batal
     user_id: Pengguna
     college_id: Kolej
     data: Data
@@ -162,6 +131,10 @@ ms_MY:
     select_company: Pilih Syarikat
   
   actions:
+    new: Baru
+    show: Papar
+    edit: Sunting
+    delete: Padam
     search: Carian
     all_records: Semua rekod
     yes: Ya

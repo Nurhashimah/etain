@@ -5,15 +5,15 @@
 %p#notice= notice
 
 %dl.dl-horizontal
-  %dt= t('locations.region')+":"
+  %dt= t('activerecord.attributes.location.region')+":"
   %dd= @location.try(:region_details)
 
 %dl.dl-horizontal
-  %dt= t('locations.name')+":"
+  %dt= t('activerecord.attributes.location.name')+":"
   %dd= @location.name
 
 %dl.dl-horizontal
-  %dt= t('locations.description')+":"
+  %dt= t('activerecord.attributes.location.description')+":"
   %dd= @location.description
 
 /%dl.dl-horizontal

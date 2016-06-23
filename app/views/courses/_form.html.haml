@@ -3,27 +3,27 @@
     = render 'shared/error_messages', object: f.object
 
     .control-group
-      = f.label  t('courses.code'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.course.code'), :class => 'control-label'
       .controls= f.text_field :code, :class => 'text_field '
 
     .control-group
-      = f.label  t('courses.category'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.course.category'), :class => 'control-label'
       .controls= f.text_field :category, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label t('courses.topic'), :class => 'control-label'
+      = f.label t('activerecord.attributes.course.topic'), :class => 'control-label'
       .controls= f.text_field :topic, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label  t('courses.description'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.course.description'), :class => 'control-label'
       .controls= f.text_field :description, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label  t('courses.fee'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.course.fee'), :class => 'control-label'
       .controls= f.text_field :fee, :class => 'text_field '
 
     .control-group
-      = f.label  t('courses.duration'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.course.duration'), :class => 'control-label'
       .controls
         = f.number_field :duration, :class => 'text_field '
         = f.select :duration_type, DropDown::DURATION_TYPE, :prompt => (t 'helpers.select')

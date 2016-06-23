@@ -1,34 +1,34 @@
 - provide(:title, 'Lecturer Details')
 - model_class = Lecturer
 .page-header
-  %h1=t 'lecturers.title'
+  %h1=t 'activerecord.attributes.lecturer.title'
 %p#notice= notice
 %dl.dl-horizontal
-  %dt= t 'lecturers.name'
+  %dt= t 'activerecord.attributes.lecturer.name'
   %dd= @lecturer.name
 
 %dl.dl-horizontal
-  %dt= t 'lecturers.mykadno'+":"
+  %dt= (t 'activerecord.attributes.lecturer.mykadno')+":"
   %dd= @lecturer.mykadno
 
 %dl.dl-horizontal
-  %dt= t 'lecturers.rate'+":"
+  %dt= (t 'activerecord.attributes.lecturer.rate')+":"
   %dd= "RM "+(sprintf("%.2f", @lecturer.rate)).to_s
 
 %dl.dl-horizontal
-  %dt= t 'lecturers.position'+":"
+  %dt=(t 'activerecord.attributes.lecturer.position')+":"
   %dd= @lecturer.position
 
 %dl.dl-horizontal
-  %dt= t 'lecturers.address'+":"
+  %dt= (t 'activerecord.attributes.lecturer.address')+":"
   %dd= @lecturer.address
 
 %dl.dl-horizontal
-  %dt= t 'lecturers.qualifications'+":"
+  %dt= (t 'activerecord.attributes.lecturer.qualifications')+":"
   %dd= @lecturer.qualifications
 
 %dl.dl-horizontal
-  %dt= t 'lecturers.experiences'+":"
+  %dt= (t 'activerecord.attributes.lecturer.experiences')+":"
   %dd= @lecturer.experiences
 
 /%dl.dl-horizontal
@@ -40,7 +40,7 @@
 /  %dd= @lecturer.college_id
 
 /%dl.dl-horizontal
-/  %dt= t 'lecturers.data'+":"
+/  %dt= t 'helpers.data'+":"
 /  %dd= @lecturer.data
 
 .form-actions

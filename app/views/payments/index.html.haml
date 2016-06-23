@@ -1,7 +1,7 @@
 - provide(:title, 'Payment')
 - model_class = Payment
 .page-header
-  %h1=t('payments.list')
+  %h1=t('activerecord.attributes.payment.list')
 
 .navbar.navbar-inverse
   .navbar-inner
@@ -14,14 +14,14 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "10%"}=t('payments.booking_id')
-      %th{width: "20%"}=t('payments.customer_id')
-      %th{width: "10%"}=t('payments.method')
-      %th{width: "15%"}=t('payments.auth_code')
-      %th{width: "10%"}=t('payments.amount')
-      %th{width: "12%"}=t('payments.confirmed_by')
-      %th{width: "13%"}=t('payments.confirmed_on')
-      %th{width: "10%"}=t('payments.status')
+      %th{width: "10%"}=t('activerecord.attributes.payment.booking_id')
+      %th{width: "20%"}=t('activerecord.attributes.payment.customer_id')
+      %th{width: "10%"}=t('activerecord.attributes.payment.method')
+      %th{width: "15%"}=t('activerecord.attributes.payment.auth_code')
+      %th{width: "10%"}=t('activerecord.attributes.payment.amount')
+      %th{width: "12%"}=t('activerecord.attributes.payment.confirmed_by')
+      %th{width: "13%"}=t('activerecord.attributes.payment.confirmed_on')
+      %th{width: "10%"}=t('activerecord.attributes.payment.status')
       /%th User
       /%th College
       /%th Data

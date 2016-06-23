@@ -3,23 +3,23 @@
     = render 'shared/error_messages', object: f.object
 
     .control-group
-      = f.label  t('customers.id_no'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.customer.id_no'), :class => 'control-label'
       .controls= f.text_field :id_no, :class => 'text_field '
 
     .control-group
-      = f.label  t('customers.name'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.customer.name'), :class => 'control-label'
       .controls= f.text_field :name, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label t('customers.email'), :class => 'control-label'
+      = f.label t('activerecord.attributes.customer.email'), :class => 'control-label'
       .controls= f.text_field :email, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label  t('customers.phone'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.customer.phone'), :class => 'control-label'
       .controls= f.text_field :phone, :class => 'text_field input-xxlarge'
 
     .control-group
-      = f.label  t('customers.corporate'), :class => 'control-label'
+      = f.label  t('activerecord.attributes.customer.corporate'), :class => 'control-label'
       .controls
         .col-sm-1= f.check_box :corporate, :id => 'is_checked'
         .col-sm-3#span_displaylist= f.collection_select :company_id, Company.all, :id, :name, :include_blank => (t 'helpers.select_company'), :class => 'selectpicker'

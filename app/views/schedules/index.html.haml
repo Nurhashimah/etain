@@ -1,7 +1,7 @@
 - provide(:title, 'schedules')
 - model_class = Schedule
 .page-header
-  %h1=t 'schedules.list'
+  %h1=t 'activerecord.attributes.schedule.list'
 
 .navbar.navbar-inverse
   .navbar-inner
@@ -13,11 +13,11 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: '25%'}=t 'schedules.course_id'
-      %th{width: '15%'}=t 'schedules.scheduled_on'
-      %th{width: '20%'}=t 'schedules.location_id'
-      %th{width: '20%'}=t 'schedules.lecturer_id'
-      %th{width: '10%'}=t 'schedules.max_people'
+      %th{width: '25%'}=t 'activerecord.attributes.schedule.course_id'
+      %th{width: '15%'}=t 'activerecord.attributes.schedule.scheduled_on'
+      %th{width: '20%'}=t 'activerecord.attributes.schedule.location_id'
+      %th{width: '20%'}=t 'activerecord.attributes.schedule.lecturer_id'
+      %th{width: '10%'}=t 'activerecord.attributes.schedule.max_people'
       %th{width: '10%'} Status
       /%th=t 'helpers.user_id'
       /%th=t 'helpers.college_id'

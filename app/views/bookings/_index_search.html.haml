@@ -1,0 +1,14 @@
+= search_form_for @search, url: bookings_path, class: "form-inline" do |f|
+  %tr.search_row{style: "display: none;"}
+    %td= f.text_field :code_cont, :class => "form-control"
+    %td= f.text_field :schedule_id_eq, :class => "form-control"
+    %td= f.text_field :customer_id_eq,:class => "form-control"
+    %td= f.text_field :payment_id_eq,:class => "form-control"
+    %td= f.text_field :warranty_id_eq,:class => "form-control"
+    %td
+      .input-group
+        = f.text_field :status_cont, :class => "form-control"
+        %span.input-group-btn
+          %button.btn.btn-sm.btn-default.right{:type => "submit"}
+            %i.fa.fa-search.fa-fw
+    %td &nbsp;
