@@ -5,3 +5,10 @@ class AddColumnsToSchedules < ActiveRecord::Migration
     rename_column :schedules, :lecturer_by, :lecturer_id
   end
 end
+
+
+=begin
+Why the change?
+This course.scheduled_on
+This course.lecturer_by.lecturer 
+=end
