@@ -1,11 +1,11 @@
 module DropDown
   DURATION_TYPE=[
      #  Displayed       stored in db
-        [ "Hours", 1],
-        [ "Days", 2],
-        [ "Weeks", 3],  
-        [ "Months", 4],
-        [ "Years", 5]
+        [ I18n.t('time.hours'), "hours"],
+        [ I18n.t('time.days'), "days"],
+        [ I18n.t('time.weeks'), "weeks"],  
+        [ I18n.t('time.months'), "months"],
+        [ I18n.t('time.years'), "years"]
   ]
   
   REGION=[

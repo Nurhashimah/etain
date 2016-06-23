@@ -160,3 +160,19 @@ en:
     all_records: All records
     yes: Yes
     no: No
+    
+    
+  date:
+    formats:
+      default: "%d %B %Y"
+      short: "%d %b"
+      long: "%d %B, %Y"
+      events: "%A, %e %b"
+      
+  time:
+    hours: hours
+    minutes: minutes
+    days: days
+    months: months
+    years: years
+    weeks: weeks

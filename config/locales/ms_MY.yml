@@ -147,3 +147,11 @@ ms_MY:
       short: "%d %b"
       long: "%d %B, %Y"
       events: "%A, %e %b"
+      
+  time:
+    hours: jam
+    minutes: minit
+    days: hari
+    months: bulan
+    years: tahun
+    weeks: minggu
