@@ -1,31 +1,31 @@
 - provide(:title, 'Payment Details')
 - model_class = Payment
 .page-header
-  %h1= t('payments.title')
+  %h1= t('activerecord.attributes.payment.title')
 %p#notice= notice
 
 %dl.dl-horizontal
-  %dt= t('payments.booking_id')+":"
+  %dt= t('activerecord.attributes.payment.booking_id')+":"
   %dd= @payment.booking_id
 
 %dl.dl-horizontal
-  %dt= t('payments.customer_id')+":"
+  %dt= t('activerecord.attributes.payment.customer_id')+":"
   %dd= @payment.customer_id
 
 %dl.dl-horizontal
-  %dt= t('payments.method')+":"
+  %dt= t('activerecord.attributes.payment.method')+":"
   %dd= @payment.auth_code
 
 %dl.dl-horizontal
-  %dt= t('payments.amount')+":"
+  %dt= t('activerecord.attributes.payment.amount')+":"
   %dd= @payment.amount
 
 %dl.dl-horizontal
-  %dt= t('payments.confirmed_by')+":"
+  %dt= t('activerecord.attributes.payment.confirmed_by')+":"
   %dd= @payment.confirmed_by
 
 %dl.dl-horizontal
-  %dt= t('payments.confirmed_on')+":"
+  %dt= t('activerecord.attributes.payment.confirmed_on')+":"
   %dd= @payment.confirmed_on.try(:strftime, '%d %b %Y  %H:%M')
 
 %dl.dl-horizontal
@@ -33,15 +33,15 @@
   %dd= @payment.status
 
 /%dl.dl-horizontal
-/  %dt= t('payments.user_id')+":"
+/  %dt= t('helpers.user_id')+":"
 /  %dd= @payment.user_id
 
 /%dl.dl-horizontal
-/  %dt= t('payments.college')+":"
+/  %dt= t('helpers.college')+":"
 /  %dd= @payment.college_id
 
 /%dl.dl-horizontal
-/  %dt= t('payments.data')+":"
+/  %dt= t('helpers.data')+":"
 /  %dd= @payment.data
 
 

@@ -1,43 +1,43 @@
 - provide(:title, 'Company Details')
 - model_class = Company
 .page-header
-  %h1= t('companies.title')
+  %h1= t('activerecord.attributes.company.title')
 %p#notice= notice
 
 %dl.dl-horizontal
-  %dt= t('companies.company_code')+":"
+  %dt= t('activerecord.attributes.company.company_code')+":"
   %dd= @company.company_code
 
 %dl.dl-horizontal
-  %dt= t('companies.name')+":"
+  %dt= t('activerecord.attributes.company.name')+":"
   %dd= @company.name
 
 %dl.dl-horizontal
-  %dt= t('companies.address')+":"
+  %dt= t('activerecord.attributes.company.address')+":"
   %dd= @company.address
 
 %dl.dl-horizontal
-  %dt= t('companies.phone')+":"
+  %dt= t('activerecord.attributes.company.phone')+":"
   %dd= @company.phone
 
 %dl.dl-horizontal
-  %dt= t('companies.fax')+":"
+  %dt= t('activerecord.attributes.company.fax')+":"
   %dd= @company.fax
 
 %dl.dl-horizontal
-  %dt= t('companies.email')+":"
+  %dt= t('activerecord.attributes.company.email')+":"
   %dd= @company.email
 
 /%dl.dl-horizontal
-/  %dt= t('companies.user_id')+":"
+/  %dt= t('helpers.user_id')+":"
 /  %dd= @company.user_id
 
 /%dl.dl-horizontal
-/  %dt= t('companies.college')+":"
+/  %dt= t('helpers.college_id')+":"
 /  %dd= @company.college_id
 
 /%dl.dl-horizontal
-/  %dt= t('companies.data')+":"
+/  %dt= t('helpers..data')+":"
 /  %dd= @company.data
 
 

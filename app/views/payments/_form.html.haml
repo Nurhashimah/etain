@@ -3,25 +3,25 @@
     = render 'shared/error_messages', object: f.object
 
     .control-group
-      = f.label t('payments.booking_id'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.booking_id'), :class => 'control-label'
       .controls= f.text_field :booking_id, :class => 'text_field '
     .control-group
-      = f.label t('payments.customer_id'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.customer_id'), :class => 'control-label'
       .controls= f.text_field :customer_id, :class => 'text_field '
     .control-group
-      = f.label t('payments.method'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.method'), :class => 'control-label'
       .controls= f.text_field :method, :class => 'text_field '
     .control-group
-      = f.label t('payments.auth_code'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.auth_code'), :class => 'control-label'
       .controls= f.text_field :auth_code, :class => 'text_field '
     .control-group
-      = f.label t('payments.amount'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.amount'), :class => 'control-label'
       .controls= f.text_field :amount, :class => 'text_field '
     .control-group
-      = f.label t('payments.confirmed_by'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.confirmed_by'), :class => 'control-label'
       .controls= f.text_field :confirmed_by, :class => 'text_field '
     .control-group
-      = f.label t('payments.confirmed_on'), :class => 'control-label'
+      = f.label t('activerecord.attributes.payment.confirmed_on'), :class => 'control-label'
       .controls= f.text_field :confirmed_on, :class => 'datetime_picker_reverse'
     .control-group
       = f.label :status, :class => 'control-label'

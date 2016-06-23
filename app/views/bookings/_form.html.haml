@@ -3,33 +3,33 @@
     = render 'shared/error_messages', object: f.object
 
     .control-group
-      = f.label :code, :class => 'control-label'
+      = f.label (t 'activerecord.attributes.booking.code'), :class => 'control-label'
       .controls= f.text_field :code, :class => 'text_field '
 
     .control-group
-      = f.label :schedule_id, :class => 'control-label'
+      = f.label (t 'activerecord.attributes.booking.schedule_id'), :class => 'control-label'
       .controls= f.number_field :schedule_id, :class => 'text_field '
     .control-group
-      = f.label :customer_id, :class => 'control-label'
+      = f.label (t 'activerecord.attributes.booking.customer_id'), :class => 'control-label'
       .controls= f.number_field :customer_id, :class => 'text_field '
     .control-group
-      = f.label :payment_id, :class => 'control-label'
+      = f.label (t 'activerecord.attributes.booking.payment_id'), :class => 'control-label'
       .controls= f.number_field :payment_id, :class => 'text_field '
     .control-group
-      = f.label :warranty_id, :class => 'control-label'
+      = f.label (t 'activerecord.attributes.booking.warranty_id'), :class => 'control-label'
       .controls= f.number_field :warranty_id, :class => 'text_field '
     .control-group
       = f.label :status, :class => 'control-label'
       .controls= f.text_field :status, :class => 'text_field '
     .control-group
-      = f.label :user_id, :class => 'control-label'
-      .controls= f.number_field :user_id, :class => 'text_field '
+      = f.label (t 'helpers.user_id'), :class => 'control-label'
+      .controls= f.number_field :user_id, :class => 'text_field ', :readonly => 'readonly'
     .control-group
-      = f.label :college_id, :class => 'control-label'
-      .controls= f.number_field :college_id, :class => 'text_field '
+      = f.label (t 'helpers.college_id'), :class => 'control-label'
+      .controls= f.number_field :college_id, :class => 'text_field ', :readonly => 'readonly'
     .control-group
-      = f.label :data, :class => 'control-label'
-      .controls= f.text_field :data, :class => 'text_field '
+      = f.label (t 'helpers.data'), :class => 'control-label'
+      .controls= f.text_field :data, :class => 'text_field ', :readonly => 'readonly'
 
 
     .form-actions

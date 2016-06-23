@@ -1,7 +1,7 @@
 - provide(:title, 'Lecturers')
 - model_class = Lecturer
 .page-header
-  %h1=t 'lecturers.list'
+  %h1=t 'activerecord.attributes.lecturer.list'
 
 
 .navbar.navbar-inverse
@@ -15,13 +15,13 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "30%"}=t 'lecturers.name'
-      %th{width: "10%"}=t 'lecturers.mykadno'
-      %th{width: "20%"}=t 'lecturers.position'
-      %th{width: "8%"}=t 'lecturers.rate'
-      %th{width: "16%"}=t 'lecturers.qualifications'
-      %th{width: "16%"}=t 'lecturers.experiences'
-      /%th=t 'lecturers.address'
+      %th{width: "30%"}=t 'activerecord.attributes.lecturer.name'
+      %th{width: "10%"}=t 'activerecord.attributes.lecturer.mykadno'
+      %th{width: "20%"}=t 'activerecord.attributes.lecturer.position'
+      %th{width: "8%"}=t 'activerecord.attributes.lecturer.rate'
+      %th{width: "16%"}=t 'activerecord.attributes.lecturer.qualifications'
+      %th{width: "16%"}=t 'activerecord.attributes.lecturer.experiences'
+      /%th=t 'activerecord.attributes.lecturer.address'
       /%th User
       /%th College
       /%th Data

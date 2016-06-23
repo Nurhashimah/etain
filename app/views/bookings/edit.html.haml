@@ -1,7 +1,7 @@
 - provide(:title, 'Edit booking')
 - model_class = Booking
 .page-header
-  %h1 Editing Booking
+  %h1=t('activerecord.attributes.booking.edit')
 = render :partial => 'form'
 
 

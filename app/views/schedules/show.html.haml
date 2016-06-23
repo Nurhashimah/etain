@@ -1,29 +1,29 @@
 - provide(:title, 'Schedule Details')
 - model_class = Schedule
 .page-header
-  %h1= t('schedules.title')
+  %h1= t('activerecord.attributes.schedule.title')
 %p#notice= notice
 
 %dl.dl-horizontal
-  %dt= t('schedules.course_id')+":"
+  %dt= t('activerecord.attributes.schedule.course_id')+":"
   %dd= @schedule.try(:schedulecourse).try(:topic)
 
 %dl.dl-horizontal
-  %dt= t('schedules.scheduled_on')+":"
+  %dt= t('activerecord.attributes.schedule.scheduled_on')+":"
   %dd
     = @schedule.try(:start_on).try(:strftime, '%d %b %y')
     = @schedule.end_on.nil? ? "" : " - "+@schedule.try(:end_on).try(:strftime, '%d %b %Y')
 
 %dl.dl-horizontal
-  %dt= t('schedules.location_id')+":"
+  %dt= t('activerecord.attributes.schedule.location_id')+":"
   %dd= @schedule.try(:schedulelocation).try(:name)
 
 %dl.dl-horizontal
-  %dt= t('schedules.lecturer_id')+":"
+  %dt= t('activerecord.attributes.schedule.lecturer_id')+":"
   %dd= @schedule.try(:schedulelecturer).try(:name)
 
 %dl.dl-horizontal
-  %dt= t('schedules.max_people')+":"
+  %dt= t('activerecord.attributes.schedule.max_people')+":"
   %dd= @schedule.max_people
 
 %dl.dl-horizontal

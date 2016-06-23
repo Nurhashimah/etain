@@ -1,7 +1,7 @@
 - provide(:title, 'bookings')
 - model_class = Booking
 .page-header
-  %h1 Booking
+  %h1=t 'activerecord.attributes.booking.list'
 
 
 .navbar.navbar-inverse
@@ -9,33 +9,35 @@
     %ul.nav
       %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_booking_path
     %ul.nav.pull-right
-      %li= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#"
+      %li= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
 
 
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th Code
-      %th Schedule 
-      %th Customer 
-      %th Payment 
-      %th Warranty 
-      %th Status 
-      %th User 
-      %th College 
-      %th Data 
+      %th{width: '15%'}=t 'activerecord.attributes.booking.code'
+      %th{width: '15%'}=t 'activerecord.attributes.booking.schedule_id'
+      %th{width: '20%'}=t 'activerecord.attributes.booking.customer_id'
+      %th{width: '15%'}=t 'activerecord.attributes.booking.payment_id'
+      %th{width: '20%'}=t 'activerecord.attributes.booking.warranty_id'
+      %th{width: '15%'}Status 
+      /%th User 
+      /%th College 
+      /%th Data 
       %th 
   %tbody
+    = render "index_search"
     - @bookings.each do |booking|
       %tr
         %td= booking.code 
         %td= booking.schedule_id 
         %td= booking.customer_id 
         %td= booking.payment_id 
+        %td= booking.warranty_id
         %td= booking.status 
-        %td= booking.user_id 
-        %td= booking.college_id 
-        %td= booking.data
+        /%td= booking.user_id 
+        /%td= booking.college_id 
+        /%td= booking.data
         = render :partial => 'action_menu', :locals => { :booking => booking } 
 
 

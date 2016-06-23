@@ -1,44 +1,44 @@
 - provide(:title, 'Course Details')
 - model_class = Course
 .page-header
-  %h1= t('courses.title')
+  %h1= t('activerecord.attributes.course.title')
 %p#notice= notice
 
 %dl.dl-horizontal
-  %dt= t('courses.code')+":"
+  %dt= t('activerecord.attributes.course.code')+":"
   %dd= @course.code
 
 %dl.dl-horizontal
-  %dt= t('courses.category')+":"
+  %dt= t('activerecord.attributes.course.category')+":"
   %dd= @course.category
 
 %dl.dl-horizontal
-  %dt= t('courses.topic')+":"
+  %dt= t('activerecord.attributes.course.topic')+":"
   %dd= @course.topic
 
 %dl.dl-horizontal
-  %dt= t('courses.description')+":"
+  %dt= t('activerecord.attributes.course.description')+":"
   %dd= @course.description
 
 %dl.dl-horizontal
-  %dt= t('courses.fee')+":"
+  %dt= t('activerecord.attributes.course.fee')+":"
   %dd= @course.fee
 
 %dl.dl-horizontal
-  %dt= t('courses.duration')+":"
+  %dt= t('activerecord.attributes.course.duration')+":"
   %dd
     = @course.duration.to_s+" "+@course.duration_details
 
 /%dl.dl-horizontal
-/  %dt= t('courses.user_id')+":"
+/  %dt= t('helpers.user_id')+":"
 /  %dd= @course.user_id
 
 /%dl.dl-horizontal
-/  %dt= t('courses.college')+":"
+/  %dt= t('helpers.college')+":"
 /  %dd= @course.college_id
 
 /%dl.dl-horizontal
-/  %dt= t('courses.data')+":"
+/  %dt= t('helpers.data')+":"
 /  %dd= @course.data
 
 
