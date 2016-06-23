@@ -1,0 +1,57 @@
+- provide(:title, 'Payment Details')
+- model_class = Payment
+.page-header
+  %h1= t('payments.title')
+%p#notice= notice
+
+%dl.dl-horizontal
+  %dt= t('payments.booking_id')+":"
+  %dd= @payment.booking_id
+
+%dl.dl-horizontal
+  %dt= t('payments.customer_id')+":"
+  %dd= @payment.customer_id
+
+%dl.dl-horizontal
+  %dt= t('payments.method')+":"
+  %dd= @payment.auth_code
+
+%dl.dl-horizontal
+  %dt= t('payments.amount')+":"
+  %dd= @payment.amount
+
+%dl.dl-horizontal
+  %dt= t('payments.confirmed_by')+":"
+  %dd= @payment.confirmed_by
+
+%dl.dl-horizontal
+  %dt= t('payments.confirmed_on')+":"
+  %dd= @payment.confirmed_on.try(:strftime, '%d %b %Y  %H:%M')
+
+%dl.dl-horizontal
+  %dt Status:
+  %dd= @payment.status
+
+/%dl.dl-horizontal
+/  %dt= t('payments.user_id')+":"
+/  %dd= @payment.user_id
+
+/%dl.dl-horizontal
+/  %dt= t('payments.college')+":"
+/  %dd= @payment.college_id
+
+/%dl.dl-horizontal
+/  %dt= t('payments.data')+":"
+/  %dd= @payment.data
+
+
+.form-actions
+  = link_to content_tag(:i, "", :class => "fa fa-arrow-left ") + " " + t('.back', :default => t("helpers.links.back")), payments_path, :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-edit") + " " + t('.edit', :default => t("helpers.links.edit")), |
+    edit_payment_path(@payment), :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-trash-o icon-white") + " " + t('.destroy', :default => t("helpers.links.destroy")), |
+    payment_path(@payment),                                                                                                    |
+    :method => 'delete',                                                                                                           |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },                   |
+    :class => 'btn btn-danger'                                                                                                     |
+

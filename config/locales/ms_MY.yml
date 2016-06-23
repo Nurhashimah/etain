@@ -57,6 +57,15 @@ ms_MY:
         email: Emel
         fax: No Faks
         
+      payments:
+        booking_id: Tempahan
+        customer_id: Pelanggan
+        method: Kaedah
+        auth_code: Auth code
+        amount: Amaun
+        confirmed_by: Disahkan oleh
+        confirmed_on: Disahkan pada
+        
 
   courses:
     list: Senarai Kursus
@@ -127,6 +136,19 @@ ms_MY:
     phone: No Telefon
     email: Emel
     fax: No Faks
+    
+  payments:
+    list: Senarai Pembayaran
+    title: Butiran Pembayaran
+    new: Pembayaran Baru
+    edit: Sunting Pembayaran
+    booking_id: Tempahan
+    customer_id: Pelanggan
+    method: Kaedah
+    auth_code: Auth code
+    amount: Amaun
+    confirmed_by: Disahkan oleh
+    confirmed_on: Disahkan pada
 
   helpers:
     links:

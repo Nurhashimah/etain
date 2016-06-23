@@ -9,6 +9,13 @@ $(document).ready(function(e){
       formatDate:'Y-m-d'
   });
   
+  $('.datetime_picker_reverse').datetimepicker({
+      timepicker:true,
+      format:'d-m-Y H:i',
+      formatDate:'Y-m-d H:i',
+      defaultSeconds: 0
+  });
+  
   $("input[id='is_checked']").change(function() {  
     if($('#is_checked').is(':checked')) { 
       $("#span_displaylist").show("highlight"); 

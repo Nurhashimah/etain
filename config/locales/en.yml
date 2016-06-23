@@ -74,6 +74,15 @@ en:
         phone: Phone no
         email: Email
         fax: Fax No
+       
+      payments:
+        booking_id: Booking
+        customer_id: Customer
+        method: Method
+        auth_code: Auth Code
+        amount: Amount
+        confirmed_by: Confirmed by
+        confirmed_on: Confirmed on
 
   courses:
     list: Course Listing
@@ -145,6 +154,19 @@ en:
     phone: Phone No
     email: Email
     fax: Fax No
+
+  payments:
+    list: Payment Listing
+    title: Payment Details
+    new: New Payment
+    edit: Edit Payment
+    booking_id: Booking
+    customer_id: Customer
+    method: Method
+    auth_code: Auth Code
+    amount: Amount
+    confirmed_by: Confirmed by
+    confirmed_on: Confirmed on
 
   helpers:
     links:

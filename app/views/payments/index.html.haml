@@ -1,0 +1,44 @@
+- provide(:title, 'Payment')
+- model_class = Payment
+.page-header
+  %h1=t('payments.list')
+
+.navbar.navbar-inverse
+  .navbar-inner
+    %ul.nav
+      %li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_payment_path
+    %ul.nav.pull-right
+      %li.toga= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
+
+
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th{width: "10%"}=t('payments.booking_id')
+      %th{width: "20%"}=t('payments.customer_id')
+      %th{width: "10%"}=t('payments.method')
+      %th{width: "15%"}=t('payments.auth_code')
+      %th{width: "10%"}=t('payments.amount')
+      %th{width: "12%"}=t('payments.confirmed_by')
+      %th{width: "13%"}=t('payments.confirmed_on')
+      %th{width: "10%"}=t('payments.status')
+      /%th User
+      /%th College
+      /%th Data
+      %th
+  %tbody
+    = render "index_search"
+    - @payments.each do |payment|
+      %tr
+        %td= payment.booking_id
+        %td= payment.customer_id
+        %td= payment.method
+        %td= payment.auth_code
+        %td= payment.amount
+        %td= payment.confirmed_by
+        %td= payment.confirmed_on.try(:strftime, '%d %b %Y %H:%M')
+        %td= payment.status
+        /%td= payment.user_id
+        /%td= payment.college_id
+        /%td= payment.data
+        = render :partial => 'action_menu', :locals => { :payment => payment }
