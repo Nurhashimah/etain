@@ -145,6 +145,9 @@ en:
       back: Back
       submit: Submit
       cancel: Cancel
+      about: About
+      contact: Contact
+      news: News
     user_id: User 
     college_id: College
     data: Data

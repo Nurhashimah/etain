@@ -3,7 +3,7 @@
     &copy; 2003-#{Time.now.year} Yaacob Noor for Teknik Padu Sdn Bhd
   %nav
     %ul
-      %li= link_to "About", about_path
-      %li= link_to "Contact", contact_path
+      %li= link_to (t 'helpers.links.about'), about_path
+      %li= link_to (t 'helpers.links.contact'), contact_path
       %li
-        %a{:href => "http://teknikpadu.com.my"} News
+        %a{:href => "http://teknikpadu.com.my"}=t('helpers.links.news')
