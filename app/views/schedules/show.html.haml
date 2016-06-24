@@ -11,7 +11,7 @@
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.schedule.scheduled_on')+":"
   %dd
-    = @schedule.try(:start_on).try(:strftime, '%d %b %y')
+    = @schedule.try(:start_on).try(:strftime, '%d %b %Y')
     = @schedule.end_on.nil? ? "" : " - "+@schedule.try(:end_on).try(:strftime, '%d %b %Y')
 
 %dl.dl-horizontal
