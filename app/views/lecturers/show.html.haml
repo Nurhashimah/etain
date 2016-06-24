@@ -13,7 +13,7 @@
 
 %dl.dl-horizontal
   %dt= (t 'activerecord.attributes.lecturer.rate')+":"
-  %dd= "RM "+(sprintf("%.2f", @lecturer.rate)).to_s
+  %dd= @lecturer.rate.nil? ? "-" : "RM "+(sprintf("%.2f", @lecturer.rate)).to_s
 
 %dl.dl-horizontal
   %dt=(t 'activerecord.attributes.lecturer.position')+":"

@@ -80,7 +80,7 @@ en:
         max_people: Max participant
         
       location:
-        list: Location Listting
+        list: Location Listing
         title: Location Details
         new: New Location
         edit: Edit Location
