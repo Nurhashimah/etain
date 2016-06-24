@@ -42,6 +42,7 @@ class LecturersController < ApplicationController
   # PATCH/PUT /lecturers/1
   # PATCH/PUT /lecturers/1.json
   def update
+    #raise params.inspect
     respond_to do |format|
       if @lecturer.update(lecturer_params)
         format.html { redirect_to @lecturer, notice: 'Lecturer was successfully updated.' }
@@ -71,7 +72,7 @@ class LecturersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecturer_params
-      params.require(:lecturer).permit(:name, {:details => []}, :rate, :position, :address, :qualifications, :experiences, :user_id, :college_id, {:data => []})
+      params.require(:lecturer).permit(:name, {:details => []}, :rate, :mykadno, :position, :address, :qualifications, :experiences, :user_id, :college_id, {:data => []})
       #if you have problems with unpermitted parameters, use below instead of above.
       #params.require(:lecturer).permit!
     end

@@ -34,8 +34,8 @@
         %td= lecturer.mykadno
         %td= lecturer.position
         %td= "RM "+(sprintf("%.2f", lecturer.rate)).to_s
-        %td= lecturer.qualifications.truncate(29)
-        %td= lecturer.experiences.truncate(28)
+        %td= lecturer.qualifications.to_s.truncate(29)
+        %td= lecturer.experiences.to_s.truncate(28)
         /%td= lecturer.address
         /%td= lecturer.user_id
         /%td= lecturer.college_id
