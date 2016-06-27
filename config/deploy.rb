@@ -99,6 +99,11 @@ namespace :deploy do
       execute "sudo service nginx start"
     end
   end
+  
+  #Stop unicorn fr running
+  task :stop_unicorn do
+    invoke "unicorn:stop"
+  end
 
 end
 
