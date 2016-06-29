@@ -21,7 +21,15 @@
       .controls= f.collection_select :location_id, Location.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
     .control-group
       = f.label (t 'activerecord.attributes.schedule.lecturer_id'), :class => 'control-label'
-      .controls= f.collection_select :lecturer_id, Lecturer.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
+      .controls
+        /= f.collection_select :lecturer_id, Lecturer.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
+        = collection_select(:schedule, :lecturer_ids, Lecturer.all, :id, :name,{:include_blank => (t 'helpers.select')},{:multiple => true, :name=>'schedule[lecturer_ids][]',:selected => 0, :style => "height: 120px;"}, ) 
+        .small 
+          =t('helpers.single_select') 
+          %i shift
+          =t('helpers.multiple_select')
+          %i ctrl
+          =t('helpers.multiple_select2')
     .control-group
       = f.label (t 'activerecord.attributes.schedule.max_people'), :class => 'control-label'
       .controls= f.number_field :max_people, :class => 'k1 text_field'

@@ -82,6 +82,7 @@ en:
         lecturer_id: Lecturer
         max_people: Max participant
         participants: Participants
+        pax: pax
         
       location:
         list: Location Listing
@@ -160,7 +161,9 @@ en:
     data: Data
     select: Select
     select_company: Select Company
-
+    single_select: Click at lecturer name to make a single selection. Use combination of (
+    multiple_select: " key + click ) OR ( "
+    multiple_select2: " key + click ) for multiple selection."
   actions:
     new: New
     show: Show
