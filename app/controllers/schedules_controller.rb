@@ -26,6 +26,7 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.json
   def create
+    #raise params.inspect
     @schedule = Schedule.new(schedule_params)
 
     respond_to do |format|
@@ -42,7 +43,6 @@ class SchedulesController < ApplicationController
   # PATCH/PUT /schedules/1
   # PATCH/PUT /schedules/1.json
   def update
-    #raise params.inspect
     respond_to do |format|
       if @schedule.update(schedule_params)
         format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }
@@ -73,6 +73,7 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:course_id, :start_on, :end_on, :location_id, :lecturer_id, :max_people, :status, :user_id, :college_id, :data, { customer_ids: [] })
+      #params.require(:schedule).permit(:course_id, :start_on, :end_on, :location_id, :lecturer_id, :max_people, :status, :user_id, :college_id, :data, { customer_ids: [] }, lecturer_ids: [])
+      params.require(:schedule).permit(:course_id, :start_on, :end_on, :location_id, :max_people, :status, :user_id, :college_id, :data, { customer_ids: [] },{ lecturer_ids: []})
     end
 end

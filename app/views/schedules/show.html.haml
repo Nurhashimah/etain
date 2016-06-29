@@ -20,11 +20,14 @@
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.schedule.lecturer_id')+":"
-  %dd= @schedule.try(:schedulelecturer).try(:name)
-
+  %dd
+    /= @schedule.try(:schedulelecturer).try(:name)
+    %ol
+      - for lecturer in @schedule.lecturers
+        %li=lecturer.name
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.schedule.max_people')+":"
-  %dd= @schedule.max_people
+  %dd= @schedule.max_people.to_s+" "+(t 'activerecord.attributes.schedule.pax')
 
 %dl.dl-horizontal
   %dt Status :

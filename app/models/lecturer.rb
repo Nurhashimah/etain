@@ -1,5 +1,5 @@
 class Lecturer < ActiveRecord::Base
-  has_many :schedules
+  has_and_belongs_to_many :schedules
 
 
   serialize :details, Hash

@@ -61,6 +61,7 @@ ms_MY:
         lecturer_id: Pengajar
         max_people: Peserta maksima
         participants: Peserta
+        pax: orang
         
       location:
         list: Senarai Lokasi
@@ -139,7 +140,9 @@ ms_MY:
     data: Data
     select: Pilih
     select_company: Pilih Syarikat
-  
+    single_select: Klik pada nama pengajar untuk membuat pilihan. Gunakan kombinasi ( kekunci 
+    multiple_select: " + klik ) ATAU ( kekunci "
+    multiple_select2: " + klik ) untuk memilih lebih daripada seorang pengajar."
   actions:
     new: Baru
     show: Papar
