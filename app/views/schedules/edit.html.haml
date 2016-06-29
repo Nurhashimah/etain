@@ -3,3 +3,18 @@
 .page-header
   %h1=t('activerecord.attributes.schedule.edit')
 = render :partial => 'form'
+
+:javascript
+  
+$(document).ready(function(){
+  $('.k1').change(function(){
+    $("#form1").submit();
+  });
+  $('.k2').change(function(){
+    $("#form1").submit();
+  });
+  var link_submit=document.getElementById("submit_show");
+  link_submit.addEventListener("click", function(){
+    $("#form1").submit();
+  });
+});
