@@ -1,5 +1,5 @@
 .container{:style => "padding-left: 60px;"}
-  = form_for @schedule, :html => { :class => 'form-horizontal' }  do |f|
+  = form_for @schedule, :html => { :class => 'edit_form form-horizontal', :id => 'form1' }, remote: true do |f|
     = render 'shared/error_messages', object: f.object
 
 
@@ -20,10 +20,16 @@
       .controls= f.collection_select :lecturer_id, Lecturer.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
     .control-group
       = f.label (t 'activerecord.attributes.schedule.max_people'), :class => 'control-label'
-      .controls= f.number_field :max_people, :class => 'text_field'
+      .controls= f.number_field :max_people, :class => 'k1 text_field'
     .control-group
       = f.label :status, :class => 'control-label'
       .controls= f.text_field :status, :class => 'text_field'
+    .control-group
+      = f.label (t 'activerecord.attributes.schedule.participants'), :class => 'control-label'
+      .controls
+        #participants_grid
+          - 0.upto(@schedule.max_people-1).each do |x|
+            = select_tag "schedule[customer_ids][]", options_from_collection_for_select(Customer.all.order(id_no: :asc), :id, :id_no_with_name_position, {:selected => @schedule.customer_ids[x]}), :prompt => (t 'helpers.select'), :class => 'k2'
     .control-group
       = f.label (t 'helpers.user_id'), :class => 'control-label'
       .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
@@ -33,9 +39,25 @@
     .control-group
       = f.label (t 'helpers.data'), :class => 'control-label'
       .controls= f.text_field :data, :class => 'text_field', :readonly => 'readonly'
-
-
+  
     .form-actions
-      = f.submit (t 'helpers.links.submit'), :class => 'btn btn-primary'
+      /= f.submit (t 'helpers.links.submit'), :class => 'btn btn-primary'
+      = link_to (t 'helpers.links.submit'), @schedule, :class => 'btn btn-primary', :id => 'submit_show'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), |
         schedules_path, :class => 'btn'
+
+:javascript
+  
+$(document).ready(function(){
+  $('.k1').change(function(){
+    $("#form1").submit();
+  });
+  $('.k2').change(function(){
+    $("#form1").submit();
+  });
+  var link_submit=document.getElementById("submit_show");
+  link_submit.addEventListener("click", function(){
+    $("#form1").submit();
+  });
+  
+});

@@ -14,12 +14,13 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "8%"}=t('activerecord.attributes.customer.id_no')
       %th{width: "20%"}=t('activerecord.attributes.customer.name')
-      %th{width: "20%"}=t('activerecord.attributes.customer.email')
-      %th{width: "18%"}=t('activerecord.attributes.customer.phone')
-      %th{width: "12%"}=t('activerecord.attributes.customer.corporate')
-      %th{width: "22%"}=t('activerecord.attributes.customer.company_id')
+      %th{width: "12%"}=t('activerecord.attributes.customer.id_no')
+      %th{width: "10%"}=t('activerecord.attributes.customer.position')
+      %th{width: "10%"}=t('activerecord.attributes.customer.phone')
+      %th{width: "18%"}=t('activerecord.attributes.customer.email')
+      %th{width: "10%"}=t('activerecord.attributes.customer.corporate')
+      %th{width: "20%"}=t('activerecord.attributes.customer.company_id')
       /%th User
       /%th College
       /%th Data
@@ -28,10 +29,11 @@
     = render "index_search"
     - @customers.each do |customer|
       %tr
-        %td= customer.id_no
         %td= customer.name
-        %td= customer.email
+        %td= customer.id_no
+        %td= customer.position
         %td= customer.phone
+        %td= customer.email
         %td= customer.corporate? ? (t 'actions.yes') : (t 'actions.no')
         %td= customer.corporate? ? customer.try(:clientcompany).try(:name) : "-"
         /%td= customer.user_id

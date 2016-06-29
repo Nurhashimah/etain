@@ -15,7 +15,7 @@ ms_MY:
       lecturer: Pengajar
       schedule: Jadual Kursus
       location: Lokasi
-      customer: Pelanggan
+      customer: Pelanggan / Peserta
       company: Syarikat Pelanggan
       payment: Pembayaran
       booking: Tempahan
@@ -40,12 +40,15 @@ ms_MY:
         edit: Sunting Pengajar
         name: Nama
         mykadno: No MyKad
+        phone: No Telefon
+        email: Emel
         rate: Kadar
         position: Jawatan
         address: Alamat
         qualifications: Kelayakan
         experiences: Pengalaman
         rate_currency: Dalam Ringgit Malaysia (RM)
+        armed_force_no_mykad: atau No Tentera
         
       schedule:
         list: Senarai Jadual Kursus
@@ -57,6 +60,7 @@ ms_MY:
         location_id: Lokasi
         lecturer_id: Pengajar
         max_people: Peserta maksima
+        participants: Peserta
         
       location:
         list: Senarai Lokasi
@@ -72,12 +76,14 @@ ms_MY:
         title: Butiran Pelanggan
         new: Pelanggan Baru
         edit: Sunting Pelanggan
-        id_no: Id
+        id_no: No Mykad
         name: Nama
         email: Emel
         phone: No telefon
         corporate: Pelanggan Korporat
         company_id: Syarikat
+        position: Pangkat
+        armed_force_no_mykad: atau No Tentera
 
       company:
         list: Senarai Syarikat

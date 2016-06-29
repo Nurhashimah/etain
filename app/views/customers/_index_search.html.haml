@@ -1,9 +1,10 @@
 = search_form_for @search, url: customers_path, class: "form-inline" do |f|
   %tr.search_row{style: "display: none;"}
-    %td= f.text_field :id_no_cont, :class => "form-control"
     %td= f.text_field :name_cont, :class => "form-control"
-    %td= f.text_field :email_cont,:class => "form-control"
+    %td= f.text_field :id_no_cont, :class => "form-control"
+    %td= f.text_field :position_cont, :class => "form-control"
     %td= f.text_field :phone_cont,:class => "form-control"
+    %td= f.text_field :email_cont,:class => "form-control"
     %td= f.select :corporate_eq, [[(t 'actions.all_records'), '' ], [(t 'actions.yes'), true], [(t 'actions.no'), false]], :class => "selectpicker"
     %td= f.select :company_id_eq, [[(t 'actions.all_records'), '']]+Company.all.pluck(:name, :id).compact, :class => "selectpicker"
     %td

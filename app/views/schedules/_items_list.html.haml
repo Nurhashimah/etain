@@ -1,0 +1,7 @@
+- 0.upto(@schedule.max_people-1).each do |x|
+  = select_tag "schedule[customer_ids][]", options_from_collection_for_select(Customer.all, :id, :id_no_with_name_position, {:selected => @schedule.customer_ids[x]}), :prompt => (t 'helpers.select'), :class => 'k3'
+
+:javascript
+  $('.k3').change(function(){
+    $("#form1").submit();
+  });

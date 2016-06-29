@@ -12,6 +12,14 @@
   %dd= @lecturer.mykadno
 
 %dl.dl-horizontal
+  %dt= (t 'activerecord.attributes.lecturer.phone')+":"
+  %dd= @lecturer.phone
+  
+%dl.dl-horizontal
+  %dt= (t 'activerecord.attributes.lecturer.email')+":"
+  %dd= @lecturer.email
+
+%dl.dl-horizontal
   %dt= (t 'activerecord.attributes.lecturer.rate')+":"
   %dd= @lecturer.rate.nil? ? "-" : "RM "+(sprintf("%.2f", @lecturer.rate)).to_s
 

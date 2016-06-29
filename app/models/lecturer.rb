@@ -13,6 +13,20 @@ class Lecturer < ActiveRecord::Base
     details[:mykadno]
   end
   
+  def phone=(value)
+    details[:phone] = value
+  end
+  def phone
+    details[:phone]
+  end
+  
+  def email=(value)
+    details[:email] = value
+  end
+  def email
+    details[:email]
+  end
+  
   def position=(value)
     details[:position] = value
   end
@@ -48,6 +62,18 @@ class Lecturer < ActiveRecord::Base
      where(id: ids)
    end
    
+   def self.phone_search(query)
+     ids=Array.new
+     Lecturer.pluck(:id, :details).each{|det| ids << det[0] if (det[1][:phone]).include?(query)}
+     where(id: ids)
+   end
+   
+   def self.email_search(query)
+     ids=Array.new
+     Lecturer.pluck(:id, :details).each{|det| ids << det[0] if (det[1][:email]).include?(query)}
+     where(id: ids)
+   end
+   
    def self.position_search(query)
      ids=Array.new
      Lecturer.pluck(:id, :details).each{|det| ids << det[0] if (det[1][:position]).include?(query) || (det[1][:position]).downcase.include?(query)}
@@ -74,7 +100,7 @@ class Lecturer < ActiveRecord::Base
    
    #ransackable
    def self.ransackable_scopes(auth_object = nil)
-     [:mykadno_search, :position_search, :address_search, :qualifications_search, :experiences_search]
+     [:mykadno_search, :phone_search, :email_search, :position_search, :address_search, :qualifications_search, :experiences_search]
    end
   
 end

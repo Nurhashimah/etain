@@ -29,6 +29,13 @@
 %dl.dl-horizontal
   %dt Status :
   %dd= @schedule.status
+  
+%dl.dl-horizontal
+  %dt=(t 'activerecord.attributes.schedule.participants')+":"
+  %dd
+    %ol
+      - for participant in @schedule.customers
+        %li=participant.id_no_with_name_position
 
 /%dl.dl-horizontal
 /  %dt= t('helpers.user_id')+":"

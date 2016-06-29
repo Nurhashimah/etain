@@ -15,9 +15,11 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "30%"}=t 'activerecord.attributes.lecturer.name'
+      %th{width: "20%"}=t 'activerecord.attributes.lecturer.name'
       %th{width: "10%"}=t 'activerecord.attributes.lecturer.mykadno'
-      %th{width: "20%"}=t 'activerecord.attributes.lecturer.position'
+      %th{width: "18%"}=t 'activerecord.attributes.lecturer.position'
+      %th{width: "5%"}=t 'activerecord.attributes.lecturer.phone'
+      %th{width: "8%"}=t 'activerecord.attributes.lecturer.email'
       %th{width: "8%"}=t 'activerecord.attributes.lecturer.rate'
       %th{width: "16%"}=t 'activerecord.attributes.lecturer.qualifications'
       %th{width: "16%"}=t 'activerecord.attributes.lecturer.experiences'
@@ -33,6 +35,8 @@
         %td= lecturer.name
         %td= lecturer.mykadno
         %td= lecturer.position
+        %td= lecturer.phone
+        %td= lecturer.email
         %td= lecturer.rate.nil? ? "-" : "RM "+(sprintf("%.2f", lecturer.rate)).to_s
         %td= lecturer.qualifications.to_s.truncate(29)
         %td= lecturer.experiences.to_s.truncate(28)

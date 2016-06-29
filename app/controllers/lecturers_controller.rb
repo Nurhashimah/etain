@@ -72,7 +72,7 @@ class LecturersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecturer_params
-      params.require(:lecturer).permit(:name, {:details => []}, :rate, :mykadno, :position, :address, :qualifications, :experiences, :user_id, :college_id, {:data => []})
+      params.require(:lecturer).permit(:name, {:details => []}, :rate, :mykadno, :phone, :email, :position, :address, :qualifications, :experiences, :user_id, :college_id, {:data => []})
       #if you have problems with unpermitted parameters, use below instead of above.
       #params.require(:lecturer).permit!
     end

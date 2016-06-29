@@ -10,7 +10,21 @@
       = f.label (t 'activerecord.attributes.lecturer.mykadno'), :class => 'control-label'
       .controls
         = f.text_field :mykadno, :class => 'text_field'
-        .small Sample: 900102015500
+        .small
+          =t('activerecord.attributes.lecturer.armed_force_no_mykad')
+          &nbsp;(Sample: 800101012256 or 8011)
+        
+    .control-group
+      = f.label (t 'activerecord.attributes.lecturer.phone'), :class => 'control-label'
+      .controls
+        = f.text_field :phone, :class => 'text_field'
+        
+    .control-group
+      = f.label (t 'activerecord.attributes.lecturer.email'), :class => 'control-label'
+      .controls
+        = f.text_field :email, :class => 'text_field'
+        
+
     .control-group
       = f.label (t 'activerecord.attributes.lecturer.rate'), :class => 'control-label'
       .controls

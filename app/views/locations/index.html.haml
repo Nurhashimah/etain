@@ -14,9 +14,9 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "20%"}=t('activerecord.attributes.location.region')
-      %th{width: "40%"}=t('activerecord.attributes.location.name')
-      %th{width: "40%"}=t('activerecord.attributes.location.description')
+      /%th{width: "20%"}=t('activerecord.attributes.location.region')
+      %th{width: "50%"}=t('activerecord.attributes.location.name')
+      %th{width: "50%"}=t('activerecord.attributes.location.description')
       /%th User
       /%th College
       /%th Data
@@ -25,7 +25,7 @@
     = render "index_search"
     - @locations.each do |location|
       %tr
-        %td= location.try(:region_details)
+        /%td= location.try(:region_details)
         %td= location.name
         %td= location.description
         /%td= location.user_id

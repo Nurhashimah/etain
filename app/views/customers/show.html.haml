@@ -5,20 +5,24 @@
 %p#notice= notice
 
 %dl.dl-horizontal
+  %dt= t('activerecord.attributes.customer.name')+":"
+  %dd= @customer.name
+  
+%dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.id_no')+":"
   %dd= @customer.id_no
 
 %dl.dl-horizontal
-  %dt= t('activerecord.attributes.customer.name')+":"
-  %dd= @customer.name
-
-%dl.dl-horizontal
-  %dt= t('activerecord.attributes.customer.email')+":"
-  %dd= @customer.email
+  %dt= t('activerecord.attributes.customer.position')+":"
+  %dd= @customer.position
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.phone')+":"
   %dd= @customer.phone
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.customer.email')+":"
+  %dd= @customer.email
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.corporate')+":"
