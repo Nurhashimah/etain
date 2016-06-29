@@ -30,7 +30,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.save
-        format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
+        format.html { render action: 'edit'}#{ redirect_to @schedule, notice: 'Schedule was successfully created.' }
         format.json { render action: 'show', status: :created, location: @schedule }
       else
         format.html { render action: 'new' }

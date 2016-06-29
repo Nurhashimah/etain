@@ -17,7 +17,7 @@
       %th{width: '15%'}=t 'activerecord.attributes.schedule.scheduled_on'
       %th{width: '20%'}=t 'activerecord.attributes.schedule.location_id'
       %th{width: '20%'}=t 'activerecord.attributes.schedule.lecturer_id'
-      %th{width: '10%'}=t 'activerecord.attributes.schedule.max_people'
+      %th{width: '10%', colspan: 2}=t 'activerecord.attributes.schedule.participants'
       %th{width: '10%'} Status
       /%th=t 'helpers.user_id'
       /%th=t 'helpers.college_id'
@@ -33,7 +33,8 @@
           = schedule.end_on.nil? ? "" : " - "+schedule.try(:end_on).try(:strftime, '%d %b %Y')
         %td= schedule.try(:schedulelocation).try(:name)
         %td= schedule.try(:schedulelecturer).try(:name)
-        %td= schedule.max_people 
+        %td{style: 'text-align: right;'}= schedule.customers.count
+        %td= schedule.max_people.nil? ? "" : " / "+schedule.max_people.to_s
         %td= schedule.status 
         /%td= schedule.user_id 
         /%td= schedule.college_id 
