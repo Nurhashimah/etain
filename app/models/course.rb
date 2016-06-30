@@ -43,11 +43,5 @@ class Course < ActiveRecord::Base
   def self.ransackable_scopes(auth_object = nil)
      [:organizer_search]
   end
-  
-  
-#   def self.experiences_search(query)
-#      ids=Array.new
-#      Lecturer.pluck(:id, :details).each{|det| ids << det[0] if (det[1][:experiences]).include?(query) || (det[1][:experiences]).downcase.include?(query)}
-#      where(id: ids)
-#    end
+
 end
