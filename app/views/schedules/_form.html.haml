@@ -18,9 +18,9 @@
         
         .small#course_owner_organizer
           - unless @schedule.new_record?
-            - unless @schedule.schedulecourse.organizer.nil?
+            - unless @schedule.schedulecourse.nil?
               =t('activerecord.attributes.schedule.organized_by')
-              %b= @schedule.schedulecourse.course_organizer
+              %b= @schedule.schedulecourse.try(:course_organizer)
               - unless @schedule.schedulecourse.owner.nil?
                 =t('activerecord.attributes.schedule.for')
                 %b= @schedule.schedulecourse.course_owner
@@ -56,7 +56,7 @@
 
     .control-group
       = f.label (t 'activerecord.attributes.schedule.max_people'), :class => 'control-label'
-      .controls= f.number_field :max_people, :class => 'k1 text_field'
+      .controls= f.number_field :max_people, :class => 'k1 text_field mandatory'
 
     .control-group
       = f.label :status, :class => 'control-label'
@@ -96,7 +96,8 @@ $(document.ready(){
     var selected_organizer = $(this).find('option:selected').attr('data');
     var selected_owner = $(this).find('option:selected').attr('data2');
     
-    $('#course_owner_organizer').html("#{I18n.t('activerecord.attributes.schedule.organized_by')}"+"<b>"+selected_organizer+"</b>")
+    if(typeof selected_organizer != 'undefined')
+    { $('#course_owner_organizer').html("#{I18n.t('activerecord.attributes.schedule.organized_by')}"+"<b>"+selected_organizer+"</b>") }
    
     if(typeof selected_owner != 'undefined')
     { $('#course_owner_organizer').append("#{I18n.t('activerecord.attributes.schedule.for')}"+"<b>"+selected_owner+"</b>") }

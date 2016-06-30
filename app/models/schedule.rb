@@ -1,9 +1,10 @@
 class Schedule < ActiveRecord::Base
   belongs_to :schedulecourse, class_name: 'Course', foreign_key: 'course_id'
   belongs_to :schedulelocation, class_name: 'Location', foreign_key: 'location_id'
-  #belongs_to :schedulelecturer, class_name: 'Lecturer', foreign_key: 'lecturer_id'
   has_and_belongs_to_many :customers
   has_and_belongs_to_many :lecturers
+  
+  validates_presence_of :course_id, :max_people
   
   # define scope
   def self.coursetitle_search(query) 

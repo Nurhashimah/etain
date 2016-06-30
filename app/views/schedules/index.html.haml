@@ -32,7 +32,10 @@
           = schedule.try(:start_on).try(:strftime, '%d %b %Y')
           = schedule.end_on.nil? ? "" : " - "+schedule.try(:end_on).try(:strftime, '%d %b %Y')
         %td= schedule.try(:schedulelocation).try(:name)
-        %td= schedule.try(:schedulelecturer).try(:name)
+        %td
+          - str=""
+          - schedule.lecturers.each{|x|str+=x.name.titleize+", "}
+          =str.gsub(/\, \z/,"")
         %td{style: 'text-align: right;'}= schedule.customers.count
         %td= schedule.max_people.nil? ? "" : " / "+schedule.max_people.to_s
         %td= schedule.status 

@@ -9,13 +9,15 @@
   %dd
     = @schedule.try(:schedulecourse).try(:topic)
     &nbsp;
-    - unless @schedule.try(:schedulecourse).organizer.blank?
-      ="("+(t 'activerecord.attributes.schedule.organized_by')
-      %b= @schedule.try(:schedulecourse).try(:course_organizer) 
-      - unless @schedule.try(:schedulecourse).owner.blank?
-        =(t 'activerecord.attributes.schedule.for')
-        %b= @schedule.try(:schedulecourse).try(:course_owner) 
-    = ")" unless @schedule.try(:schedulecourse).organizer.blank? && @schedule.try(:schedulecourse).owner.blank?
+    - unless @schedule.schedulecourse.nil? 
+      - unless @schedule.schedulecourse.course_organizer.nil?
+        ="("+(t 'activerecord.attributes.schedule.organized_by')
+        %b= @schedule.try(:schedulecourse).try(:course_organizer) 
+        - unless @schedule.schedulecourse.owner.nil?
+          =(t 'activerecord.attributes.schedule.for')
+          %b= @schedule.try(:schedulecourse).try(:course_owner) 
+        =" )" unless @schedule.schedulecourse.course_organizer.nil? && @schedule.schedulecourse.owner.nil?
+     
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.schedule.departments')+":"
   %dd= @schedule.departments
