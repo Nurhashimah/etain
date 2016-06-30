@@ -32,6 +32,8 @@ ms_MY:
         description: Deskripsi
         fee: Yuran
         duration: Tempoh
+        owner: Pemilik kursus
+        organizer: Penganjur
 
       lecturer:
         list: Senarai Pengajar
@@ -62,6 +64,10 @@ ms_MY:
         max_people: Peserta maksima
         participants: Peserta
         pax: orang
+        departments: Kumpulan sasar
+        conduct_notes: "Nama kapal, jabatan atau kumpulan. Gunakan tanda koma (,) jika terdapat lebih dari 1 kumpulan sasar."
+        organized_by: " Dianjurkan oleh "
+        for: " untuk "
         
       location:
         list: Senarai Lokasi
@@ -143,6 +149,7 @@ ms_MY:
     single_select: Klik pada nama pengajar untuk membuat pilihan. Gunakan kombinasi ( kekunci 
     multiple_select: " + klik ) ATAU ( kekunci "
     multiple_select2: " + klik ) untuk memilih lebih daripada seorang pengajar."
+
   actions:
     new: Baru
     show: Papar

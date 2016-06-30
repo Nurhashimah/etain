@@ -9,6 +9,14 @@
   %dd= @course.code
 
 %dl.dl-horizontal
+  %dt= t('activerecord.attributes.course.owner')+":"
+  %dd= @course.try(:course_owner) unless @course.owner.blank?
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.course.organizer')+":"
+  %dd= @course.try(:course_organizer) unless @course.organizer.blank?
+
+%dl.dl-horizontal
   %dt= t('activerecord.attributes.course.category')+":"
   %dd= @course.category
 

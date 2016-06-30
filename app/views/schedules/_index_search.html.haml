@@ -6,7 +6,7 @@
       = f.text_field :end_on_eq, :class => 'date_picker_reverse', placeholder: 'end date', value: @search.end_on_eq.try(:strftime, '%d-%m-%Y')
     %td= f.text_field :locationname_search, :class => "form-control"
     %td= f.text_field :lecturername_search, :class => "form-control"
-    %td= f.text_field :max_people_eq, :class => "form-control"
+    %td{colspan:2}= f.text_field :max_people_eq, :class => "form-control", placeholder: 'search maximum'
     %td
       .input-group
         = f.text_field :status_cont, :class => "form-control"
