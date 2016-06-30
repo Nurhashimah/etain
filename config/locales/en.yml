@@ -53,7 +53,9 @@ en:
         description: Description
         fee: Fee
         duration: Duration
-
+        owner: Course owner
+        organizer: Organizer
+        
       lecturer:
         list: Lecturer Listing
         title: Lecturer Details
@@ -83,6 +85,10 @@ en:
         max_people: Max participant
         participants: Participants
         pax: pax
+        departments: Conducted for
+        conduct_notes: "Vessel, department or group name. Use comma (,) for more than 1 target groups."
+        organized_by: " Organized by "
+        for: " for "
         
       location:
         list: Location Listing
@@ -164,6 +170,7 @@ en:
     single_select: Click at lecturer name to make a single selection. Use combination of (
     multiple_select: " key + click ) OR ( "
     multiple_select2: " key + click ) for multiple selection."
+
   actions:
     new: New
     show: Show

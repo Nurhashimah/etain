@@ -10,39 +10,66 @@
     .control-group
       = f.label (t 'activerecord.attributes.schedule.course_id'), :class => 'control-label'
       .controls
-        = f.collection_select :course_id, Course.all, :id, :topic, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
+        /= f.collection_select :course_id, Course.all, :id, :topic, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
+        - arr=Array.new
+        - arr << [(t 'helpers.select'),"", {'data'=>"", 'data2'=>""}]
+        - Course.all.each{ |c| arr << [c.topic, c.id, {'data'=>c.course_organizer, 'data2'=>c.course_owner}] }
+        = select_tag("schedule[course_id]", options_for_select(arr, @schedule.course_id), {class: 'selectpicker', "data-width"=>'550px'})
+        
+        .small#course_owner_organizer
+          - unless @schedule.new_record?
+            - unless @schedule.schedulecourse.organizer.nil?
+              =t('activerecord.attributes.schedule.organized_by')
+              %b= @schedule.schedulecourse.course_organizer
+              - unless @schedule.schedulecourse.owner.nil?
+                =t('activerecord.attributes.schedule.for')
+                %b= @schedule.schedulecourse.course_owner
+ 
+    .control-group
+      = f.label (t 'activerecord.attributes.schedule.departments'), :class => 'control-label'
+      .controls
+        = f.text_field :departments, :class => 'text_field'
+        .small=t 'activerecord.attributes.schedule.conduct_notes'
+
     .control-group
       = f.label (t 'activerecord.attributes.schedule.scheduled_on'), :class => 'control-label'
       .controls
         = f.text_field :start_on, :class => 'date_picker_reverse', :value => @schedule.start_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'start date'
         = f.text_field :end_on, :class => 'date_picker_reverse', :value => @schedule.end_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'end date'
+ 
     .control-group
       = f.label (t 'activerecord.attributes.schedule.location_id'), :class => 'control-label'
       .controls= f.collection_select :location_id, Location.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
+
     .control-group
       = f.label (t 'activerecord.attributes.schedule.lecturer_id'), :class => 'control-label'
       .controls
         /= f.collection_select :lecturer_id, Lecturer.all, :id, :name, :include_blank => (t 'helpers.select'), :html_options => {:class => 'selectpicker'}
-        = collection_select(:schedule, :lecturer_ids, Lecturer.all, :id, :name,{:include_blank => (t 'helpers.select')},{:multiple => true, :name=>'schedule[lecturer_ids][]',:selected => 0, :style => "height: 120px;"}, ) 
+        /= collection_select(:schedule, :lecturer_ids, Lecturer.all, :id, :name,{:include_blank => (t 'helpers.select')},{:multiple => true, :name=>'schedule[lecturer_ids][]',:selected => 0, :style => "height: 120px;"}, ) 
+        = f.collection_select(:lecturer_ids, Lecturer.all, :id, :name,{:include_blank => (t 'helpers.select')},{:multiple => true, :name=>'schedule[lecturer_ids][]',:selected => 0, :style => "height: 120px;"} ) 
         .small 
           =t('helpers.single_select') 
-          %i shift
+          %i Shift
           =t('helpers.multiple_select')
-          %i ctrl
+          %i Ctrl
           =t('helpers.multiple_select2')
+
     .control-group
       = f.label (t 'activerecord.attributes.schedule.max_people'), :class => 'control-label'
       .controls= f.number_field :max_people, :class => 'k1 text_field'
+
     .control-group
       = f.label :status, :class => 'control-label'
       .controls= f.text_field :status, :class => 'text_field'
+
     .control-group
       = f.label (t 'activerecord.attributes.schedule.participants'), :class => 'control-label'
       .controls
         #participants_grid
-          - unless @schedule.new_record? 
+          - unless @schedule.new_record? && @schedule.max_people.nil?
             - 0.upto(@schedule.max_people-1).each do |x|
               = select_tag "schedule[customer_ids][]", options_from_collection_for_select(Customer.all.order(id_no: :asc), :id, :id_no_with_name_position, {:selected => @schedule.customer_ids[x]}), :prompt => (t 'helpers.select'), :class => 'k2'
+
     .control-group
       = f.label (t 'helpers.user_id'), :class => 'control-label'
       .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'
@@ -60,4 +87,20 @@
         = link_to (t 'helpers.links.submit'), @schedule, :class => 'btn btn-primary', :id => 'submit_show'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), |
         schedules_path, :class => 'btn'
+
+:javascript
+
+$(document.ready(){
+  $('#schedule_course_id').change(function(){
+    /* var selected_course=$('#schedule_course_id :selected').val();*/
+    var selected_organizer = $(this).find('option:selected').attr('data');
+    var selected_owner = $(this).find('option:selected').attr('data2');
+    
+    $('#course_owner_organizer').html("#{I18n.t('activerecord.attributes.schedule.organized_by')}"+"<b>"+selected_organizer+"</b>")
+   
+    if(typeof selected_owner != 'undefined')
+    { $('#course_owner_organizer').append("#{I18n.t('activerecord.attributes.schedule.for')}"+"<b>"+selected_owner+"</b>") }
+    
+  });
+});
 

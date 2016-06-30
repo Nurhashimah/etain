@@ -7,6 +7,14 @@
       .controls= f.text_field :code, :class => 'text_field '
 
     .control-group
+      = f.label  t('activerecord.attributes.course.owner'), :class => 'control-label'
+      .controls= f.collection_select :owner, Company.all.order(name: :asc), :id, :name, :include_blank => (t 'helpers.select'), :class => 'selectpicker'
+
+    .control-group
+      = f.label  t('activerecord.attributes.course.organizer'), :class => 'control-label'
+      .controls= f.collection_select :organizer, Company.all.order(name: :asc), :id, :name, :include_blank => (t 'helpers.select'), :class => 'selectpicker'
+
+    .control-group
       = f.label  t('activerecord.attributes.course.category'), :class => 'control-label'
       .controls= f.text_field :category, :class => 'text_field input-xxlarge'
 

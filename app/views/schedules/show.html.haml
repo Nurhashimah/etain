@@ -6,7 +6,19 @@
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.schedule.course_id')+":"
-  %dd= @schedule.try(:schedulecourse).try(:topic)
+  %dd
+    = @schedule.try(:schedulecourse).try(:topic)
+    &nbsp;
+    - unless @schedule.try(:schedulecourse).organizer.blank?
+      ="("+(t 'activerecord.attributes.schedule.organized_by')
+      %b= @schedule.try(:schedulecourse).try(:course_organizer) 
+      - unless @schedule.try(:schedulecourse).owner.blank?
+        =(t 'activerecord.attributes.schedule.for')
+        %b= @schedule.try(:schedulecourse).try(:course_owner) 
+    = ")" unless @schedule.try(:schedulecourse).organizer.blank? && @schedule.try(:schedulecourse).owner.blank?
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.schedule.departments')+":"
+  %dd= @schedule.departments
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.schedule.scheduled_on')+":"
