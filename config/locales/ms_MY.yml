@@ -51,6 +51,7 @@ ms_MY:
         experiences: Pengalaman
         rate_currency: Dalam Ringgit Malaysia (RM)
         armed_force_no_mykad: atau No Tentera
+        mykadno_blank: No MyKad tidak boleh dikosongkan
         
       schedule:
         list: Senarai Jadual Kursus
@@ -59,6 +60,8 @@ ms_MY:
         edit: Sunting Jadual Kursus
         course_id: Kursus
         scheduled_on: Tarikh kursus
+        start_on: Tarikh mula
+        end_on: Tarikh tamat
         location_id: Lokasi
         lecturer_id: Pengajar
         max_people: Peserta maksima
@@ -68,6 +71,7 @@ ms_MY:
         conduct_notes: "Nama kapal, jabatan atau kumpulan. Gunakan tanda koma (,) jika terdapat lebih dari 1 kumpulan sasar."
         organized_by: " Dianjurkan oleh "
         for: " untuk "
+        begin_before_ends: Kelas mesti bermula sebelum ia berakhir
         
       location:
         list: Senarai Lokasi
@@ -123,11 +127,11 @@ ms_MY:
         new: Tempahan Baru
         edit: Sunting Tempahan
         code: Kod
-        schedule_id: Jadual
-        customer_id: Pelanggan
+        schedule_id: Jadual Kursus
+        customer_id: Pemohon / Peserta
         payment_id: Pembayaran
         warranty_id: Jaminan
-
+        unique_applicant: telah membuat tempahan bagi kelas (jadual kursus) yang dipilih
 
   helpers:
     links:

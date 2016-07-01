@@ -3,6 +3,8 @@ class Course < ActiveRecord::Base
   
   serialize :details, Hash
   
+  validates :topic, presence: true
+  
   def duration_details
     (DropDown::DURATION_TYPE.find_all{|disp, value| value==duration_type}).map{|disp, value|disp}.first.to_s
   end

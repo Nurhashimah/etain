@@ -3,9 +3,11 @@ class Schedule < ActiveRecord::Base
   belongs_to :schedulelocation, class_name: 'Location', foreign_key: 'location_id'
   has_and_belongs_to_many :customers
   has_and_belongs_to_many :lecturers
+  has_many :bookings
   
-  validates_presence_of :course_id, :max_people
-  
+  validates :course_id, :max_people, :start_on, :end_on, presence: true 
+  validate :end_on_should_later_than_start_on
+
   # define scope
   def self.coursetitle_search(query) 
     course_ids=Course.where('topic ILIKE(?)', "%#{query}%").pluck(:id)
@@ -27,4 +29,14 @@ class Schedule < ActiveRecord::Base
     [:coursetitle_search, :locationname_search, :lecturername_search]
   end
   
+  def schedule_course_details
+    start_on.strftime('%d/%m/%y')+" - "+end_on.strftime('%d/%m/%y')+" - "+schedulecourse.topic
+  end
+  
+  def end_on_should_later_than_start_on
+    if end_on && start_on && end_on < start_on && end_on < DateTime.now
+      errors.add(:base, I18n.t('activerecord.attributes.schedule.begin_before_ends'))
+    end
+  end
+
 end

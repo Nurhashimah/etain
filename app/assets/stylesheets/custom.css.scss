@@ -164,7 +164,10 @@ label {
     text-indent: -15px;
 }
 input {height: auto !important;}
-.text_field.mandatory {background-color:#FFF0F5;}
+.text_field.mandatory, .date_picker_reverse.mandatory {background-color:#FFF0F5;}
+input, select, text, .mandatory {background-color:#FFF0F5;}
+
+
 .dropdown, select {position: relative;}
 
 input[type=checkbox] {width:13px; height:13px; *overflow: hidden; }

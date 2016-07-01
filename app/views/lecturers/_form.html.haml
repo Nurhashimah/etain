@@ -4,12 +4,12 @@
 
     .control-group
       = f.label (t 'activerecord.attributes.lecturer.name'), :class => 'control-label'
-      .controls= f.text_field :name, :class => 'text_field input-xxlarge'
+      .controls= f.text_field :name, :class => 'text_field input-xxlarge mandatory'
 
     .control-group
       = f.label (t 'activerecord.attributes.lecturer.mykadno'), :class => 'control-label'
       .controls
-        = f.text_field :mykadno, :class => 'text_field'
+        = f.text_field :mykadno, :class => 'text_field mandatory'
         .small
           =t('activerecord.attributes.lecturer.armed_force_no_mykad')
           &nbsp;(Sample: 800101012256 or 8011)

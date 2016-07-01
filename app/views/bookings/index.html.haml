@@ -15,11 +15,11 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: '15%'}=t 'activerecord.attributes.booking.code'
-      %th{width: '15%'}=t 'activerecord.attributes.booking.schedule_id'
-      %th{width: '20%'}=t 'activerecord.attributes.booking.customer_id'
-      %th{width: '15%'}=t 'activerecord.attributes.booking.payment_id'
-      %th{width: '20%'}=t 'activerecord.attributes.booking.warranty_id'
+      %th{width: '7%'}=t 'activerecord.attributes.booking.code'
+      %th{width: '30%'}=t 'activerecord.attributes.booking.schedule_id'
+      %th{width: '23%'}=t 'activerecord.attributes.booking.customer_id'
+      %th{width: '10%'}=t 'activerecord.attributes.booking.payment_id'
+      %th{width: '15%'}=t 'activerecord.attributes.booking.warranty_id'
       %th{width: '15%'}Status 
       /%th User 
       /%th College 
@@ -30,8 +30,19 @@
     - @bookings.each do |booking|
       %tr
         %td= booking.code 
-        %td= booking.schedule_id 
-        %td= booking.customer_id 
+        %td
+          = booking.schedule.schedule_course_details
+          .small
+            - unless booking.schedule.schedulecourse.nil? 
+              - unless booking.schedule.schedulecourse.course_organizer.nil?
+                ="("+(t 'activerecord.attributes.schedule.organized_by')
+                %b= booking.schedule.try(:schedulecourse).try(:course_organizer) 
+                - unless booking.schedule.schedulecourse.owner.nil?
+                  =(t 'activerecord.attributes.schedule.for')
+                  %b= booking.schedule.try(:schedulecourse).try(:course_owner) 
+                =" )" unless booking.schedule.schedulecourse.course_organizer.nil? && booking.schedule.schedulecourse.owner.nil?
+
+        %td= booking.participant.try(:name)
         %td= booking.payment_id 
         %td= booking.warranty_id
         %td= booking.status 
