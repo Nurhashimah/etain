@@ -5,18 +5,18 @@
     
     .control-group
       = f.label  t('activerecord.attributes.customer.name'), :class => 'control-label'
-      .controls= f.text_field :name, :class => 'text_field input-xxlarge'
+      .controls= f.text_field :name, :class => 'text_field input-xxlarge mandatory'
 
     .control-group
       = f.label  t('activerecord.attributes.customer.id_no'), :class => 'control-label'
       .controls
-        = f.text_field :id_no, :class => 'text_field '
+        = f.text_field :id_no, :class => 'text_field mandatory'
         .small
           =t('activerecord.attributes.customer.armed_force_no_mykad')
           &nbsp;(Sample: 800101012256 or 8011)
     .control-group
       = f.label t('activerecord.attributes.customer.position'), :class => 'control-label'
-      .controls= f.text_field :position, :class => 'text_field input-xxlarge'   
+      .controls= f.text_field :position, :class => 'text_field input-xxlarge mandatory'   
 
     .control-group
       = f.label  t('activerecord.attributes.customer.phone'), :class => 'control-label'

@@ -14,14 +14,14 @@
         - arr=Array.new
         - arr << [(t 'helpers.select'),"", {'data'=>"", 'data2'=>""}]
         - Course.all.each{ |c| arr << [c.topic, c.id, {'data'=>c.course_organizer, 'data2'=>c.course_owner}] }
-        = select_tag("schedule[course_id]", options_for_select(arr, @schedule.course_id), {class: 'selectpicker', "data-width"=>'550px'})
+        = select_tag("schedule[course_id]", options_for_select(arr, @schedule.course_id), {class: 'selectpicker mandatory', "data-width"=>'550px'})
         
         .small#course_owner_organizer
           - unless @schedule.new_record?
-            - unless @schedule.schedulecourse.nil?
+            - unless @schedule.schedulecourse.nil? && @schedule.schedulecourse.blank?
               =t('activerecord.attributes.schedule.organized_by')
               %b= @schedule.schedulecourse.try(:course_organizer)
-              - unless @schedule.schedulecourse.owner.nil?
+              - unless @schedule.schedulecourse.owner.blank?
                 =t('activerecord.attributes.schedule.for')
                 %b= @schedule.schedulecourse.course_owner
  
@@ -34,8 +34,8 @@
     .control-group
       = f.label (t 'activerecord.attributes.schedule.scheduled_on'), :class => 'control-label'
       .controls
-        = f.text_field :start_on, :class => 'date_picker_reverse', :value => @schedule.start_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'start date'
-        = f.text_field :end_on, :class => 'date_picker_reverse', :value => @schedule.end_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'end date'
+        = f.text_field :start_on, :class => 'date_picker_reverse mandatory', :value => @schedule.start_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'start date'
+        = f.text_field :end_on, :class => 'date_picker_reverse mandatory', :value => @schedule.end_on.try(:strftime, '%d-%m-%Y'), :placeholder => 'end date'
  
     .control-group
       = f.label (t 'activerecord.attributes.schedule.location_id'), :class => 'control-label'

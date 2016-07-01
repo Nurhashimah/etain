@@ -72,6 +72,7 @@ en:
         experiences: Experiences
         rate_currency: In Ringgit Malaysia (RM)
         armed_force_no_mykad: or Armed Forced No
+        mykadno_blank: MyKad no can't be blank
 
       schedule:
         list: Schedule Listing
@@ -80,6 +81,8 @@ en:
         edit: Edit Schedule
         course_id: Course
         scheduled_on: Scheduled on
+        start_on: Start date
+        end_on: End date
         location_id: Location
         lecturer_id: Lecturer
         max_people: Max participant
@@ -89,6 +92,7 @@ en:
         conduct_notes: "Vessel, department or group name. Use comma (,) for more than 1 target groups."
         organized_by: " Organized by "
         for: " for "
+        begin_before_ends: Class should begin before it ends
         
       location:
         list: Location Listing
@@ -145,10 +149,10 @@ en:
         edit: Edit Booking
         code: Code
         schedule_id: Schedule
-        customer_id: Customer
+        customer_id: Participant / Applicant
         payment_id: Payment
         warranty_id: Warranty
-
+        unique_applicant: already applied to attend selected class
 
   helpers:
     links:

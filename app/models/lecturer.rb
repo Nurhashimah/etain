@@ -1,8 +1,10 @@
 class Lecturer < ActiveRecord::Base
   has_and_belongs_to_many :schedules
 
-
   serialize :details, Hash
+  
+  validates :name, presence: true
+  validate :mykadno_must_not_blank
 
   #lecturers details
   #House Sitter data
@@ -101,6 +103,12 @@ class Lecturer < ActiveRecord::Base
    #ransackable
    def self.ransackable_scopes(auth_object = nil)
      [:mykadno_search, :phone_search, :email_search, :position_search, :address_search, :qualifications_search, :experiences_search]
+   end
+   
+   def mykadno_must_not_blank
+     if mykadno.nil? || mykadno.blank?
+       errors.add(:base, I18n.t('activerecord.attributes.lecturer.mykadno_blank'))
+     end
    end
   
 end
