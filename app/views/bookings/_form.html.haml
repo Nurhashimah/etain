@@ -13,9 +13,6 @@
       = f.label (t 'activerecord.attributes.booking.customer_id'), :class => 'control-label'
       .controls= f.collection_select :customer_id, Customer.all.order(id_no: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}
     .control-group
-      = f.label (t 'activerecord.attributes.booking.payment_id'), :class => 'control-label'
-      .controls= f.number_field :payment_id, :class => 'text_field '
-    .control-group
       = f.label (t 'activerecord.attributes.booking.warranty_id'), :class => 'control-label'
       .controls= f.number_field :warranty_id, :class => 'text_field '
     .control-group

@@ -10,6 +10,10 @@ class Customer < ActiveRecord::Base
     corporate==true
   end
   
+  def id_no_with_name 
+    id_no+" "+name
+  end
+  
   def id_no_with_name_position
     a=id_no+" "+name
     a+=" ("+position+")" unless position.blank?

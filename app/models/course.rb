@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  has_many :schedules
+  has_many :schedules, dependent: :restrict_with_error
   
   serialize :details, Hash
   
