@@ -59,8 +59,13 @@ class SchedulesController < ApplicationController
   # DELETE /schedules/1.json
   def destroy
     @schedule.destroy
+    if @schedule.errors.messages.count > 0
+      err_msg=@schedule.errors.messages[:base].first
+    else
+      err_msg='Schedule was successfully deleted.'
+    end
     respond_to do |format|
-      format.html { redirect_to schedules_url }
+      format.html { redirect_to schedules_url, notice: err_msg}
       format.json { head :no_content }
     end
   end

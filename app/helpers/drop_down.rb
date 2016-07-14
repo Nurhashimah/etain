@@ -17,4 +17,15 @@ module DropDown
         [ "Sarawak", 5]
     ]
   
+  PAYMENT_METHOD=[
+    # Displayed       stored in db
+        [ I18n.t('helpers.select'), ""],
+        [ I18n.t('activerecord.attributes.payment.cash'), "Cash" ],
+        [ I18n.t('activerecord.attributes.payment.cheque_draft'), "Cheque / bank draft"],
+        [ I18n.t('activerecord.attributes.payment.credit_card'), "Credit card" ],
+        [ I18n.t('activerecord.attributes.payment.local_postal'), "Local / postal order"],
+        [ I18n.t('activerecord.attributes.payment.transfer'), "Bank transfer" ],
+        [ I18n.t('activerecord.attributes.payment.others'), "Others"]
+    ]
+  
 end

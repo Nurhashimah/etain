@@ -3,7 +3,7 @@ class Schedule < ActiveRecord::Base
   belongs_to :schedulelocation, class_name: 'Location', foreign_key: 'location_id'
   has_and_belongs_to_many :customers
   has_and_belongs_to_many :lecturers
-  has_many :bookings
+  has_many :bookings, dependent: :restrict_with_error
   
   validates :course_id, :max_people, :start_on, :end_on, presence: true 
   validate :end_on_should_later_than_start_on
@@ -31,6 +31,12 @@ class Schedule < ActiveRecord::Base
   
   def schedule_course_details
     start_on.strftime('%d/%m/%y')+" - "+end_on.strftime('%d/%m/%y')+" - "+schedulecourse.topic
+  end
+  
+  def self.available_schedule
+    schedule_ids=Array.new
+    Schedule.all.each{|x|schedule_ids << x.id if x.customers.count < x.max_people}
+    where(id: schedule_ids)
   end
   
   def end_on_should_later_than_start_on

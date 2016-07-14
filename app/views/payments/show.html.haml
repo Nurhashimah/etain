@@ -6,27 +6,31 @@
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.payment.booking_id')+":"
-  %dd= @payment.booking_id
+  %dd= @payment.booking.schedule_details
 
-%dl.dl-horizontal
-  %dt= t('activerecord.attributes.payment.customer_id')+":"
-  %dd= @payment.customer_id
+/%dl.dl-horizontal
+/  %dt= t('activerecord.attributes.payment.customer_id')+":"
+/  %dd= @payment.customer_id
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.payment.method')+":"
+  %dd= t('activerecord.attributes.payment.'+@payment.method)
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.payment.auth_code')+":"
   %dd= @payment.auth_code
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.payment.amount')+":"
-  %dd= @payment.amount
+  %dd= @payment.amount.nil? ? "" : "RM "+sprintf("%.2f", @payment.amount)
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.payment.confirmed_by')+":"
-  %dd= @payment.confirmed_by
+  %dd= @payment.authorised_payer.name
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.payment.confirmed_on')+":"
-  %dd= @payment.confirmed_on.try(:strftime, '%d %b %Y  %H:%M')
+  %dd= @payment.confirmed_on.try(:strftime, '%d %b %Y  %H:%M %P')
 
 %dl.dl-horizontal
   %dt Status:

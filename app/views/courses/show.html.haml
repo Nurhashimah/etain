@@ -30,7 +30,7 @@
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.course.fee')+":"
-  %dd= @course.fee
+  %dd= @course.fee.nil? ? "" : "RM "+sprintf("%.2f", @course.fee).to_s
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.course.duration')+":"
