@@ -114,12 +114,18 @@ ms_MY:
         new: Pembayaran Baru
         edit: Sunting Pembayaran
         booking_id: Tempahan
-        customer_id: Pelanggan
+        customer_id: Peserta
         method: Kaedah
         auth_code: Auth code
         amount: Amaun
-        confirmed_by: Disahkan oleh
+        confirmed_by: Pengesah bayaran
         confirmed_on: Disahkan pada
+        cash: Tunai
+        cheque_draft: Cek / Draf bank
+        credit_card: Kad kredit
+        local_postal: Pesanan tempatan / Kiriman wang
+        transfer: Pindahan (bank)
+        others: Lain-lain
         
       booking:
         list: Senarai Tempahan
@@ -153,6 +159,7 @@ ms_MY:
     single_select: Klik pada nama pengajar untuk membuat pilihan. Gunakan kombinasi ( kekunci 
     multiple_select: " + klik ) ATAU ( kekunci "
     multiple_select2: " + klik ) untuk memilih lebih daripada seorang pengajar."
+    in_rm: Dalam Ringgit Malaysia (RM)
 
   actions:
     new: Baru

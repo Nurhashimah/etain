@@ -8,7 +8,7 @@
 
     .control-group
       = f.label (t 'activerecord.attributes.booking.schedule_id'), :class => 'control-label'
-      .controls= f.collection_select :schedule_id, Schedule.all.order(start_on: :desc), :id, :schedule_course_details, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}
+      .controls= f.collection_select :schedule_id, Schedule.available_schedule.order(start_on: :desc), :id, :schedule_course_details, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}
     .control-group
       = f.label (t 'activerecord.attributes.booking.customer_id'), :class => 'control-label'
       .controls= f.collection_select :customer_id, Customer.all.order(id_no: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}

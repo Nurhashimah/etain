@@ -135,12 +135,18 @@ en:
         new: New Payment
         edit: Edit Payment
         booking_id: Booking
-        customer_id: Customer
+        customer_id: Participant
         method: Method
         auth_code: Auth Code
         amount: Amount
         confirmed_by: Confirmed by
         confirmed_on: Confirmed on
+        cash: Cash
+        cheque_draft: Cheque / Bank draft
+        credit_card: Credit card
+        local_postal: Local / Postal order
+        transfer: Bank transfer
+        others: Others
         
       booking:
         list: Booking Listing
@@ -174,6 +180,7 @@ en:
     single_select: Click at lecturer name to make a single selection. Use combination of (
     multiple_select: " key + click ) OR ( "
     multiple_select2: " key + click ) for multiple selection."
+    in_rm:  In Ringgit Malaysia (RM)
 
   actions:
     new: New

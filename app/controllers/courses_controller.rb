@@ -57,8 +57,13 @@ class CoursesController < ApplicationController
   # DELETE /courses/1.json
   def destroy
     @course.destroy
+    if @course.errors.messages.count > 0
+      err_msg=@course.errors.messages[:base].first
+    else
+      err_msg='Course was successfully deleted.'
+    end
     respond_to do |format|
-      format.html { redirect_to courses_url }
+      format.html { redirect_to courses_url, notice: err_msg}
       format.json { head :no_content }
     end
   end

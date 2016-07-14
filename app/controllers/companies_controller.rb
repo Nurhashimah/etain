@@ -57,8 +57,13 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1.json
   def destroy
     @company.destroy
+    if @company.errors.messages.count > 0
+      err_msg=@company.errors.messages[:base].first
+    else
+      err_msg='Company was successfully deleted.'
+    end
     respond_to do |format|
-      format.html { redirect_to companies_url }
+      format.html { redirect_to companies_url, notice: err_msg}
       format.json { head :no_content }
     end
   end

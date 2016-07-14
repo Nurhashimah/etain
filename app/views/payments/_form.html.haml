@@ -4,28 +4,30 @@
 
     .control-group
       = f.label t('activerecord.attributes.payment.booking_id'), :class => 'control-label'
-      .controls= f.text_field :booking_id, :class => 'text_field '
-    .control-group
-      = f.label t('activerecord.attributes.payment.customer_id'), :class => 'control-label'
-      .controls= f.text_field :customer_id, :class => 'text_field '
+      .controls= f.collection_select :booking_id, Booking.all, :id, :schedule_details, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}
+    /.control-group
+    /  = f.label t('activerecord.attributes.payment.customer_id'), :class => 'control-label'
+    /  .controls= f.text_field :customer_id, :class => 'text_field '
     .control-group
       = f.label t('activerecord.attributes.payment.method'), :class => 'control-label'
-      .controls= f.text_field :method, :class => 'text_field '
+      .controls= f.select :method, DropDown::PAYMENT_METHOD, :class => 'selectpicker'      
     .control-group
       = f.label t('activerecord.attributes.payment.auth_code'), :class => 'control-label'
       .controls= f.text_field :auth_code, :class => 'text_field '
     .control-group
       = f.label t('activerecord.attributes.payment.amount'), :class => 'control-label'
-      .controls= f.text_field :amount, :class => 'text_field '
+      .controls
+        = f.text_field :amount, :class => 'text_field'
+        .small=t('helpers.in_rm')
     .control-group
       = f.label t('activerecord.attributes.payment.confirmed_by'), :class => 'control-label'
-      .controls= f.text_field :confirmed_by, :class => 'text_field '
+      .controls= f.collection_select :confirmed_by, Customer.order(name: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
     .control-group
       = f.label t('activerecord.attributes.payment.confirmed_on'), :class => 'control-label'
       .controls= f.text_field :confirmed_on, :class => 'datetime_picker_reverse'
     .control-group
       = f.label :status, :class => 'control-label'
-      .controls= f.text_field :status, :class => 'text_field '
+      .controls= f.text_field :status, :class => 'text_field'
     .control-group
       = f.label  t('helpers.user_id'), :class => 'control-label'
       .controls= f.number_field :user_id, :class => 'text_field', :readonly => 'readonly'

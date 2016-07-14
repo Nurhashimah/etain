@@ -14,10 +14,10 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "10%"}=t('activerecord.attributes.payment.booking_id')
-      %th{width: "20%"}=t('activerecord.attributes.payment.customer_id')
-      %th{width: "10%"}=t('activerecord.attributes.payment.method')
-      %th{width: "15%"}=t('activerecord.attributes.payment.auth_code')
+      %th{width: "25%"}=t('activerecord.attributes.payment.booking_id')
+      %th{width: "10%"}=t('activerecord.attributes.payment.customer_id')
+      %th{width: "8%"}=t('activerecord.attributes.payment.method')
+      %th{width: "12%"}=t('activerecord.attributes.payment.auth_code')
       %th{width: "10%"}=t('activerecord.attributes.payment.amount')
       %th{width: "12%"}=t('activerecord.attributes.payment.confirmed_by')
       %th{width: "13%"}=t('activerecord.attributes.payment.confirmed_on')
@@ -30,12 +30,14 @@
     = render "index_search"
     - @payments.each do |payment|
       %tr
-        %td= payment.booking_id
-        %td= payment.customer_id
-        %td= payment.method
+        %td= payment.booking.schedule.schedule_course_details
+        %td
+          /= payment.customer_id
+          = payment.booking.participant.name
+        %td=payment.try(:method)
         %td= payment.auth_code
         %td= payment.amount
-        %td= payment.confirmed_by
+        %td= payment.authorised_payer.name
         %td= payment.confirmed_on.try(:strftime, '%d %b %Y %H:%M')
         %td= payment.status
         /%td= payment.user_id

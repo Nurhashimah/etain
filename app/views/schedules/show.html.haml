@@ -10,10 +10,10 @@
     = @schedule.try(:schedulecourse).try(:topic)
     &nbsp;
     - unless @schedule.schedulecourse.nil? 
-      - unless @schedule.schedulecourse.course_organizer.nil?
+      - unless @schedule.schedulecourse.course_organizer.blank?
         ="("+(t 'activerecord.attributes.schedule.organized_by')
         %b= @schedule.try(:schedulecourse).try(:course_organizer) 
-        - unless @schedule.schedulecourse.owner.nil?
+        - unless @schedule.schedulecourse.owner.blank?
           =(t 'activerecord.attributes.schedule.for')
           %b= @schedule.try(:schedulecourse).try(:course_owner) 
         =" )" unless @schedule.schedulecourse.course_organizer.nil? && @schedule.schedulecourse.owner.nil?
