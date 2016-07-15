@@ -1,11 +1,11 @@
 = search_form_for @search, url: payments_path, class: "form-inline" do |f|
   %tr.search_row{style: "display: none;"}
-    %td= f.text_field :booking_id_eq, :class => "form-control"
+    %td= f.text_field :booking_schedule_search, :class => "form-control", :placeholder => "Course Title"
     %td= f.text_field :customer_id_eq, :class => "form-control"
     %td= f.text_field :method_cont,:class => "form-control"
-    %td= f.text_field :auth_code_cont,:class => "form-control"
+    /%td= f.text_field :auth_code_cont,:class => "form-control"
     %td= f.text_field :amount_eq,:class => "form-control"
-    %td= f.text_field :confirmed_by_eq,:class => "form-control"
+    %td= f.text_field :authorised_payer_name_cont, :class => "form-control"
     %td=f.text_field :confirmed_on_search, :class => 'date_picker_reverse', value: @search.confirmed_on_search
     %td
       .input-group

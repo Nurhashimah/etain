@@ -135,8 +135,10 @@ en:
         new: New Payment
         edit: Edit Payment
         booking_id: Booking
+        schedule_id: Course Schedule
         customer_id: Participant
         method: Method
+        reference_no: Reference No
         auth_code: Auth Code
         amount: Amount
         confirmed_by: Confirmed by
@@ -147,6 +149,11 @@ en:
         local_postal: Local / Postal order
         transfer: Bank transfer
         others: Others
+        payment_for: Payment for 
+        payment_type: "Tick if payment for booking (per participant), untick if payment for course schedule."
+        reference_caption:  Invoice No / Cheque or Draft No / Credit Card No / Postal or Local Order No / Transaction No
+        select_one: Select booking / schedule please
+        choose_one: Choose either booking / schedule
         
       booking:
         list: Booking Listing

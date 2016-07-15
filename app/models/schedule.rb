@@ -4,6 +4,7 @@ class Schedule < ActiveRecord::Base
   has_and_belongs_to_many :customers
   has_and_belongs_to_many :lecturers
   has_many :bookings, dependent: :restrict_with_error
+  has_one :payment
   
   validates :course_id, :max_people, :start_on, :end_on, presence: true 
   validate :end_on_should_later_than_start_on
