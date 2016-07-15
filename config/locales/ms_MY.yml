@@ -114,8 +114,10 @@ ms_MY:
         new: Pembayaran Baru
         edit: Sunting Pembayaran
         booking_id: Tempahan
+        schedule_id: Jadual Kursus
         customer_id: Peserta
         method: Kaedah
+        reference_no: No Rujukan
         auth_code: Auth code
         amount: Amaun
         confirmed_by: Pengesah bayaran
@@ -126,6 +128,11 @@ ms_MY:
         local_postal: Pesanan tempatan / Kiriman wang
         transfer: Pindahan (bank)
         others: Lain-lain
+        payment_for: Pembayaran bagi
+        payment_type: "Pilih jika pembayaran bagi kursus ditempah (mengikut peserta), nyahpilih jika pembayaran bagi kursus dijadualkan."
+        reference_caption:  No Invois / No Cek atau Draf / No Kad Kredit / No Kiriman Wang atau Pesanan Tempatan / No Transaksi
+        select_one: Sila pilih kursus ditempah / jadual kursus
+        choose_one: Pilih samada kursus ditempah / jadual kursus
         
       booking:
         list: Senarai Tempahan
