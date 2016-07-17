@@ -15,12 +15,12 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "20%"}=t 'activerecord.attributes.lecturer.name'
-      %th{width: "10%"}=t 'activerecord.attributes.lecturer.mykadno'
-      %th{width: "18%"}=t 'activerecord.attributes.lecturer.position'
-      %th{width: "5%"}=t 'activerecord.attributes.lecturer.phone'
-      %th{width: "8%"}=t 'activerecord.attributes.lecturer.email'
-      %th{width: "8%"}=t 'activerecord.attributes.lecturer.rate'
+      %th{width: "20%"}=sort_link @search, :name, t('activerecord.attributes.lecturer.name')
+      %th{width: "10%"}=t('activerecord.attributes.lecturer.mykadno')
+      %th{width: "18%"}=t('activerecord.attributes.lecturer.position')
+      %th{width: "5%"}=t('activerecord.attributes.lecturer.phone')
+      %th{width: "8%"}=t('activerecord.attributes.lecturer.email')
+      %th{width: "8%"}=sort_link @search, :rate, t('activerecord.attributes.lecturer.rate')
       %th{width: "16%"}=t 'activerecord.attributes.lecturer.qualifications'
       %th{width: "16%"}=t 'activerecord.attributes.lecturer.experiences'
       /%th=t 'activerecord.attributes.lecturer.address'

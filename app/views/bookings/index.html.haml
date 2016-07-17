@@ -15,11 +15,11 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: '7%'}=t 'activerecord.attributes.booking.code'
-      %th{width: '40%'}=t 'activerecord.attributes.booking.schedule_id'
-      %th{width: '23%'}=t 'activerecord.attributes.booking.customer_id'
+      %th{width: '7%'}=sort_link @search, :code, t('activerecord.attributes.booking.code')
+      %th{width: '40%'}=sort_link @search, :schedule_id, t('activerecord.attributes.booking.schedule_id')
+      %th{width: '23%'}=sort_link @search, :customer_id, t('activerecord.attributes.booking.customer_id')
       %th{width: '15%'}=t 'activerecord.attributes.booking.warranty_id'
-      %th{width: '15%'}Status 
+      %th{width: '15%'}=sort_link @search, :status, "Status"
       /%th User 
       /%th College 
       /%th Data 

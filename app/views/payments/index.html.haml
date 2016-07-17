@@ -15,13 +15,13 @@
   %thead
     %tr
       %th{width: "25%"}=t('activerecord.attributes.payment.schedule_id')
-      %th{width: "22%"}=t('activerecord.attributes.course.organizer')+" / "+t('activerecord.attributes.payment.customer_id')
-      %th{width: "8%"}=t('activerecord.attributes.payment.method')
+      %th{width: "22%"}=sort_link @search, :booking_id, t('activerecord.attributes.course.organizer')+" / "+t('activerecord.attributes.payment.customer_id')
+      %th{width: "8%"}=sort_link @search, :method, t('activerecord.attributes.payment.method')
       /%th{width: "12%"}=t('activerecord.attributes.payment.auth_code')
-      %th{width: "10%"}=t('activerecord.attributes.payment.amount')
-      %th{width: "12%"}=t('activerecord.attributes.payment.confirmed_by')
-      %th{width: "13%"}=t('activerecord.attributes.payment.confirmed_on')
-      %th{width: "10%"}=t('activerecord.attributes.payment.status')
+      %th{width: "10%"}=sort_link @search, :amount, t('activerecord.attributes.payment.amount')
+      %th{width: "12%"}=sort_link @search, :confirmed_by, t('activerecord.attributes.payment.confirmed_by')
+      %th{width: "13%"}=sort_link @search, :confirmed_on, t('activerecord.attributes.payment.confirmed_on')
+      %th{width: "10%"}=sort_link @search, :status, t('activerecord.attributes.payment.status')
       /%th User
       /%th College
       /%th Data

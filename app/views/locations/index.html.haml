@@ -15,8 +15,8 @@
   %thead
     %tr
       /%th{width: "20%"}=t('activerecord.attributes.location.region')
-      %th{width: "50%"}=t('activerecord.attributes.location.name')
-      %th{width: "50%"}=t('activerecord.attributes.location.description')
+      %th{width: "50%"}=sort_link @search, :name, t('activerecord.attributes.location.name')
+      %th{width: "50%"}=sort_link @search, :descrption, t('activerecord.attributes.location.description')
       /%th User
       /%th College
       /%th Data

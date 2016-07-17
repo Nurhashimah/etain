@@ -13,12 +13,12 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "8%"}=t 'activerecord.attributes.company.company_code'
-      %th{width: "20%"}=t 'activerecord.attributes.company.name'
+      %th{width: "8%"}=sort_link @search, :company_code, t('activerecord.attributes.company.company_code')
+      %th{width: "20%"}=sort_link @search, :name, t('activerecord.attributes.company.name')
       %th{width: "28%"}=t 'activerecord.attributes.company.address'
-      %th{width: "12%"}=t 'activerecord.attributes.company.phone'
-      %th{width: "12%"}=t 'activerecord.attributes.company.fax'
-      %th{width: "20%"}=t 'activerecord.attributes.company.email'
+      %th{width: "12%"}=sort_link @search, :phone, t('activerecord.attributes.company.phone')
+      %th{width: "12%"}=sort_link @search, :fax, t('activerecord.attributes.company.fax')
+      %th{width: "20%"}=sort_link @search, :email, t('activerecord.attributes.company.email')
       /%th User
       /%th College
       /%th Data

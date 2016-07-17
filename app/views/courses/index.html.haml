@@ -14,13 +14,13 @@
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
-      %th{width: "8%"}=t('activerecord.attributes.course.code')
+      %th{width: "8%"}=sort_link @search, :code, t('activerecord.attributes.course.code')
       %th{width: "16%"}=t('activerecord.attributes.course.organizer')
-      %th{width: "10%"}=t('activerecord.attributes.course.category')
-      %th{width: "20%"}=t('activerecord.attributes.course.topic')
+      %th{width: "10%"}=sort_link @search, :category, t('activerecord.attributes.course.category')
+      %th{width: "20%"}=sort_link @search, :topic, t('activerecord.attributes.course.topic')
       %th{width: "30%"}=t('activerecord.attributes.course.description')
-      %th{width: "10%"}=t('activerecord.attributes.course.fee')
-      %th{width: "6%"}=t('activerecord.attributes.course.duration')
+      %th{width: "10%"}=sort_link @search, :fee, t('activerecord.attributes.course.fee')
+      %th{width: "6%"}=sort_link @search, :duration, t('activerecord.attributes.course.duration')
       /%th User
       /%th College
       /%th Data
