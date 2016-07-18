@@ -18,7 +18,11 @@
       .control-group
         = f.label t('activerecord.attributes.payment.schedule_id'), :class => 'control-label'
         .controls
-          = f.collection_select :schedule_id, Schedule.joins(:customers).uniq, :id, :schedule_course_details, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}
+          /= f.collection_select :schedule_id, Schedule.joins(:customers).uniq, :id, :schedule_course_details, {:include_blank => (t 'helpers.select')}, {:class => 'selectpicker mandatory'}
+          - arr=Array.new
+          - arr << [(t 'helpers.select'),"", {'data'=>""}]
+          - Schedule.joins(:customers).uniq.all.each{ |c| arr << [c.schedule_course_details, c.id, {'data'=>c.schedulecourse.fee}] }
+          = select_tag("payment[schedule_id]", options_for_select(arr, @payment.schedule_id), {class: 'selectpicker mandatory', "data-width"=>'550px'})
 
     /.control-group
     /  = f.label t('activerecord.attributes.payment.customer_id'), :class => 'control-label'
@@ -39,10 +43,15 @@
       = f.label t('activerecord.attributes.payment.amount'), :class => 'control-label'
       .controls
         = f.text_field :amount, :class => 'text_field mandatory'
+        #course_fee
         .small=t('helpers.in_rm')
     .control-group
       = f.label t('activerecord.attributes.payment.confirmed_by'), :class => 'control-label'
-      .controls= f.collection_select :confirmed_by, Customer.order(name: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
+      .controls
+        #span_customer
+          = f.collection_select :confirmed_by, Customer.order(name: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
+        #span_corporate
+          = f.collection_select :confirmed_by, Customer.where(corporate: true).order(name: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
     .control-group
       = f.label t('activerecord.attributes.payment.confirmed_on'), :class => 'control-label'
       .controls= f.text_field :confirmed_on, :class => 'datetime_picker_reverse'
@@ -72,23 +81,41 @@ $(document).ready(function(e){
     if($('#payment_by_booking').is(':checked')) { 
       $("#span_booking").show("highlight"); 
       $("#span_schedule").hide(""); 
+      $("#span_customer").show("highlight"); 
+      $("#span_corporate").hide(""); 
     }else{
       $("#span_schedule").show("highlight"); 
       $("#span_booking").hide(""); 
+      $("#span_corporate").show("highlight");
+      $("#span_customer").hide(""); 
     }
   });
   $("input[id='payment_by_booking']").each(function() {  
     if($('#payment_by_booking').is(':checked')) { 
-      $("#span_booking").show("highlight"); 
+      $("#span_booking").show("highlight");
       $("#span_schedule").hide(""); 
+      $("#span_customer").show("highlight"); 
+      $("#span_corporate").hide(""); 
     }else{
       $("#span_schedule").show("highlight"); 
       $("#span_booking").hide(""); 
+      $("#span_corporate").show("highlight"); 
+      $("#span_customer").hide(""); 
     }
-
   });
   
-
-
-
+  $('#payment_schedule_id').change(function(){
+    var selected_schedule_fee = $(this).find('option:selected').attr('data');
+    var amt = document.getElementById("payment_amount");
+    
+    if(typeof selected_schedule_fee != 'undefined')
+    { amt.value=selected_schedule_fee;}
+    else
+    { amt.value=0;}
+    
+  });
+  
 });
+
+/$('#course_fee').html("#{I18n.t('activerecord.attributes.schedule.organized_by')}"+"<b>"+selected_schedule_fee+"</b>") 
+/$('#course_fee').html("0.00")

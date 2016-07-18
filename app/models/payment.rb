@@ -4,7 +4,7 @@ class Payment < ActiveRecord::Base
   #customer_id?
   belongs_to :authorised_payer, class_name: 'Customer', foreign_key: 'confirmed_by'
   validates :confirmed_by, :method, :amount,  presence: true
-  validates :amount, numericality: true
+  validates :amount, numericality: {greater_than: 0}
   validate :pay_booking_or_schedule
   
   attr_accessor :by_booking
