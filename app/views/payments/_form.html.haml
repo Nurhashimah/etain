@@ -51,7 +51,7 @@
         #span_customer
           = f.collection_select :confirmed_by, Customer.order(name: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
         #span_corporate
-          = f.collection_select :confirmed_by, Customer.where(corporate: true).order(name: :asc), :id, :id_no_with_name_position, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
+          = f.collection_select :confirmed_by, Customer.where(corporate: true).order(name: :asc), :id, :corporate_payer, {:include_blank => (t 'helpers.select')},{ :class => 'selectpicker mandatory'}
     .control-group
       = f.label t('activerecord.attributes.payment.confirmed_on'), :class => 'control-label'
       .controls= f.text_field :confirmed_on, :class => 'datetime_picker_reverse'

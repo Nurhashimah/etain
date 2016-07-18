@@ -20,6 +20,10 @@ class Customer < ActiveRecord::Base
     a
   end
   
+  def corporate_payer
+    clientcompany.name+"-"+id_no_with_name_position
+  end
+  
   def non_corporate_remove_company
     self.company_id=nil if corporate==false
   end
