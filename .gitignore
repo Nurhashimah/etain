@@ -12,6 +12,10 @@ config/database.yml
 /log/*.log
 /tmp
 
+#ignore production files
+*.log
+*.pid
+
 # Ignore other unneeded files.
 doc/
 *.swp
@@ -38,4 +42,3 @@ tmp/**/*
 .secret
 
 shared/**
-
