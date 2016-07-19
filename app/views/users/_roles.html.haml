@@ -1,0 +1,9 @@
+- role_list=["administration", "trainer", "trainee"]
+= f.fields_for :user_roles do |ff|
+  - role_list.each do |role|
+    
+    .col-md-offset-3
+      = ff.check_box role, checked: ((@user.user_roles[role] == '1' ? "checked" : "") rescue "")
+      = role.titleize
+
+/= @user.user_roles[:administration]

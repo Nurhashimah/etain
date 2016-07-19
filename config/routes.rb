@@ -18,7 +18,12 @@ Etain::Application.routes.draw do
   resources :courses
 
   devise_for :users
-  resources :users
+  resources :users do
+    member do
+      get 'match'
+      post 'match'
+    end
+  end
   root  'static_pages#home'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'

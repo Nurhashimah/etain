@@ -1,0 +1,20 @@
+- model_class = User
+.page-header
+  %h1= t 'users.title', :default => model_class.model_name.human.pluralize
+  
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th{width: "15%"} Name
+      %th{width: "10%"} Email
+      %th{width: "20%"} Company / Employer
+      %th{width: "15%"} College Access
+      %th{width: "20%"} Roles
+  - for user in @users
+    %tbody
+      %tr
+        %td= user.name 
+        %td= link_to user.email, edit_user_path(user)
+        %td= user.try(:employer).try(:name)
+        %td= user.try(:college).try(:name)
+        %td= user.role_strings.titleize
