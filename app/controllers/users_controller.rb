@@ -25,6 +25,8 @@ class UsersController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+      #flash.discard
+      #flash.now[:notice]=
     end
   end
   
@@ -34,7 +36,6 @@ class UsersController < ApplicationController
     @matched_customer=Customer.where(email: current_user.email, corporate: true)
     @role_list=["administration", "trainer", "trainee"]
     @role_val=['1','0','0']
-    @corporate=Customer.where(email: current_user.email, corporate: true).first if @matched_customer.count > 0
   end
 
   private

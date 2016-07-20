@@ -5,7 +5,7 @@ authorization do
   end
   
   # permissions on other roles, such as
-  role :admin do
+  role :administration do
     has_permission_on :courses, :to => :manage
   end
   # role :user do

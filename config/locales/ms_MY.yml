@@ -2,12 +2,25 @@ ms_MY:
   sidebar:
     home: Rumah
   
+  homepage:
+    welcome: Selamat Datang ke ETAIN
+    introduction: Ini adalah laman utama bagi 
+    sample: Sampel aplikasi Etain App.
+    is_the: adalah
+    company_administrator: pentadbir syarikat
+    login_email: Emel Log masuk
+    match_company_admin: "sepadan dengan rekod pentadbir syarikat berikut :"
+    match_company_employer: "sepadan dengan rekod syarikat (majikan) berikut :"
+    to_link_company: untuk padanan dengan syarikat.
+    sign_up: "Daftar sekarang!"
+  
   main_menu:
     course: Kursus
     people: Senarai Hubungan
     facilities: Kemudahan
     reports: Laporan
     payments: Pembayaran
+    account: Akaun
 
   activerecord:
     models:
@@ -145,6 +158,20 @@ ms_MY:
         payment_id: Pembayaran
         warranty_id: Jaminan
         unique_applicant: telah membuat tempahan bagi kelas (jadual kursus) yang dipilih
+      
+      user:
+        list: Senarai Pengguna
+        name: Nama
+        email: Email
+        password: Kata laluan
+        company_id: Syarikat / Majikan
+        college_id: Akses bagi kolej
+        roles: Peranan
+        logout: Log keluar
+        update_details: Kemaskini butiran
+        signin: Log masuk
+        manage_user: Tadbir pengguna
+        change_password: Ubah kata laluan
 
   helpers:
     links:
@@ -158,6 +185,9 @@ ms_MY:
       contact: Hubungi Kami
       news: Berita
       add_participant: Simpan & Tambah Peserta
+    for: untuk
+    click: Klik
+    here: sini
     user_id: Pengguna
     college_id: Kolej
     data: Data

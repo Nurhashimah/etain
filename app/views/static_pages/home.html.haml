@@ -1,60 +1,49 @@
 .row
   %br <br>
   .center.hero-unit
-    %h1 Welcome to Etain
+    %h1=t 'homepage.welcome'
     %h2
-    This is the home page for the
-    %a{:href => "https://github.com/maxcobmara/etain"} Etain App sample application.
+    =t 'homepage.introduction'
+    %a{:href => "https://github.com/maxcobmara/etain"}=t 'homepage.sample'
     %br
     - if user_signed_in?
       .small
-        /= current_user.email 
-        - matching_company_email=Company.where(email: current_user.email)
-        - matching_customer_email=Customer.where(email: current_user.email, corporate: true)
-        /= matching_customer_email.count
+        - matching_company=Company.where(email: current_user.email)
+        - matching_customer=Customer.where(email: current_user.email, corporate: true)
         
-        - if matching_company_email.count > 0
+        - if matching_company.count > 0
           - if current_user.company_id?
             = current_user.email 
-            is the
-            %b company administrator 
-            for : 
+            =t 'homepage.is_the'
+            %b=t 'homepage.company_administrator'
+            =t('helpers.for')+" : "
             = current_user.employer.name
           - else
-            Your login email
+            =t 'homepage.login_email'
             %strong= current_user.email 
-            matches the following company administrator record :
-            %strong=matching_company_email.first.name
+            =t 'homepage.match_company_admin'
+            %strong=matching_company.first.name
             %br 
-            Click
-            = link_to 'here', match_user_path(current_user)
-            to link to this company.
-            /- @user=current_user
-            /= form_for @user do |f|
-            /  = f.hidden_field :company_id, value: Company.where(email: current_user.email).first.id
-            /  - role_list=["administration", "trainer", "trainee"]
-            /  - role_val=['1','0','0']
-            /  = f.fields_for :user_roles do |ff|
-            /    - role_list.each_with_index do |role, ind|
-            /      = ff.text_field role, value: role_val[ind]
-            /  = f.submit "Match Company", class: "btn btn-primary"
+            =t 'helpers.click'
+            = link_to t('helpers.here'), match_user_path(current_user)
+            =t 'homepage.to_link_company'
         
         - else
           /set @user.company of matching email for corporate customers only
-          - if matching_customer_email.count > 0
+          - if matching_customer.count > 0
             - if current_user.company_id?
             - else
-              Your login email
+              =t 'homepage.login_email'
               %strong= current_user.email 
-              matches the following company (employer) record :
-              %strong=matching_customer_email.first.clientcompany.name
+              =t 'homepage.match_company_employer'
+              %strong=matching_customer.first.clientcompany.name
               %br 
-              Click
-              = link_to 'here', match_user_path(current_user)
-              to link to this company.
+              =t 'helpers.click'
+              = link_to t('helpers.here'), match_user_path(current_user)
+              =t 'homepage.to_link_company'
           
     - else
-      = link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary"
+      = link_to t('homepage.sign_up'), new_user_registration_path, class: "btn btn-primary"
 
     
   = link_to image_tag("powered_by_rails.png", alt: "Rails"), 'http://rubyonrails.org/'

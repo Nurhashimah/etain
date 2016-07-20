@@ -1,4 +1,4 @@
-- model=User
+- model_class=User
 .row
   %br <br>
   .center.hero-unit
@@ -12,7 +12,7 @@
             - @role_list.each_with_index do |role, ind|
               = ff.hidden_field role, value: @role_val[ind]
         - else
-          = f.hidden_field :company_id, value: @corporate.company_id
+          = f.hidden_field :company_id, value: @matched_customer.first.company_id
 
         /= f.submit "Match Company", class: "btn btn-primary"
       
@@ -27,6 +27,6 @@
           = f.submit "Match Company", class: "btn btn-primary"
         .col-md-4
           .well
-            = @matched_company.count > 0 ? @matched_company.first.name : @corporate.clientcompany.name
+            = @matched_company.count > 0 ? @matched_company.first.name : @matched_customer.first.clientcompany.name
             
     %br

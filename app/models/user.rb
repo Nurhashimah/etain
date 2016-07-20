@@ -31,6 +31,25 @@ class User < ActiveRecord::Base
     user_roles.find_all{|key, value| value == '1'}.map(&:first).join(", ") rescue ""
   end
   
+  #define scope
+  def self.roles_search(query)
+    user_ids=[]
+    if query=='administration'
+      User.all.each{|x|user_ids << x.id if x.user_roles[:administration]=='1'}
+    elsif query=='trainer'
+      User.all.each{|x|user_ids << x.id if x.user_roles[:trainer]=='1'}
+    elsif query=='trainee'
+      User.all.each{|x|user_ids << x.id if x.user_roles[:trainee]=='1'}
+    end
+    #User.all.each{|x|user_ids << x.id if x.user_roles[:administration]=='1'}
+     where(id: user_ids)
+  end
+  
+  #ransackable
+  def self.ransackable_scopes(auth_object = nil)
+     [:roles_search]
+  end
+  
   def company_email_should_owned_by_admin
     self.roles[:user_roles][:administration]='1' if employer && email==employer.email
   end

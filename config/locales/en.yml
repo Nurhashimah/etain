@@ -21,6 +21,18 @@
 
 en:
   hello: "Hello world"
+  
+  homepage:
+    welcome: Welcome to Etain
+    introduction: This is the home page for the
+    sample: Etain App sample application.
+    is_the: is the
+    company_administrator: company administrator
+    login_email: Login Email
+    match_company_admin: "matches the following company administrator record :"
+    match_company_employer: "matches the following company (employer) record :"
+    to_link_company: to link to this company.
+    sign_up: "Sign up now!"
 
   main_menu:
     course: Course
@@ -28,6 +40,7 @@ en:
     facilities: Facilities
     reports: Reports
     payments: Payments
+    account: Account
 
   activerecord:
     models:
@@ -166,6 +179,19 @@ en:
         payment_id: Payment
         warranty_id: Warranty
         unique_applicant: already applied to attend selected class
+        
+      user:
+        list: User Listing
+        name: Name
+        email: Email
+        password: Password
+        company_id: Company / Employer 
+        college_id: College Access
+        logout: Logout
+        update_details: Update details
+        signin: Sign in
+        manage_user: Manage User
+        change_password: Change password
 
   helpers:
     links:
@@ -179,6 +205,9 @@ en:
       contact: Contact
       news: News
       add_participant: Save & Add Participant
+    for: for
+    click: Click
+    here: here
     user_id: User 
     college_id: College
     data: Data
