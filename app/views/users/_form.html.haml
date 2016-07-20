@@ -1,0 +1,37 @@
+.page-header
+  %h1 Update Details
+.row
+  /= render 'shared/flashes'
+  = form_for @user, :html => { :class => 'form-horizontal'} do |f|
+    .col-lg-8.col-lg-offset-3
+      .form-group
+        .col-sm-3.control-label
+          = f.label :email
+        .col-sm-4
+          = f.text_field :email, class: 'form-control mandatory'
+  
+      .form-group
+        .col-sm-3.control-label
+          = f.label :name
+        .col-sm-4
+          = f.text_field :name, class: 'form-control mandatory'
+      
+      - if current_user.user_roles && current_user.user_roles[:administration]=='1'
+        .form-group
+          .col-sm-3.control-label
+            = f.label :company_id
+          .col-sm-4
+            = f.collection_select :company_id, Company.all.order(name: :asc), :id, :name, :include_blank => (t 'select'), class: 'form-control mandatory'
+          
+        .form-group
+          .col-sm-3.control-label
+            = f.label :college_id
+          .col-sm-4
+            = f.collection_select :college_id, Company.all.order(name: :asc), :id, :name, :include_blank => (t 'select'), class: 'form-control mandatory'
+
+      
+        = render partial: "roles", locals: {:f => f}
+
+      .form-group
+        .col-sm-offset-3.col-sm-6
+          = f.submit "Update Details", :class => 'btn btn-primary'

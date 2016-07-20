@@ -18,6 +18,7 @@ gem "bootstrap-datepicker-rails", "~> 1.3.0.1"
 gem "bootstrap-select-rails", "~> 1.3.0.1"
 gem 'modernizr-rails', '~> 2.7.1'
 gem 'ransack',        '~> 1.6.6'
+gem 'declarative_authorization', git: 'https://github.com/stffn/declarative_authorization.git' #'~> 0.5.7'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

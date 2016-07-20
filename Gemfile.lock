@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/stffn/declarative_authorization.git
+  revision: 45e91af20eba71b2828c5c84066bcce3ef032e8a
+  specs:
+    declarative_authorization (1.0.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -278,6 +284,7 @@ DEPENDENCIES
   capistrano-rvm
   capybara (~> 2.1.0)
   coffee-rails (~> 4.0.1)
+  declarative_authorization!
   devise (~> 3.2.4)
   font-awesome-rails (~> 4.0.3.1)
   growl (= 1.0.3)

@@ -1,0 +1,32 @@
+- model_class=User
+.row
+  %br <br>
+  .center.hero-unit
+    %h2 Link User to Company
+        
+    .small
+      = form_for @user do |f|
+        - if @matched_company.count > 0
+          = f.hidden_field :company_id, value: @matched_company.first.id
+          = f.fields_for :user_roles do |ff|
+            - @role_list.each_with_index do |role, ind|
+              = ff.hidden_field role, value: @role_val[ind]
+        - else
+          = f.hidden_field :company_id, value: @matched_customer.first.company_id
+
+        /= f.submit "Match Company", class: "btn btn-primary"
+      
+        .col-md-4.col-md-offset-1
+          .well
+            = current_user.email
+        /.col-md-1
+        /  .crosshairs
+        /    = button_tag(type: 'submit', class: "btn btn-primary") do
+        /      .i= fa_icon "link"
+        .col-md-2
+          = f.submit "Match Company", class: "btn btn-primary"
+        .col-md-4
+          .well
+            = @matched_company.count > 0 ? @matched_company.first.name : @matched_customer.first.clientcompany.name
+            
+    %br

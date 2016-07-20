@@ -1,0 +1,30 @@
+- provide(:title, 'User')
+- model_class = User
+.page-header
+  %h1= t 'activerecord.attributes.user.list', :default => model_class.model_name.human.pluralize
+/%p=notice
+.navbar.navbar-inverse
+  .navbar-inner
+    %ul.nav
+      /%li= link_to content_tag(:li, fa_icon(" ", text: (t 'actions.new'))), new_user_registration_path
+    %ul.nav.pull-right
+      %li.toga= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
+
+%table.table.table-condensed.table-hover.table-striped
+  %thead
+    %tr
+      %th{width: "15%"}=t 'activerecord.attributes.user.name'
+      %th{width: "10%"}=t 'activerecord.attributes.user.email'
+      %th{width: "20%"}=t 'activerecord.attributes.user.company_id'
+      %th{width: "15%"}=t 'activerecord.attributes.user.college_id'
+      %th{width: "20%"}=t 'activerecord.attributes.user.roles'
+  %tbody
+    = render "index_search"
+    - for user in @users
+      %tr
+        %td= user.name 
+        %td= link_to user.email, edit_user_path(user)
+        %td= user.try(:employer).try(:name)
+        %td= user.try(:college).try(:name)
+        %td= user.role_strings.titleize
+        = render :partial => 'action_menu', :locals => { :user => user }
