@@ -108,6 +108,20 @@ ms_MY:
         company_id: Syarikat
         position: Pangkat
         armed_force_no_mykad: atau No Tentera
+        armed_force_personnel: bagi anggota tentera
+        rank_id: Pangkat
+        
+      rank:
+        list: Senarai Pangkat
+        title: Butiran Pangkat
+        new: Pangkat Baru
+        edit: Sunting Pangkat
+        shortname: Nama Ringkas
+        name: Nama
+        category: Kategori
+        rate: Kumpulan Kadaran
+        category_rate_peg: "Kumpulan kadaran bagi Pegawai: (i) Kadet Kanan & ke bawah, (ii) Leftenan Muda & ke atas"
+        category_rate_llp: "Kumpulan kadaran bagi Lain-Lain Pangkat: (i) 'Junior rate', (ii) 'Senior rate'"
 
       company:
         list: Senarai Syarikat

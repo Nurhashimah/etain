@@ -1,0 +1,45 @@
+- provide(:title, 'Rank Details')
+- model_class = Rank
+.page-header
+  %h1= t('activerecord.attributes.rank.title')
+%p#notice= notice
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.rank.shortname')+":"
+  %dd= @rank.shortname
+  
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.rank.name')+":"
+  %dd= @rank.name
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.rank.category')+":"
+  %dd= @rank.render_category
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.rank.rate')+":"
+  %dd= @rank.render_rate
+
+/%dl.dl-horizontal
+/  %dt= t('helpers.user_id')+":"
+/  %dd= @rank.user_id
+
+/%dl.dl-horizontal
+/  %dt= t('helpers.college')+":"
+/  %dd= @rank.college_id
+
+/%dl.dl-horizontal
+/  %dt= t('helpers.data')+":"
+/  %dd= @rank.data
+
+
+.form-actions
+  = link_to content_tag(:i, "", :class => "fa fa-arrow-left ") + " " + t('.back', :default => t("helpers.links.back")), ranks_path, :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-edit") + " " + t('.edit', :default => t("helpers.links.edit")), |
+    edit_rank_path(@rank), :class => 'btn'
+  = link_to content_tag(:i, "", :class => "fa fa-trash-o icon-white") + " " + t('.destroy', :default => t("helpers.links.destroy")), |
+    rank_path(@rank),                                                                                                    |
+    :method => 'delete',                                                                                                           |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },                   |
+    :class => 'btn btn-danger'                                                                                                     |
+

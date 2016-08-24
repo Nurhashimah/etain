@@ -16,6 +16,8 @@ Etain::Application.routes.draw do
   resources :schedules
 
   resources :courses
+  
+  resources :ranks
 
   devise_for :users
   resources :users do

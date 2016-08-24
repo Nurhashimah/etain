@@ -14,6 +14,14 @@
         .small
           =t('activerecord.attributes.customer.armed_force_no_mykad')
           &nbsp;(Sample: 800101012256 or 8011)
+
+    .control-group
+      = f.label t('activerecord.attributes.customer.rank_id'), :class => 'control-label'
+      .controls
+        = f.collection_select :rank_id, Rank.all.order(id: :asc), :id, :description, :include_blank => (t 'select'), class: 'selectpicker'
+        .small
+          =t('activerecord.attributes.customer.armed_force_personnel')
+      
     .control-group
       = f.label t('activerecord.attributes.customer.position'), :class => 'control-label'
       .controls= f.text_field :position, :class => 'text_field input-xxlarge mandatory'   
