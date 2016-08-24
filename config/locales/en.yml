@@ -129,6 +129,20 @@ en:
         company_id: Company
         position: Position
         armed_force_no_mykad: or Armed Forced No
+        armed_force_personnel: for Armed Forced Personnel
+        rank_id: Rank
+      
+      rank:
+        list: Rank Listing
+        title: Rank Details
+        new: New Rank
+        edit: Edit Rank
+        shortname: Short Name
+        name: Name
+        category: Category
+        rate: Rate Group
+        category_rate_peg: "Rate Group for Officers: (i) 'Kadet Kanan & ke bawah', (ii) 'Leftenan Muda & ke atas'"
+        category_rate_llp: "Rate Group for Other Ranks: (i) Junior rate, (ii) Senior rate"
         
       company:
         list: Company Listing

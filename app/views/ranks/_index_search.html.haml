@@ -1,0 +1,9 @@
+= search_form_for @search, url: ranks_path, class: "form-inline" do |f|
+  %tr.search_row{style: "display: none;"}
+    %td= f.text_field :shortname_cont, :class => "form-control"
+    %td= f.text_field :name_cont, :class => "form-control"
+    %td= f.select :category_eq, [[(t 'actions.all_records'), '' ]]+DropDown::CATEGORY, :class => "selectpicker"
+    %td
+      = f.select :rate_eq, [[(t 'actions.all_records'), '']]+DropDown::RATE, :class => "selectpicker"
+      %button.btn.btn-sm.btn-default.right{:type => "submit"}
+        %i.fa.fa-search.fa-fw
