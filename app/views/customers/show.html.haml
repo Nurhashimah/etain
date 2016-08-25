@@ -7,14 +7,18 @@
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.name')+":"
   %dd= @customer.name
-  
+
+%dl.dl-horizontal
+  %dt= t('activerecord.attributes.customer.rank_id')+":"
+  %dd= @customer.rank.try(:name)
+
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.id_no')+":"
   %dd= @customer.id_no
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.position')+":"
-  %dd= @customer.position
+  %dd= @customer.try(:position)
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.phone')+":"
@@ -26,11 +30,11 @@
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.corporate')+":"
-  %dd= @customer.corporate? ? (t 'actions.yes') : (t 'actions.no')
+  %dd= @customer.corporate? ? fa_icon("check")+" "+@customer.try(:clientcompany).try(:name) : fa_icon("times")
 
-%dl.dl-horizontal
-  %dt= t('activerecord.attributes.customer.company_id')+":"
-  %dd= @customer.try(:clientcompany).try(:name)
+/%dl.dl-horizontal
+/  %dt= t('activerecord.attributes.customer.company_id')+":"
+/  %dd= @customer.try(:clientcompany).try(:name)
 
 /%dl.dl-horizontal
 /  %dt= t('helpers.user_id')+":"

@@ -49,6 +49,7 @@ en:
       schedule: Scheduling
       location: Locations
       customer: Customers / Participants
+      rank: Ranks
       company: Client Companies
       payment: Payments
       booking: Bookings
@@ -68,6 +69,7 @@ en:
         duration: Duration
         owner: Course owner
         organizer: Organizer
+        frequency: Frequency
         
       lecturer:
         list: Lecturer Listing
@@ -126,11 +128,15 @@ en:
         email: Email
         phone: Phone
         corporate: Corporate Client
+        non_corporate: Non corporate
+        corporate2: Corporate?
         company_id: Company
         position: Position
         armed_force_no_mykad: or Armed Forced No
         armed_force_personnel: for Armed Forced Personnel
         rank_id: Rank
+        rank_with_name: Rank - Name
+        rank_or_position: Please enter staff rank or position
       
       rank:
         list: Rank Listing

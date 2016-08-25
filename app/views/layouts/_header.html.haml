@@ -30,6 +30,9 @@
             %li= link_to (t 'activerecord.models.lecturer'), lecturers_path
             %li= link_to (t 'activerecord.models.customer'), customers_path
             %li= link_to (t 'activerecord.models.company'), companies_path
+            %li.divider
+            %li.dropdown-header=(t 'helpers.links.support_table')
+            %li= link_to (t 'activerecord.models.rank'), ranks_path
 
         %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
