@@ -69,6 +69,7 @@ en:
         duration: Duration
         owner: Course owner
         organizer: Organizer
+        frequency: Frequency
         
       lecturer:
         list: Lecturer Listing
