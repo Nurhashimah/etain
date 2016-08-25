@@ -1,11 +1,13 @@
 = search_form_for @search, url: customers_path, class: "form-inline" do |f|
   %tr.search_row{style: "display: none;"}
-    %td= f.text_field :name_cont, :class => "form-control"
+    %td= f.text_field :rank_name_cont, :class => "form-control", placeholder: (t 'activerecord.attributes.customer.rank_id')
+    %td= f.text_field :name_cont, :class => "form-control", placeholder: (t 'activerecord.attributes.customer.name')
     %td= f.text_field :id_no_cont, :class => "form-control"
     %td= f.text_field :position_cont, :class => "form-control"
     %td= f.text_field :phone_cont,:class => "form-control"
     %td= f.text_field :email_cont,:class => "form-control"
-    %td= f.select :corporate_eq, [[(t 'actions.all_records'), '' ], [(t 'actions.yes'), true], [(t 'actions.no'), false]], :class => "selectpicker"
+    - corporate_str=(t 'activerecord.attributes.customer.corporate').slice(0,1).capitalize+(t 'activerecord.attributes.customer.corporate').slice(1..-1).downcase
+    %td= f.select :corporate_eq, [[(t 'actions.all_records'), '' ], [corporate_str, true], [(t 'activerecord.attributes.customer.non_corporate'), false]], :class => "selectpicker"
     %td= f.select :company_id_eq, [[(t 'actions.all_records'), '']]+Company.all.pluck(:name, :id).compact, :class => "selectpicker"
     %td
       %button.btn.btn-sm.btn-default.right{:type => "submit"}

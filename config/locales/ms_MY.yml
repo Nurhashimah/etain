@@ -29,6 +29,7 @@ ms_MY:
       schedule: Jadual Kursus
       location: Lokasi
       customer: Pelanggan / Peserta
+      rank: Pangkat
       company: Syarikat Pelanggan
       payment: Pembayaran
       booking: Tempahan
@@ -105,12 +106,16 @@ ms_MY:
         email: Emel
         phone: No telefon
         corporate: Pelanggan Korporat
+        non_corporate: Bukan korporat
+        corporate2: Korporat?
         company_id: Syarikat
-        position: Pangkat
+        position: Jawatan
         armed_force_no_mykad: atau No Tentera
         armed_force_personnel: bagi anggota tentera
         rank_id: Pangkat
-        
+        rank_with_name: Pangkat - Nama
+        rank_or_position: Sila masukkan pangkat atau jawatan
+         
       rank:
         list: Senarai Pangkat
         title: Butiran Pangkat
@@ -199,6 +204,7 @@ ms_MY:
       contact: Hubungi Kami
       news: Berita
       add_participant: Simpan & Tambah Peserta
+      support_table: Jadual Sokongan
     for: untuk
     click: Klik
     here: sini

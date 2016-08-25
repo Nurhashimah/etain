@@ -4,11 +4,18 @@ class Customer < ActiveRecord::Base
   has_and_belongs_to_many :schedules
   has_many :bookings
   validates_presence_of :company_id, :if => :client_is_corporate?, :message => " - "+I18n.t("helpers.select_company")+" ("+I18n.t("customers.corporate")+")"
-  validates :name, :id_no, :position, presence: true
+  validates :name, :id_no, presence: true
+  validate :rank_or_position_must_exist, :message => "Please enter staff rank or position"
   before_save :non_corporate_remove_company
   
   def client_is_corporate?
     corporate==true
+  end
+  
+  def rank_or_position_must_exist
+    if rank_id==nil && position==""
+      errors.add(:base, I18n.t('activerecord.attributes.customer.rank_or_position'))
+    end
   end
   
   def id_no_with_name 
@@ -19,6 +26,10 @@ class Customer < ActiveRecord::Base
     a=id_no+" "+name
     a+=" ("+position+")" unless position.blank?
     a
+  end
+  
+  def rank_with_name
+    "<b>#{rank.try(:name)}</b></td><td width='18%'> #{name}</td>".html_safe
   end
   
   def corporate_payer
