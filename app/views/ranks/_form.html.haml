@@ -16,10 +16,10 @@
       = f.label t('activerecord.attributes.rank.category'), :class => 'control-label'
       .controls= f.select :category, DropDown::CATEGORY, :include_blank => (t 'select'), class: 'selectpicker'
 
-    .control-group
+    .control-group#span_rate
       = f.label t('activerecord.attributes.rank.rate'), :class => 'control-label'
       .controls
-        = f.select :rate, DropDown::REV_RATE, :include_blank => (t 'select'), class: 'selectpicker'
+        = f.select :rate, DropDown::REV_RATE, class: 'selectpicker'
         .small
           %ul
             %li=t('activerecord.attributes.rank.category_rate_peg')
@@ -32,25 +32,62 @@
         
 :javascript
   $(document).ready(function(){
-   ranks = $('#rank_rate').html();
-   $("#rank_category").change(function(){
-     selected_category = $('#rank_category :selected').text();
-     escaped_category = selected_category.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
-     options = $(ranks).filter("optgroup[label='"+escaped_category+"']").html();
-     if(options)
-     {
-      $('#rank_rate').html(options);
-      $('#rank_rate').parent().show();
+    ranks = $('#rank_rate').html();
+    rankingname = document.getElementById('rank_name');
+    $("#rank_category").change(function(){
+      selected_category = $('#rank_category :selected').text();
+      escaped_category = selected_category.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+      options = $(ranks).filter("optgroup[label='"+escaped_category+"']").html();
+      if(options)
+      {
+        $('#rank_rate').html(options);
+        $('#rank_rate').parent().show();
+        if(rankingname.value.indexOf("Maritim") != -1)
+        {  $("#span_rate").hide(); }
+        else
+        {  $("#span_rate").show(); }
       }
-    else
-    {
-      $('#rank_rate').empty;
-      $('#rank_rate').parent().hide();
-    }
-  });
-  $("#rank_category").each(function(){
+      else
+      {
+        $('#rank_rate').empty;
+        $('#rank_rate').parent().hide();
+      }
+    });
+    $("#rank_category").each(function(){
+      selected_category = $('#rank_category :selected').text();
+      escaped_category = selected_category.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+      options = $(ranks).filter("optgroup[label='"+escaped_category+"']").html();
+      if(options)
+      {
+        $('#rank_rate').html(options);
+        $('#rank_rate').parent().show();
+        if(rankingname.value.indexOf("Maritim") != -1)
+        {  $("#span_rate").hide(); }
+        else
+        {  $("#span_rate").show(); }
+      }
+      else
+      {
+        $('#rank_rate').empty;
+        $('#rank_rate').parent().hide();
+      }   
+    });
+    $("#rank_name").change(function(){
+    });
    
-   
-   });
   });
 
+/  $("#rank_name").change(function(){
+/       var rankname=this.value
+/       alert(rankname);
+/       if(rankname.indexOf("Maritim") != -1)
+/       { 
+/         alert("apmm");
+/         $("#span_rate").hide();
+/       }
+/       else
+/       { 
+/         alert("navy - kena display RATE group");
+/         $("#span_rate").show();
+/       }
+/     });

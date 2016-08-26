@@ -14,13 +14,6 @@
         .small
           =t('activerecord.attributes.customer.armed_force_no_mykad')
           &nbsp;(Sample: 800101012256 or 8011)
-
-    .control-group
-      = f.label t('activerecord.attributes.customer.rank_id'), :class => 'control-label'
-      .controls
-        = f.collection_select :rank_id, Rank.all.order(id: :asc), :id, :description, :include_blank => (t 'select'), class: 'selectpicker'
-        .small
-          =t('activerecord.attributes.customer.armed_force_personnel')
       
     .control-group
       = f.label t('activerecord.attributes.customer.position'), :class => 'control-label'
@@ -39,6 +32,16 @@
       .controls
         .col-sm-1= f.check_box :corporate, :id => 'is_checked'
         .col-sm-3#span_displaylist= f.collection_select :company_id, Company.all, :id, :name, :include_blank => (t 'helpers.select_company'), :class => 'selectpicker'
+
+    /TODO - RANK selection to display based on company NAME - 'ilike(?), "%#{TLDM}%"  or "%#{Tentera Laut}%" -- to display rank without (M)', 
+    /TODO - 'ilike(?), "%#{APMM}%" or "%#{Agensi Penguatkuasaan maritim}%" -- to display rank with (M) ONLY'
+
+    .control-group
+      = f.label t('activerecord.attributes.customer.rank_id'), :class => 'control-label'
+      .controls
+        = f.collection_select :rank_id, Rank.all.order(id: :asc), :id, :description, :include_blank => (t 'select'), class: 'selectpicker'
+        .small
+          =t('activerecord.attributes.customer.armed_force_personnel')
 
     .control-group
       = f.label  t('helpers.user_id'), :class => 'control-label'

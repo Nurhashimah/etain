@@ -3,7 +3,42 @@
     %td= f.text_field :shortname_cont, :class => "form-control"
     %td= f.text_field :name_cont, :class => "form-control"
     %td= f.select :category_eq, [[(t 'actions.all_records'), '' ]]+DropDown::CATEGORY, :class => "selectpicker"
+    - if @search.rate_not_null==true
+      - rank_selected='1'
+    - elsif @search.rate_not_null==false
+      - rank_selected='0'
+    - else
+      - rank_selected=''
+    %td= f.select :rate_not_null, [['All Ranks', ''], ['TLDM ranks', '1'], ['APMM ranks', '0']], :selected =>rank_selected, :class => "selectpicker"
     %td
-      = f.select :rate_eq, [[(t 'actions.all_records'), '']]+DropDown::RATE, :class => "selectpicker"
+      #rate_span= f.select :rate_eq, [[(t 'actions.all_records'), '']]+DropDown::RATE, :class => "selectpicker"
+    %td
       %button.btn.btn-sm.btn-default.right{:type => "submit"}
-        %i.fa.fa-search.fa-fw
+        %i.fa.fa-search.fa-fws
+
+:javascript
+ 
+  $(document).ready(function(){
+    $("#q_rate_not_null").change(function(){
+      is_army=this.value;
+      rate=document.getElementById('q_rate_eq');
+      if(is_army=='1' || is_army=='')
+      {  $("#rate_span").show();}
+      else
+      {  
+        $("#rate_span").hide();
+        rate.value='';
+      }
+    });
+    $("#q_rate_not_null").each(function(){
+      is_army=this.value;
+      rate=document.getElementById('q_rate_eq');
+      if(is_army=='1' || is_army=='')
+      {  $("#rate_span").show();}
+      else
+      {  
+        $("#rate_span").hide();
+        rate.value='';
+      }
+    });   
+  });

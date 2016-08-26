@@ -16,9 +16,10 @@
   %dt= t('activerecord.attributes.rank.category')+":"
   %dd= @rank.render_category
 
-%dl.dl-horizontal
-  %dt= t('activerecord.attributes.rank.rate')+":"
-  %dd= @rank.render_rate
+- if @rank.rank_for_navy?
+  %dl.dl-horizontal
+    %dt= t('activerecord.attributes.rank.rate')+":"
+    %dd= @rank.render_rate
 
 /%dl.dl-horizontal
 /  %dt= t('helpers.user_id')+":"

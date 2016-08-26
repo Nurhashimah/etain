@@ -10,14 +10,13 @@
     %ul.nav.pull-right
       %li.toga= link_to content_tag(:li, fa_icon("search", text: (t 'actions.search'))), "#", class: "index_search_bar"
 
-
 %table.table.table-condensed.table-hover.table-striped
   %thead
     %tr
       %th{width: "20%"}= sort_link @search, :id, t('activerecord.attributes.rank.shortname')
       %th{width: "30%"}=sort_link @search, :name, t('activerecord.attributes.rank.name')
       %th{width: "25%"}=t('activerecord.attributes.rank.category')
-      %th{width: "25%"}=t('activerecord.attributes.rank.rate')
+      %th{width: "25%", colspan: 2}=t('activerecord.attributes.rank.rate')
       /%th User
       /%th College
       /%th Data
@@ -29,7 +28,7 @@
         %td= rank.shortname
         %td= rank.name
         %td= rank.render_category
-        %td= rank.render_rate
+        %td{colspan: 2}= rank.rank_for_navy? ?  rank.render_rate : "-"
         /%td= rank.user_id
         /%td= rank.college_id
         /%td= rank.data

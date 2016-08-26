@@ -36,7 +36,7 @@ module DropDown
              ["Leftenan Muda & Ke Atas", 4]
            ]
   
-  REV_RATE={"Lain-Lain Pangkat"=> [ ["Junior Rate", 1], ["Senior Rate", 2]],  "Pegawai"=> [["Kadet Kanan & Ke Bawah", 3], ["Leftenan Muda & Ke Atas", 4]]}
+  REV_RATE={"Lain-Lain Pangkat"=> [[ I18n.t('helpers.select'), ""], ["Junior Rate", 1], ["Senior Rate", 2]],  "Pegawai"=> [[ I18n.t('helpers.select'), ""], ["Kadet Kanan & Ke Bawah", 3], ["Leftenan Muda & Ke Atas", 4]]}
 
   CATEGORY = [
             #  Displayed       stored in db
