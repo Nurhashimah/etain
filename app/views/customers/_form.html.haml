@@ -33,10 +33,7 @@
         .col-sm-1= f.check_box :corporate, :id => 'is_checked'
         .col-sm-3#span_displaylist= f.collection_select :company_id, Company.all, :id, :name, :include_blank => (t 'helpers.select_company'), :class => 'selectpicker'
 
-    /TODO - RANK selection to display based on company NAME - 'ilike(?), "%#{TLDM}%"  or "%#{Tentera Laut}%" -- to display rank without (M)', 
-    /TODO - 'ilike(?), "%#{APMM}%" or "%#{Agensi Penguatkuasaan maritim}%" -- to display rank with (M) ONLY'
-
-    .control-group
+    .control-group#span_navy_rank
       = f.label t('activerecord.attributes.customer.rank_id'), :class => 'control-label'
       .controls
         = f.collection_select :rank_id, Rank.all.order(id: :asc), :id, :description, :include_blank => (t 'select'), class: 'selectpicker'
@@ -60,6 +57,25 @@
       = f.submit (t 'helpers.links.submit'), :class => 'btn btn-primary'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), |
         customers_path, :class => 'btn'
+
+:javascript
+  
+  $(document).ready(function(){
+    $("#customer_company_id").change(function(){
+      company=$("#customer_company_id :selected").text()
+      if (company.indexOf("Tentera Laut")!=-1)
+      { $("#span_navy_rank").show();}
+      else
+      { $("#span_navy_rank").hide();}
+    });
+    $("#customer_company_id").each(function(){
+      company=$("#customer_company_id :selected").text()
+      if (company.indexOf("Tentera Laut")!=-1)
+      { $("#span_navy_rank").show();}
+      else
+      { $("#span_navy_rank").hide();}
+    });
+  });
 
 / 
 / :javascript

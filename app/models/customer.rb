@@ -6,7 +6,7 @@ class Customer < ActiveRecord::Base
   validates_presence_of :company_id, :if => :client_is_corporate?, :message => " - "+I18n.t("helpers.select_company")+" ("+I18n.t("customers.corporate")+")"
   validates :name, :id_no, presence: true
   validate :rank_or_position_must_exist, :message => "Please enter staff rank or position"
-  before_save :non_corporate_remove_company
+  before_save :non_corporate_remove_company, :non_navy_remove_rank
   
   def client_is_corporate?
     corporate==true
@@ -39,4 +39,12 @@ class Customer < ActiveRecord::Base
   def non_corporate_remove_company
     self.company_id=nil if corporate==false
   end
+  
+  def non_navy_remove_rank
+    navy=Company.where(name: 'Tentera Laut Diraja Malaysia')
+    if navy.count > 0
+      self.rank_id=nil if company_id!=navy.first.id
+    end
+  end
+  
 end
