@@ -1,6 +1,6 @@
 = search_form_for @search, url: customers_path, class: "form-inline" do |f|
   %tr.search_row{style: "display: none;"}
-    %td= f.text_field :rank_name_cont, :class => "form-control", placeholder: (t 'activerecord.attributes.customer.rank_id')
+    %td= f.text_field :rank_name_or_rank_shortname_cont, :class => "form-control", placeholder: (t 'activerecord.attributes.customer.rank_id')
     %td= f.text_field :name_cont, :class => "form-control", placeholder: (t 'activerecord.attributes.customer.name')
     %td= f.text_field :id_no_cont, :class => "form-control"
     %td= f.text_field :position_cont, :class => "form-control"
