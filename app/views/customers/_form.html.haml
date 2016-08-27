@@ -32,22 +32,11 @@
       .controls
         .col-sm-1= f.check_box :corporate, :id => 'is_checked'
         .col-sm-3#span_displaylist
-          /= f.collection_select :company_id, Company.all, :id, :name, :include_blank => (t 'helpers.select_company'), :class => 'selectpicker'
-          - company_list=[[I18n.t('helpers.select'), '']]
-          - company_collection=[]
-          - Company.all.each{|x|company_collection << [x.name, x.id]}
-          = f.select("company_id", options_for_select(company_collection, @customer.company_id), :include_blank => (t 'select'),  class: 'selectpicker')
+          = f.select("company_id", options_for_select(Company.company_collection, @customer.company_id), :include_blank => (t 'select'),  class: 'selectpicker')
     .control-group#span_navy_apmm_rank
       = f.label t('activerecord.attributes.customer.rank_id'), :class => 'control-label'
       .controls
-        /= f.collection_select :rank_id, Rank.all.order(id: :asc), :id, :description, :include_blank => (t 'select'), class: 'selectpicker'
-        - groupped_rank=[]
-        - rank_collection_navy=[[I18n.t('helpers.select'), '']]
-        - rank_collection_apmm=[[I18n.t('helpers.select'), '']]
-        - Rank.where('rate is not null').order(id: :asc).each{|x|rank_collection_navy << [x.name, x.id]}
-        - Rank.where('rate is null').order(id: :asc).each{|x|rank_collection_apmm << [x.name, x.id]}
-        - groupped_rank << ["Tentera Laut Diraja Malaysia", rank_collection_navy] << ["Agensi Penguatkuasaan Maritim Malaysia", rank_collection_apmm]
-        = f.select("rank_id", grouped_options_for_select(groupped_rank, @customer.rank_id), :class => 'selectpicker')
+        = f.select("rank_id", grouped_options_for_select(Rank.groupped_rank, @customer.rank_id), :class => 'selectpicker')
         .small
           =t('activerecord.attributes.customer.armed_force_personnel')
 
@@ -98,7 +87,7 @@
         $("#span_navy_apmm_rank").show();
       }
       else
-      { $("#span_navy_apmm_rank_rank").hide();}
+      { $("#span_navy_apmm_rank").hide();}
     });
   });
 

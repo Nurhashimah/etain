@@ -21,6 +21,7 @@ $(document).ready(function(e){
       $("#span_displaylist").show("highlight"); 
     }else{
       $("#span_displaylist").hide(""); 
+      $("#span_navy_apmm_rank").hide();
     }
   });
   $("input[id='is_checked']").each(function() {  
@@ -28,6 +29,7 @@ $(document).ready(function(e){
       $("#span_displaylist").show("highlight"); 
     }else{
       $("#span_displaylist").hide(""); 
+      $("#span_navy_apmm_rank").hide();
     }
   });
   

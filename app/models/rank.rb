@@ -22,4 +22,14 @@ class Rank < ActiveRecord::Base
   def render_rate
     DropDown::RATE.find_all{|disp, value| value==rate}.map{|disp, value| disp}[0] 
   end
+  
+  def self.groupped_rank
+    groupped_rank=[]
+    rank_collection_navy=[[I18n.t('helpers.select'), '']]
+    rank_collection_apmm=[[I18n.t('helpers.select'), '']]
+    Rank.where('rate is not null').order(id: :asc).each{|x|rank_collection_navy << [x.description, x.id]}
+    Rank.where('rate is null').order(id: :asc).each{|x|rank_collection_apmm << [x.description, x.id]}
+    groupped_rank << ["Tentera Laut Diraja Malaysia", rank_collection_navy] << ["Agensi Penguatkuasaan Maritim Malaysia", rank_collection_apmm]
+    groupped_rank
+  end
 end
