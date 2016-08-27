@@ -27,7 +27,7 @@
       %th
   %tbody
     = render "index_search"
-    - @customers.order(name: :asc).each do |customer|
+    - @customers.order(rank_id: :asc, name: :asc).each do |customer|
       %tr
         %td= customer.rank_with_name
         %td= customer.id_no
