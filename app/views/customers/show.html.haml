@@ -10,7 +10,7 @@
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.rank_id')+":"
-  %dd= @customer.rank.try(:name)
+  %dd= @customer.rank.try(:description)
 
 %dl.dl-horizontal
   %dt= t('activerecord.attributes.customer.id_no')+":"

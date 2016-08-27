@@ -29,7 +29,7 @@ class Customer < ActiveRecord::Base
   end
   
   def rank_with_name
-    "<b>#{rank.try(:name)}</b></td><td width='18%'> #{name}</td>".html_safe
+    "<b>#{rank.try(:shortname)}</b></td><td width='21%'> #{name}</td>".html_safe
   end
   
   def corporate_payer
