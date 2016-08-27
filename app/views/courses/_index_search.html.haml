@@ -5,12 +5,15 @@
     %td= f.text_field :category_cont, :class => "form-control"
     %td= f.text_field :topic_cont,:class => "form-control"
     %td= f.text_field :description_cont, :class => "form-control"
-    %td
-      .input-group
-        = f.text_field :fee_eq, :class => "form-control"
-        %span.input-group-btn
-          %button.btn.btn-sm.btn-default.right{:type => "submit"}
-            %i.fa.fa-search.fa-fw
+    %td= f.text_field :fee_eq, :class => "form-control"
+    %td{colspan: 2}
+      .col-md-2 - 
+      .col-md-10
+        .input-group
+          = f.text_field :frequency_search, :class => "form-control year_picker_reverse"
+          %span.input-group-btn
+            %button.btn.btn-sm.btn-default.right{:type => "submit"}
+              %i.fa.fa-search.fa-fw
     %td &nbsp;
     %td &nbsp;
     /%td &nbsp;

@@ -41,9 +41,18 @@ class Course < ActiveRecord::Base
     where(id: ids)
   end
   
+  def self.frequency_search(query)
+    if query
+      selected_date=query.to_date
+      schedules_selected_year=Schedule.where('start_on >=? and start_on <=?', selected_date.beginning_of_year, selected_date.end_of_year)
+      course_ids=schedules_selected_year.pluck(:course_id)
+      where(id: course_ids)
+    end
+  end
+  
   #ransackable
   def self.ransackable_scopes(auth_object = nil)
-     [:organizer_search]
+     [:organizer_search, :frequency_search]
   end
 
 end

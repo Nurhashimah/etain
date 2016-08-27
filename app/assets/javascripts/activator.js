@@ -16,6 +16,16 @@ $(document).ready(function(e){
       defaultSeconds: 0
   });
   
+  $('.year_picker_reverse').datetimepicker({
+      format: "d-m-Y",
+      formatDate: "Y-m-d",
+      timepicker: false,
+      autoclose: true,
+      onSelectDate: function(dp, $input) {
+        $input.val( '01-01-'+$input.val().substr(6,9));
+      }
+  });
+  
   $("input[id='is_checked']").change(function() {  
     if($('#is_checked').is(':checked')) { 
       $("#span_displaylist").show("highlight"); 
