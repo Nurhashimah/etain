@@ -15,12 +15,13 @@
   %thead
     %tr
       %th{width: "8%"}=sort_link @search, :code, t('activerecord.attributes.course.code')
-      %th{width: "16%"}=t('activerecord.attributes.course.organizer')
+      %th{width: "12%"}=t('activerecord.attributes.course.organizer')
       %th{width: "10%"}=sort_link @search, :category, t('activerecord.attributes.course.category')
-      %th{width: "20%"}=sort_link @search, :topic, t('activerecord.attributes.course.topic')
-      %th{width: "30%"}=t('activerecord.attributes.course.description')
-      %th{width: "10%"}=sort_link @search, :fee, t('activerecord.attributes.course.fee')
+      %th{width: "18%"}=sort_link @search, :topic, t('activerecord.attributes.course.topic')
+      %th{width: "26%"}=t('activerecord.attributes.course.description')
+      %th{width: "8%"}=sort_link @search, :fee, t('activerecord.attributes.course.fee')
       %th{width: "6%"}=sort_link @search, :duration, t('activerecord.attributes.course.duration')
+      %th{width: "10%"}Year-Frequency
       /%th User
       /%th College
       /%th Data
@@ -36,6 +37,15 @@
         %td= course.description
         %td= course.fee.nil? ? "" : "RM "+sprintf("%.2f", course.fee).to_s
         %td= course.duration.to_s+" "+course.duration_details
+        %td
+          - if @search.frequency_search
+            - selected_date=@search.frequency_search.to_date
+            - schedules_ofyear=course.schedules.where('start_on >=? and start_on <=?', selected_date.beginning_of_year, selected_date.end_of_year)
+            = "<b>#{selected_date.year}</b> : Total = #{schedules_ofyear.count}".html_safe
+          - else
+            - cnt=0
+            - course.schedules.group_by{|x|x.start_on.year}.sort.reverse.each do |yyear, scs|
+              = ((cnt+=1).to_s+") "+yyear.to_s+" - "+scs.count.to_s+'<br>').html_safe
         /%td= course.user_id
         /%td= course.college_id
         /%td= course.data
