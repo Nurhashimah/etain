@@ -68,7 +68,7 @@
         #participants_grid
           - unless @schedule.new_record? && @schedule.max_people.nil?
             - 0.upto(@schedule.max_people-1).each do |x|
-              = select_tag "schedule[customer_ids][]", options_from_collection_for_select(Customer.all.order(id_no: :asc), :id, :id_no_with_name_position, {:selected => @schedule.customer_ids[x]}), :prompt => (t 'helpers.select'), :class => 'k2'
+              = select_tag "schedule[customer_ids][]", options_from_collection_for_select(Customer.all.order(id_no: :asc), :id, :id_no_with_rank_name_position, {:selected => @schedule.customer_ids[x]}), :prompt => (t 'helpers.select'), :class => 'k2'
 
     .control-group
       = f.label (t 'helpers.user_id'), :class => 'control-label'
