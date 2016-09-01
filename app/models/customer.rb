@@ -28,6 +28,14 @@ class Customer < ActiveRecord::Base
     a
   end
   
+  def id_no_with_rank_name_position
+    a=id_no+" "
+    a+=rank.shortname+" " if rank_id?
+    a+=name
+    a+=" ("+position+")" unless position.blank?
+    a
+  end
+  
   def rank_with_name
     "<b>#{rank.try(:shortname)}</b></td><td width='21%'> #{name}</td>".html_safe
   end
